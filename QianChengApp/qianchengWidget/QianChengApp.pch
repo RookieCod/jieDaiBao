@@ -1,0 +1,18 @@
+//
+//  QianChengApp.pch
+//  QianChengApp
+//
+//  Created by zhangsong on 2017/11/17.
+//  Copyright © 2017年 zhangsong. All rights reserved.
+//
+
+#ifndef QianChengApp_pch
+#define QianChengApp_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIColor+Addtions.h"
+#import "CommonMarco.h"
+
+#endif /* QianChengApp_pch */
