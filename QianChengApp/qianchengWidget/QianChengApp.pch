@@ -15,4 +15,5 @@
 #import "UIColor+Addtions.h"
 #import "CommonMarco.h"
 #import "UIView+LayoutFrame.h"
+#import "AFNetworking.h"
 #endif /* QianChengApp_pch */

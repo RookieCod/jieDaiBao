@@ -50,10 +50,10 @@
 //            [self setImageWithURLString:model.selectIcon
 //                               forState:UIControlStateNormal];
 //        }
-        [self setImage:[UIImage imageNamed:@""]
+        [self setImage:model.selectedIcon
               forState:UIControlStateNormal];
         
-        [self setTitle:@""
+        [self setTitle:model.title
               forState:UIControlStateNormal];
     }else
     {
@@ -69,10 +69,10 @@
 //            [self setImageWithURLString:model.icon
 //                               forState:UIControlStateNormal];
 //        }
-        [self setImage:[UIImage imageNamed:@""]
+        [self setImage:model.defaultIcon
               forState:UIControlStateNormal];
         
-        [self setTitle:@""
+        [self setTitle:model.title
               forState:UIControlStateNormal];
         
     }

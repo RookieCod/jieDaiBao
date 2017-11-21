@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B424F527C38E985EFCFD386C /* libPods-QianChengApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75648AE3F7E99A7D77994D84 /* libPods-QianChengApp.a */; };
 		D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DA01FBE81E10090FE80 /* AppDelegate.m */; };
 		D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA61FBE82300090FE80 /* Assets.xcassets */; };
 		D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA71FBE82300090FE80 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C6ABC434D53A18BA2F7E352 /* Pods-QianChengApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QianChengApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp.release.xcconfig"; sourceTree = "<group>"; };
+		75648AE3F7E99A7D77994D84 /* libPods-QianChengApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QianChengApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD0896958AAECCDB0E92024 /* Pods-QianChengApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QianChengApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D6215D841FBE80DB0090FE80 /* QianChengApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QianChengApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6215D9F1FBE81E10090FE80 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6215DA01FBE81E10090FE80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,17 +77,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B424F527C38E985EFCFD386C /* libPods-QianChengApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58EE91D31A015A86E03DFECB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BD0896958AAECCDB0E92024 /* Pods-QianChengApp.debug.xcconfig */,
+				0C6ABC434D53A18BA2F7E352 /* Pods-QianChengApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9DB366D91B8A29D210958C42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75648AE3F7E99A7D77994D84 /* libPods-QianChengApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D6215D7B1FBE80DB0090FE80 = {
 			isa = PBXGroup;
 			children = (
 				D6215D861FBE80DB0090FE80 /* QianChengApp */,
 				D6215D851FBE80DB0090FE80 /* Products */,
+				58EE91D31A015A86E03DFECB /* Pods */,
+				9DB366D91B8A29D210958C42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D6215D9A1FBE80DB0090FE80 /* Build configuration list for PBXNativeTarget "QianChengApp" */;
 			buildPhases = (
+				BB1709574660C3CD1D6DDC6F /* [CP] Check Pods Manifest.lock */,
 				D6215D801FBE80DB0090FE80 /* Sources */,
 				D6215D811FBE80DB0090FE80 /* Frameworks */,
 				D6215D821FBE80DB0090FE80 /* Resources */,
+				539C884D9F7AF131D3772B0B /* [CP] Embed Pods Frameworks */,
+				67EA096DA2499975C2944837 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +330,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		539C884D9F7AF131D3772B0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67EA096DA2499975C2944837 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB1709574660C3CD1D6DDC6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6215D801FBE80DB0090FE80 /* Sources */ = {
@@ -452,6 +527,7 @@
 		};
 		D6215D9B1FBE80DB0090FE80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD0896958AAECCDB0E92024 /* Pods-QianChengApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +544,7 @@
 		};
 		D6215D9C1FBE80DB0090FE80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6ABC434D53A18BA2F7E352 /* Pods-QianChengApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

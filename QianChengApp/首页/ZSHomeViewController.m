@@ -8,8 +8,9 @@
 
 #import "ZSHomeViewController.h"
 
-@interface ZSHomeViewController ()
-
+@interface ZSHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+/** collectionView */
+@property (nonatomic, strong) UITableView *baseTableView;
 @end
 
 @implementation ZSHomeViewController
@@ -17,6 +18,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"首页";
+    
+}
+
+
+- (void)requestContent
+{
+    //顶部banner
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {

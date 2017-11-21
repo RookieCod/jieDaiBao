@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [self initTabVC];
 }
 
 - (void)initTabVC
@@ -42,7 +42,7 @@
     //默认选中的tabItem
     selectedIndex = 1;
     
-    UIButton *button = (UIButton *)[self.view viewWithTag:selectedIndex];
+    //UIButton *button = (UIButton *)[self.view viewWithTag:selectedIndex];
     [self layoutTabBarItems];
     
 //    if (delegate && [delegate respondsToSelector:@selector(tapWithIndex:)]) {
