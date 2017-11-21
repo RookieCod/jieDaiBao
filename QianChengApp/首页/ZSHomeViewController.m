@@ -7,6 +7,7 @@
 //
 
 #import "ZSHomeViewController.h"
+#import "HomeRequest.h"
 
 @interface ZSHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 /** collectionView */
@@ -19,14 +20,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"首页";
-    
+    [self requestContent];
 }
 
 
 - (void)requestContent
 {
     //顶部banner
-    
+    HomeRequest *request = [[HomeRequest alloc] init];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        id object = request.responseObject;
+        NSLog(@"%@",object);
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

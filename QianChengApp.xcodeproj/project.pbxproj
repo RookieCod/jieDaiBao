@@ -29,6 +29,7 @@
 		D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DD71FBEB93B0090FE80 /* ZSMyAppViewController.xib */; };
 		D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D41FC2822600D68410 /* CycleScrollView.m */; };
 		D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */; };
+		D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8E61FC40B5800D68410 /* HomeRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		D637E8D41FC2822600D68410 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		D637E8D61FC2835100D68410 /* UIView+LayoutFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutFrame.h"; sourceTree = "<group>"; };
 		D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutFrame.m"; sourceTree = "<group>"; };
+		D637E8E51FC40B5800D68410 /* HomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRequest.h; sourceTree = "<group>"; };
+		D637E8E61FC40B5800D68410 /* HomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				D6215DC61FBEB8BC0090FE80 /* ZSHomeViewController.h */,
 				D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */,
 				D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */,
+				D637E8E51FC40B5800D68410 /* HomeRequest.h */,
+				D637E8E61FC40B5800D68410 /* HomeRequest.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
+				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D6215DCE1FBEB9030090FE80 /* ZSMarketViewController.m in Sources */,
