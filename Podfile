@@ -4,4 +4,6 @@ target 'QianChengApp' do
     pod 'YTKNetwork', '~> 2.0.3'
     pod 'MJExtension', '~> 3.0.13'
     pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'SDWebImage', '~> 4.0.0'
+    pod 'Masonry', '~> 1.0.2'
 end

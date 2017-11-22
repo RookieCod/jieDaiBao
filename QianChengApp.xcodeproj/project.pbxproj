@@ -30,6 +30,9 @@
 		D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D41FC2822600D68410 /* CycleScrollView.m */; };
 		D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */; };
 		D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8E61FC40B5800D68410 /* HomeRequest.m */; };
+		D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8E91FC50D7400D68410 /* BannerModel.m */; };
+		D637E8F11FC515DD00D68410 /* HomeTangDouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */; };
+		D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,11 @@
 		D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutFrame.m"; sourceTree = "<group>"; };
 		D637E8E51FC40B5800D68410 /* HomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeRequest.h; sourceTree = "<group>"; };
 		D637E8E61FC40B5800D68410 /* HomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeRequest.m; sourceTree = "<group>"; };
+		D637E8E81FC50D7400D68410 /* BannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
+		D637E8E91FC50D7400D68410 /* BannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
+		D637E8EE1FC515DD00D68410 /* HomeTangDouTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTangDouTableViewCell.h; sourceTree = "<group>"; };
+		D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTangDouTableViewCell.m; sourceTree = "<group>"; };
+		D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTangDouTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,11 +177,9 @@
 		D6215DA21FBE81E10090FE80 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				D6215DC61FBEB8BC0090FE80 /* ZSHomeViewController.h */,
-				D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */,
-				D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */,
-				D637E8E51FC40B5800D68410 /* HomeRequest.h */,
-				D637E8E61FC40B5800D68410 /* HomeRequest.m */,
+				D637E8ED1FC515A800D68410 /* V */,
+				D637E8EC1FC515A100D68410 /* M */,
+				D637E8EB1FC5159600D68410 /* C */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -261,6 +267,37 @@
 			path = "无限轮播图";
 			sourceTree = "<group>";
 		};
+		D637E8EB1FC5159600D68410 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				D6215DC61FBEB8BC0090FE80 /* ZSHomeViewController.h */,
+				D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */,
+				D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		D637E8EC1FC515A100D68410 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				D637E8E51FC40B5800D68410 /* HomeRequest.h */,
+				D637E8E61FC40B5800D68410 /* HomeRequest.m */,
+				D637E8E81FC50D7400D68410 /* BannerModel.h */,
+				D637E8E91FC50D7400D68410 /* BannerModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		D637E8ED1FC515A800D68410 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				D637E8EE1FC515DD00D68410 /* HomeTangDouTableViewCell.h */,
+				D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */,
+				D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,6 +364,7 @@
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
+				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
 				D6215DB01FBE82310090FE80 /* Info.plist in Resources */,
 				D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */,
@@ -389,11 +427,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D637E8F11FC515DD00D68410 /* HomeTangDouTableViewCell.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
 				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
+				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D6215DCE1FBEB9030090FE80 /* ZSMarketViewController.m in Sources */,
