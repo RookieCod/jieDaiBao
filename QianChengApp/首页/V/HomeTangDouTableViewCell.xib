@@ -17,17 +17,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-QS-Lra">
+                    <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-QS-Lra">
                         <rect key="frame" x="0.0" y="0.0" width="106" height="43.5"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="tangdouButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZCV-po-swX"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EY2-hm-dHM">
+                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EY2-hm-dHM">
                         <rect key="frame" x="107" y="0.0" width="106" height="43.5"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="tangdouButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q8V-Uz-9JA"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwk-gx-qaN">
+                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwk-gx-qaN">
                         <rect key="frame" x="214" y="0.0" width="106" height="43.5"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="tangdouButtonDidClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HaR-h9-T2f"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

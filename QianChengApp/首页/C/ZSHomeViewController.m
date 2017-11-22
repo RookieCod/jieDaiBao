@@ -36,7 +36,7 @@ CycleScrollViewDatasource>
     self.navigationItem.title = @"首页";
     [self requestContent];
     
-    [self.baseTableView registerClass:[HomeTangDouTableViewCell class] forCellReuseIdentifier:TangDouTableViewCell];
+    [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeTangDouTableViewCell" bundle:nil] forCellReuseIdentifier:TangDouTableViewCell];
 }
 
 
@@ -51,6 +51,7 @@ CycleScrollViewDatasource>
             self.bannerModelArray = [BannerModel mj_objectArrayWithKeyValuesArray:bannerResponse[@"data"][@"bannerList"]];
             if (self.bannerModelArray && self.bannerModelArray.count > 0) {
                 [self reloadTableHeaderView];
+                [self.baseTableView reloadData];
             }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -60,7 +61,7 @@ CycleScrollViewDatasource>
 
 - (void)reloadTableHeaderView
 {
-    if (!self.tableHeaderView.superview) {
+    if (!self.baseTableView.tableHeaderView) {
         self.baseTableView.tableHeaderView = self.tableHeaderView;
     }
 }
@@ -139,7 +140,13 @@ CycleScrollViewDatasource>
     
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:TangDouTableViewCell forIndexPath:indexPath];
-        
+        HomeTangDouTableViewCell *tangdou = (HomeTangDouTableViewCell *)cell;
+        //@weakify(self);
+        [[tangdou.buttonClick takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(NSNumber *buttonTag) {
+            //@strongify(self);
+            NSInteger index = [buttonTag integerValue] - 1000;
+            //根据index 判断跳转
+        }];
     }
     return cell;
 }
@@ -148,7 +155,7 @@ CycleScrollViewDatasource>
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 0;
+        return 10;
     }
     return 30;
 }

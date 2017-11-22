@@ -6,4 +6,5 @@ target 'QianChengApp' do
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'SDWebImage', '~> 4.0.0'
     pod 'Masonry', '~> 1.0.2'
+    pod 'ReactiveCocoa', '~> 2.5'
 end

@@ -12,4 +12,6 @@
 
 @interface HomeTangDouTableViewCell : UITableViewCell
 
+/** <#description#> */
+@property (nonatomic, strong) RACSubject *buttonClick;
 @end

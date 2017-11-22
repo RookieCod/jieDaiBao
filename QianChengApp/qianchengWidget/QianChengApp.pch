@@ -21,4 +21,6 @@
 #import "MJExtension.h"
 #import "UIImageView+WebCache.h"
 #import <Masonry/Masonry.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #endif /* QianChengApp_pch */
