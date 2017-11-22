@@ -8,7 +8,22 @@
 
 #import "HomeRequest.h"
 
+@interface HomeRequest()
+{
+    NSNumber *_source;
+}
+@end
+
 @implementation HomeRequest
+
+- (instancetype)initWithSource:(NSNumber *)source
+{
+    if (self = [super init]) {
+        _source = source;
+    }
+    return self;
+}
+
 
 - (NSString *)requestUrl
 {
@@ -17,7 +32,14 @@
 
 - (YTKRequestMethod)requestMethod
 {
-    return YTKRequestMethodGET;
+    return YTKRequestMethodPOST;
+}
+
+- (id)requestArgument
+{
+    return @{
+             @"source":_source,
+             };
 }
 
 @end

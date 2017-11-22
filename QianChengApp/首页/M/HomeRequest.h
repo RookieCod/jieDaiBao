@@ -9,5 +9,5 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface HomeRequest : YTKRequest
-
+- (instancetype)initWithSource:(NSNumber *)source;
 @end

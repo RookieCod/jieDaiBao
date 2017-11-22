@@ -33,6 +33,14 @@
 		D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8E91FC50D7400D68410 /* BannerModel.m */; };
 		D637E8F11FC515DD00D68410 /* HomeTangDouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */; };
 		D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */; };
+		D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8F91FC5778E00D68410 /* HotDaiKuanRequest.m */; };
+		D637E8FD1FC577AC00D68410 /* HotXinYongRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8FC1FC577AC00D68410 /* HotXinYongRequest.m */; };
+		D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8FF1FC582AC00D68410 /* DaiKuanModel.m */; };
+		D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E9021FC5847B00D68410 /* HomeCardModel.m */; };
+		D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E9051FC588CF00D68410 /* DaiKuanTableViewCell.m */; };
+		D637E9081FC588CF00D68410 /* DaiKuanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E9061FC588CF00D68410 /* DaiKuanTableViewCell.xib */; };
+		D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E90A1FC588DD00D68410 /* HomeCardTableViewCell.m */; };
+		D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E90B1FC588DD00D68410 /* HomeCardTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +89,20 @@
 		D637E8EE1FC515DD00D68410 /* HomeTangDouTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTangDouTableViewCell.h; sourceTree = "<group>"; };
 		D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTangDouTableViewCell.m; sourceTree = "<group>"; };
 		D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTangDouTableViewCell.xib; sourceTree = "<group>"; };
+		D637E8F81FC5778E00D68410 /* HotDaiKuanRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotDaiKuanRequest.h; sourceTree = "<group>"; };
+		D637E8F91FC5778E00D68410 /* HotDaiKuanRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotDaiKuanRequest.m; sourceTree = "<group>"; };
+		D637E8FB1FC577AC00D68410 /* HotXinYongRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotXinYongRequest.h; sourceTree = "<group>"; };
+		D637E8FC1FC577AC00D68410 /* HotXinYongRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotXinYongRequest.m; sourceTree = "<group>"; };
+		D637E8FE1FC582AC00D68410 /* DaiKuanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiKuanModel.h; sourceTree = "<group>"; };
+		D637E8FF1FC582AC00D68410 /* DaiKuanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanModel.m; sourceTree = "<group>"; };
+		D637E9011FC5847B00D68410 /* HomeCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCardModel.h; sourceTree = "<group>"; };
+		D637E9021FC5847B00D68410 /* HomeCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCardModel.m; sourceTree = "<group>"; };
+		D637E9041FC588CF00D68410 /* DaiKuanTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiKuanTableViewCell.h; sourceTree = "<group>"; };
+		D637E9051FC588CF00D68410 /* DaiKuanTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanTableViewCell.m; sourceTree = "<group>"; };
+		D637E9061FC588CF00D68410 /* DaiKuanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiKuanTableViewCell.xib; sourceTree = "<group>"; };
+		D637E9091FC588DD00D68410 /* HomeCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCardTableViewCell.h; sourceTree = "<group>"; };
+		D637E90A1FC588DD00D68410 /* HomeCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCardTableViewCell.m; sourceTree = "<group>"; };
+		D637E90B1FC588DD00D68410 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,8 +304,16 @@
 			children = (
 				D637E8E51FC40B5800D68410 /* HomeRequest.h */,
 				D637E8E61FC40B5800D68410 /* HomeRequest.m */,
+				D637E8F81FC5778E00D68410 /* HotDaiKuanRequest.h */,
+				D637E8F91FC5778E00D68410 /* HotDaiKuanRequest.m */,
+				D637E8FB1FC577AC00D68410 /* HotXinYongRequest.h */,
+				D637E8FC1FC577AC00D68410 /* HotXinYongRequest.m */,
 				D637E8E81FC50D7400D68410 /* BannerModel.h */,
 				D637E8E91FC50D7400D68410 /* BannerModel.m */,
+				D637E8FE1FC582AC00D68410 /* DaiKuanModel.h */,
+				D637E8FF1FC582AC00D68410 /* DaiKuanModel.m */,
+				D637E9011FC5847B00D68410 /* HomeCardModel.h */,
+				D637E9021FC5847B00D68410 /* HomeCardModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -294,6 +324,12 @@
 				D637E8EE1FC515DD00D68410 /* HomeTangDouTableViewCell.h */,
 				D637E8EF1FC515DD00D68410 /* HomeTangDouTableViewCell.m */,
 				D637E8F01FC515DD00D68410 /* HomeTangDouTableViewCell.xib */,
+				D637E9041FC588CF00D68410 /* DaiKuanTableViewCell.h */,
+				D637E9051FC588CF00D68410 /* DaiKuanTableViewCell.m */,
+				D637E9061FC588CF00D68410 /* DaiKuanTableViewCell.xib */,
+				D637E9091FC588DD00D68410 /* HomeCardTableViewCell.h */,
+				D637E90A1FC588DD00D68410 /* HomeCardTableViewCell.m */,
+				D637E90B1FC588DD00D68410 /* HomeCardTableViewCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -363,10 +399,12 @@
 				D6215DCF1FBEB9030090FE80 /* ZSMarketViewController.xib in Resources */,
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
+				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
 				D6215DB01FBE82310090FE80 /* Info.plist in Resources */,
+				D637E9081FC588CF00D68410 /* DaiKuanTableViewCell.xib in Resources */,
 				D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */,
 				D6215DBD1FBE86B30090FE80 /* ZSTabBarViewController.xib in Resources */,
 			);
@@ -434,14 +472,20 @@
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
 				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
+				D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */,
+				D637E8FD1FC577AC00D68410 /* HotXinYongRequest.m in Sources */,
+				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D6215DCE1FBEB9030090FE80 /* ZSMarketViewController.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
+				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,
 				D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */,
+				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,
+				D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
