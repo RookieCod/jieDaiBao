@@ -22,6 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-0F-EM6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dZ-3s-xWa" userLabel="首页" customClass="ZSTabBarItem">
                     <rect key="frame" x="0.0" y="0.0" width="94" height="49"/>
                     <state key="normal">
@@ -68,6 +72,8 @@
                 <constraint firstItem="slI-2r-USx" firstAttribute="width" secondItem="5dZ-3s-xWa" secondAttribute="width" id="1C3-Bk-nAv"/>
                 <constraint firstItem="XPT-B6-lgP" firstAttribute="leading" secondItem="oID-rx-Ga7" secondAttribute="trailing" id="1Z6-7a-n1c"/>
                 <constraint firstAttribute="bottom" secondItem="5dZ-3s-xWa" secondAttribute="bottom" id="2Ho-RZ-4uk"/>
+                <constraint firstItem="yw2-0F-EM6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3A7-Po-RoF"/>
+                <constraint firstItem="yw2-0F-EM6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BZB-cN-ciy"/>
                 <constraint firstItem="XPT-B6-lgP" firstAttribute="width" secondItem="5dZ-3s-xWa" secondAttribute="width" id="Ea1-n7-SvA"/>
                 <constraint firstAttribute="bottom" secondItem="XPT-B6-lgP" secondAttribute="bottom" id="Hcb-aQ-HT2"/>
                 <constraint firstItem="5dZ-3s-xWa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IoZ-18-1x3"/>
@@ -75,11 +81,13 @@
                 <constraint firstAttribute="bottom" secondItem="slI-2r-USx" secondAttribute="bottom" id="LXv-KC-s54"/>
                 <constraint firstItem="oID-rx-Ga7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NlF-6Z-dO0"/>
                 <constraint firstAttribute="bottom" secondItem="oID-rx-Ga7" secondAttribute="bottom" id="Ujj-lJ-zZW"/>
+                <constraint firstAttribute="trailing" secondItem="yw2-0F-EM6" secondAttribute="trailing" id="ZXo-fk-jI7"/>
                 <constraint firstItem="oID-rx-Ga7" firstAttribute="width" secondItem="5dZ-3s-xWa" secondAttribute="width" id="fMZ-IA-aTd"/>
                 <constraint firstItem="slI-2r-USx" firstAttribute="leading" secondItem="5dZ-3s-xWa" secondAttribute="trailing" id="ib7-Ce-Gzx"/>
                 <constraint firstItem="XPT-B6-lgP" firstAttribute="height" secondItem="5dZ-3s-xWa" secondAttribute="height" id="llb-5n-uZT"/>
                 <constraint firstAttribute="trailing" secondItem="XPT-B6-lgP" secondAttribute="trailing" id="sOA-lF-IzD"/>
                 <constraint firstItem="oID-rx-Ga7" firstAttribute="leading" secondItem="slI-2r-USx" secondAttribute="trailing" id="tDn-ab-lsH"/>
+                <constraint firstAttribute="bottom" secondItem="yw2-0F-EM6" secondAttribute="bottom" id="uId-Eb-ri9"/>
                 <constraint firstItem="5dZ-3s-xWa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="xiO-5y-akU"/>
                 <constraint firstItem="slI-2r-USx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="za4-bR-Mb5"/>
             </constraints>

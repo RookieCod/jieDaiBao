@@ -45,9 +45,7 @@
     //UIButton *button = (UIButton *)[self.view viewWithTag:selectedIndex];
     [self layoutTabBarItems];
     
-//    if (delegate && [delegate respondsToSelector:@selector(tapWithIndex:)]) {
-//        [delegate tapWithIndex:(button.tag-1)];
-//    }
+
 }
 - (IBAction)buttonAction:(id)sender {
     
@@ -75,7 +73,7 @@
 -(void) layoutTabBarItems
 {
     NSInteger index = 0;
-    for (ZSTabBarItem *btn in _tabBarArray) {
+    for (ZSTabBarItem *btn in self.tabBarArray) {
         
         if (index < self.tabBarArray.count) {
             [btn configWithItemModel:self.defaultTabBarModelArray[index]
@@ -98,15 +96,15 @@
     if (!_defaultTabBarModelArray) {
         
         NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
-        for (int i = 0; i < 5; i++) {
+        for (NSInteger i = 0; i < 4; i++) {
             ZSTabBarItemModel *model = [[ZSTabBarItemModel alloc] init];
             model.title = tabBarNameArray[i];
-            model.defaultIcon = [UIImage imageNamed:@""];
+            model.defaultIcon = [[UIImage imageNamed:[NSString stringWithFormat:@"tabDefaultIcon_%ld",(long)i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             
-            model.selectedIcon = [UIImage imageNamed:@""];
+            model.selectedIcon = [[UIImage imageNamed:[NSString stringWithFormat:@"tabSelectedIcon_%ld",(long)i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             
-            model.defaultColor = [UIColor blackColor];
-            model.selectedColor = [UIColor redColor];
+//            model.defaultColor = [UIColor blackColor];
+//            model.selectedColor = [UIColor redColor];
             
             [mutableArray addObject:model];
         }

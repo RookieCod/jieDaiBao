@@ -70,7 +70,7 @@
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, marketNav, newsNav, myAppNav, nil];
-    
+    //self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:68/255.0 green:173/255.0 blue:159/255.0 alpha:1];
     self.tabBarVC = [[ZSTabBarViewController alloc] initWithNibName:@"ZSTabBarViewController" bundle:nil];
     self.tabBarVC.view.frame = CGRectMake(0, 0, MAINWIDTH, 49);
     self.tabBarVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;

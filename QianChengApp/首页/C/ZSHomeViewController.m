@@ -45,6 +45,7 @@ CycleScrollViewDatasource>
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"首页";
+    
     [self requestContent];
     
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeTangDouTableViewCell" bundle:nil] forCellReuseIdentifier:TangDouTableViewCell];
@@ -166,6 +167,7 @@ CycleScrollViewDatasource>
 {
     BannerModel *bannerModel = self.bannerModelArray[index];
     UIImageView *tempView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MAINWIDTH, 150*MAINWIDTH/375.0)];
+    tempView.backgroundColor = [UIColor lightGrayColor];
     [tempView sd_setImageWithURL:[NSURL URLWithString:bannerModel.bannerPic] placeholderImage:nil];
     return tempView;
 }
@@ -279,11 +281,11 @@ CycleScrollViewDatasource>
 {
     
     UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor colorWithHexString:@"FFFFFF"];
-    
+    headerView.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
+
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.hidden = NO;
-    titleLabel.textColor = [UIColor colorWithHexString:@"666666"];
+    titleLabel.textColor = [UIColor colorWithHexString:@"333333"];
     titleLabel.font = [UIFont systemFontOfSize:15];
     if (section == 1) {
         titleLabel.text = @"热门贷款推荐";
