@@ -60,8 +60,8 @@ CycleScrollViewDatasource>
 {
     //顶部banner
     HomeRequest *request1 = [[HomeRequest alloc] initWithSource:@(1)];
-    HotDaiKuanRequest *request2 = [[HotDaiKuanRequest alloc] init];
-    HotXinYongRequest *request3 = [[HotXinYongRequest alloc] init];
+    HotDaiKuanRequest *request2 = [[HotDaiKuanRequest alloc] initWithType:1];
+    HotXinYongRequest *request3 = [[HotXinYongRequest alloc] initWithType:1];
     
     YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[request1,request2,request3]];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -100,7 +100,7 @@ CycleScrollViewDatasource>
 {
     NSDictionary *responseDic = (NSDictionary *)responseObj;
     if ([responseDic[@"code"] integerValue] == 00) {
-        self.daiKuanModelArray = [DaiKuanModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"hotLoanList"]];
+        self.daiKuanModelArray = [DaiKuanModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"loanList"]];
         
         if (self.daiKuanModelArray && self.daiKuanModelArray.count > 0) {
             [self.baseTableView reloadData];
@@ -114,7 +114,7 @@ CycleScrollViewDatasource>
 {
     NSDictionary *responseDic = (NSDictionary *)responseObj;
     if ([responseDic[@"code"] integerValue] == 00) {
-        self.homeCardModelArray = [HomeCardModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"hotCardList"]];
+        self.homeCardModelArray = [HomeCardModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"cardList"]];
         
         if (self.homeCardModelArray && self.homeCardModelArray.count > 0) {
             [self.baseTableView reloadData];
@@ -247,9 +247,13 @@ CycleScrollViewDatasource>
         //@strongify(self);
         NSInteger index = [buttonTag integerValue] - 1000;
         //根据index 判断跳转
-        
+        [self pushNextVCWithIndex:index];
     }];
     return cell;
+}
+
+- (void)pushNextVCWithIndex:(NSInteger)index
+{
 }
 
 - (DaiKuanTableViewCell *)daiKuanCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath

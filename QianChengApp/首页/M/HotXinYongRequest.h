@@ -9,5 +9,6 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface HotXinYongRequest : YTKRequest
+- (instancetype)initWithType:(NSInteger)type;
 
 @end

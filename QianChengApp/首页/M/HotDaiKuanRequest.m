@@ -8,15 +8,37 @@
 
 #import "HotDaiKuanRequest.h"
 
+@interface HotDaiKuanRequest()
+{
+    NSInteger _type;
+}
+@end
+
 @implementation HotDaiKuanRequest
+
+- (instancetype)initWithType:(NSInteger)type
+{
+    if (self = [super init]) {
+        _type = type;
+    }
+    return self;
+}
+
 - (NSString *)requestUrl
 {
-    return @"loan/hotlist";
+    return @"loan/list";
 }
 
 - (YTKRequestMethod)requestMethod
 {
     return YTKRequestMethodPOST;
+}
+
+- (id)requestArgument
+{
+    return @{
+             @"type" : @(_type),
+             };
 }
 
 @end

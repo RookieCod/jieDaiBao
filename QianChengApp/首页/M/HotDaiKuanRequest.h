@@ -9,5 +9,5 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface HotDaiKuanRequest : YTKRequest
-
+- (instancetype)initWithType:(NSInteger)type;
 @end
