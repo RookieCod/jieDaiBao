@@ -301,8 +301,8 @@ CycleScrollViewDatasource>
 
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.hidden = NO;
-    titleLabel.textColor = [UIColor colorWithHexString:@"333333"];
-    titleLabel.font = [UIFont systemFontOfSize:15];
+    titleLabel.textColor = [UIColor colorWithHexString:@"4A4A4A"];
+    titleLabel.font = [UIFont boldSystemFontOfSize:14];
     if (section == 1) {
         titleLabel.text = @"热门贷款推荐";
     } else if (section == 2) {

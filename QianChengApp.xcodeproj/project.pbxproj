@@ -43,6 +43,10 @@
 		D637E9121FC6603000D68410 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */; };
 		D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */; };
 		D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */; };
+		D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */; };
+		D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */; };
+		D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */; };
+		D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +112,13 @@
 		D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSDaiKuanListViewController.h; sourceTree = "<group>"; };
 		D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSDaiKuanListViewController.m; sourceTree = "<group>"; };
 		D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSDaiKuanListViewController.xib; sourceTree = "<group>"; };
+		D6C178561FC6A7D700BD1199 /* ZSSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSSegmentView.h; sourceTree = "<group>"; };
+		D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSSegmentView.m; sourceTree = "<group>"; };
+		D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSSegmentView.xib; sourceTree = "<group>"; };
+		D6C1785B1FC6CA5000BD1199 /* DaiKuanListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiKuanListRequest.h; sourceTree = "<group>"; };
+		D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanListRequest.m; sourceTree = "<group>"; };
+		D6C178631FC6F16900BD1199 /* LoanMoneyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanMoneyModel.h; sourceTree = "<group>"; };
+		D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanMoneyModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,9 +225,9 @@
 		D6215DA31FBE81E10090FE80 /* 贷款 */ = {
 			isa = PBXGroup;
 			children = (
-				D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */,
-				D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */,
-				D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */,
+				D6C178541FC6A78700BD1199 /* C */,
+				D6C178551FC6A78700BD1199 /* M */,
+				D6C178531FC6A78700BD1199 /* V */,
 			);
 			path = "贷款";
 			sourceTree = "<group>";
@@ -342,6 +353,37 @@
 			path = V;
 			sourceTree = "<group>";
 		};
+		D6C178531FC6A78700BD1199 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				D6C178561FC6A7D700BD1199 /* ZSSegmentView.h */,
+				D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */,
+				D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		D6C178541FC6A78700BD1199 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */,
+				D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */,
+				D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		D6C178551FC6A78700BD1199 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				D6C1785B1FC6CA5000BD1199 /* DaiKuanListRequest.h */,
+				D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */,
+				D6C178631FC6F16900BD1199 /* LoanMoneyModel.h */,
+				D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +450,7 @@
 				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
+				D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
@@ -475,12 +518,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D637E8F11FC515DD00D68410 /* HomeTangDouTableViewCell.m in Sources */,
+				D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
+				D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */,
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
 				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
+				D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */,
 				D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */,
 				D637E8FD1FC577AC00D68410 /* HotXinYongRequest.m in Sources */,
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
