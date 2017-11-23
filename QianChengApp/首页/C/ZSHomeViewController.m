@@ -79,7 +79,7 @@ CycleScrollViewDatasource>
         [self dealWithCardResponse:xinYongRequest.responseObject];
         
     } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
-
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -335,7 +335,7 @@ CycleScrollViewDatasource>
             ZSDaiKuanListViewController *daiKuan = [[ZSDaiKuanListViewController alloc] init];
             [self.navigationController pushViewController:daiKuan animated:YES];
         } else {
-            NSLog(@"%d",section);
+
         }
     }];
     [rightImage addGestureRecognizer:tap];
@@ -345,6 +345,11 @@ CycleScrollViewDatasource>
         rightImage.hidden = YES;
     }
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

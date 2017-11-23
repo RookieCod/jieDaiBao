@@ -8,6 +8,11 @@
 
 #import "ZSSegmentView.h"
 
+@interface ZSSegmentView()
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
+@end
 @implementation ZSSegmentView
 
 /*
@@ -38,4 +43,28 @@
     }
 }
 
+- (void)reloadSubview:(NSInteger)index
+{
+    if (index == 1) {
+        self.leftButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+        [self.leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.rightButton.backgroundColor = [UIColor whiteColor];
+        [self.rightButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
+    } else if (index == 2) {
+        self.leftButton.backgroundColor = [UIColor whiteColor];
+        [self.leftButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
+        self.rightButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+        [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    }
+}
+- (void)reloadTitle:(NSString *)string index:(NSInteger)index
+{
+    if (index == 1) {
+        [self.leftButton setTitle:string forState:UIControlStateNormal];
+        [self.rightButton setTitle:@"默认排序" forState:UIControlStateNormal];
+    } else {
+        [self.rightButton setTitle:string forState:UIControlStateNormal];
+        [self.leftButton setTitle:@"可贷额度" forState:UIControlStateNormal ];
+    }
+}
 @end

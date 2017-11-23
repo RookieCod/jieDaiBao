@@ -20,4 +20,7 @@
 /** delegate */
 @property (nonatomic, assign) id<ZSSegmentViewDelegate> delegate;
 
+- (void)reloadSubview:(NSInteger)index;
+
+- (void)reloadTitle:(NSString *)string index:(NSInteger)index;
 @end

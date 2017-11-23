@@ -10,8 +10,8 @@
 
 @interface DaiKuanListRequest : YTKRequest
 /** <#description#> */
-@property (nonatomic, strong) NSNumber *money;
+@property (nonatomic, strong) NSString *money;
 
 /** <#description#> */
-@property (nonatomic, strong) NSNumber *sort;
+@property (nonatomic, strong) NSString *sort;
 @end

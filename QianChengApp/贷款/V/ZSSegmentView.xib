@@ -25,7 +25,7 @@
                         <action selector="buttonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="dq1-t8-JjW"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOF-WG-zyA">
+                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOF-WG-zyA" userLabel="默认排序">
                     <rect key="frame" x="188" y="0.0" width="187" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -49,6 +49,10 @@
                 <constraint firstItem="FOF-WG-zyA" firstAttribute="leading" secondItem="lUR-bV-dSn" secondAttribute="trailing" constant="1" id="qhf-az-AWV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="leftButton" destination="lUR-bV-dSn" id="nEy-Zp-ahr"/>
+                <outlet property="rightButton" destination="FOF-WG-zyA" id="alG-Yx-oFW"/>
+            </connections>
         </view>
     </objects>
 </document>
