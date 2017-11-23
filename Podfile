@@ -7,4 +7,5 @@ target 'QianChengApp' do
     pod 'SDWebImage', '~> 4.0.0'
     pod 'Masonry', '~> 1.0.2'
     pod 'ReactiveCocoa', '~> 2.5'
+    pod 'IQKeyboardManager', '~> 4.0.8'
 end

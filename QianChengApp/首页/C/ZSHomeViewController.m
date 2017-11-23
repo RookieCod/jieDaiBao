@@ -17,6 +17,7 @@
 #import "HomeCardModel.h"
 #import "DaiKuanTableViewCell.h"
 #import "HomeCardTableViewCell.h"
+#import "ZSDaiKuanListViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -207,7 +208,7 @@ CycleScrollViewDatasource>
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 80;
+        return 60;
     } else if (indexPath.section == 1) {
         return 97;
     } else {
@@ -254,6 +255,17 @@ CycleScrollViewDatasource>
 
 - (void)pushNextVCWithIndex:(NSInteger)index
 {
+    switch (index) {
+        case 0:
+        {
+            ZSDaiKuanListViewController *daiKuanListVC = [[ZSDaiKuanListViewController alloc] init];
+            [self.navigationController pushViewController:daiKuanListVC animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (DaiKuanTableViewCell *)daiKuanCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
@@ -276,7 +288,7 @@ CycleScrollViewDatasource>
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 10;
+        return 0;
     }
     return 25;
 }
@@ -306,20 +318,19 @@ CycleScrollViewDatasource>
     if (section == 0) {
         titleLabel.hidden = YES;
         rightImage.hidden = YES;
+    } else {
+        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(headerView.mas_left).offset(20);
+            make.top.bottom.equalTo(headerView);
+        }];
+        
+        [rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(headerView.mas_right).offset(20);
+            make.top.equalTo(headerView.mas_top).offset(5);
+            make.bottom.equalTo(headerView.mas_bottom).offset(5);
+            make.width.mas_equalTo(@(15));
+        }];
     }
-    
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(headerView.mas_left).offset(20);
-        make.top.bottom.equalTo(headerView);
-    }];
-    
-    [rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(headerView.mas_right).offset(20);
-        make.top.equalTo(headerView.mas_top).offset(5);
-        make.bottom.equalTo(headerView.mas_bottom).offset(5);
-        make.size.mas_equalTo(CGSizeMake(15, 15));
-    }];
-    
     return headerView;
 }
 

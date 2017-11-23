@@ -21,8 +21,6 @@
 		D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DC31FBEB6340090FE80 /* UIColor+Addtions.m */; };
 		D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */; };
 		D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */; };
-		D6215DCE1FBEB9030090FE80 /* ZSMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DCC1FBEB9030090FE80 /* ZSMarketViewController.m */; };
-		D6215DCF1FBEB9030090FE80 /* ZSMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DCD1FBEB9030090FE80 /* ZSMarketViewController.xib */; };
 		D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DD11FBEB92A0090FE80 /* ZSNewsViewController.m */; };
 		D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */; };
 		D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DD61FBEB93B0090FE80 /* ZSMyAppViewController.m */; };
@@ -41,6 +39,10 @@
 		D637E9081FC588CF00D68410 /* DaiKuanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E9061FC588CF00D68410 /* DaiKuanTableViewCell.xib */; };
 		D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E90A1FC588DD00D68410 /* HomeCardTableViewCell.m */; };
 		D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E90B1FC588DD00D68410 /* HomeCardTableViewCell.xib */; };
+		D637E9101FC65F2000D68410 /* MBProgressHUD+ZSS.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E90F1FC65F2000D68410 /* MBProgressHUD+ZSS.m */; };
+		D637E9121FC6603000D68410 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */; };
+		D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */; };
+		D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +71,6 @@
 		D6215DC61FBEB8BC0090FE80 /* ZSHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSHomeViewController.h; sourceTree = "<group>"; };
 		D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSHomeViewController.m; sourceTree = "<group>"; };
 		D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSHomeViewController.xib; sourceTree = "<group>"; };
-		D6215DCB1FBEB9030090FE80 /* ZSMarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSMarketViewController.h; sourceTree = "<group>"; };
-		D6215DCC1FBEB9030090FE80 /* ZSMarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSMarketViewController.m; sourceTree = "<group>"; };
-		D6215DCD1FBEB9030090FE80 /* ZSMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSMarketViewController.xib; sourceTree = "<group>"; };
 		D6215DD01FBEB92A0090FE80 /* ZSNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSNewsViewController.h; sourceTree = "<group>"; };
 		D6215DD11FBEB92A0090FE80 /* ZSNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSNewsViewController.m; sourceTree = "<group>"; };
 		D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSNewsViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +102,12 @@
 		D637E9091FC588DD00D68410 /* HomeCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCardTableViewCell.h; sourceTree = "<group>"; };
 		D637E90A1FC588DD00D68410 /* HomeCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCardTableViewCell.m; sourceTree = "<group>"; };
 		D637E90B1FC588DD00D68410 /* HomeCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCardTableViewCell.xib; sourceTree = "<group>"; };
+		D637E90E1FC65F2000D68410 /* MBProgressHUD+ZSS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ZSS.h"; sourceTree = "<group>"; };
+		D637E90F1FC65F2000D68410 /* MBProgressHUD+ZSS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+ZSS.m"; sourceTree = "<group>"; };
+		D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSDaiKuanListViewController.h; sourceTree = "<group>"; };
+		D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSDaiKuanListViewController.m; sourceTree = "<group>"; };
+		D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSDaiKuanListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +162,8 @@
 			children = (
 				D6215DBE1FBE8BC60090FE80 /* 扩展 */,
 				D6215DA21FBE81E10090FE80 /* 首页 */,
-				D6215DA31FBE81E10090FE80 /* 超市 */,
-				D6215D9D1FBE81E10090FE80 /* 咨询 */,
+				D6215DA31FBE81E10090FE80 /* 贷款 */,
+				D6215D9D1FBE81E10090FE80 /* 信用卡 */,
 				D6215DA11FBE81E10090FE80 /* 我的 */,
 				D6215DA51FBE82300090FE80 /* qianchengWidget */,
 				D6215D9E1FBE81E10090FE80 /* APPDelegate */,
@@ -166,14 +171,14 @@
 			path = QianChengApp;
 			sourceTree = "<group>";
 		};
-		D6215D9D1FBE81E10090FE80 /* 咨询 */ = {
+		D6215D9D1FBE81E10090FE80 /* 信用卡 */ = {
 			isa = PBXGroup;
 			children = (
 				D6215DD01FBEB92A0090FE80 /* ZSNewsViewController.h */,
 				D6215DD11FBEB92A0090FE80 /* ZSNewsViewController.m */,
 				D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */,
 			);
-			path = "咨询";
+			path = "信用卡";
 			sourceTree = "<group>";
 		};
 		D6215D9E1FBE81E10090FE80 /* APPDelegate */ = {
@@ -206,14 +211,14 @@
 			path = "首页";
 			sourceTree = "<group>";
 		};
-		D6215DA31FBE81E10090FE80 /* 超市 */ = {
+		D6215DA31FBE81E10090FE80 /* 贷款 */ = {
 			isa = PBXGroup;
 			children = (
-				D6215DCB1FBEB9030090FE80 /* ZSMarketViewController.h */,
-				D6215DCC1FBEB9030090FE80 /* ZSMarketViewController.m */,
-				D6215DCD1FBEB9030090FE80 /* ZSMarketViewController.xib */,
+				D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */,
+				D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */,
+				D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */,
 			);
-			path = "超市";
+			path = "贷款";
 			sourceTree = "<group>";
 		};
 		D6215DA51FBE82300090FE80 /* qianchengWidget */ = {
@@ -268,6 +273,9 @@
 				D6215DC31FBEB6340090FE80 /* UIColor+Addtions.m */,
 				D637E8D61FC2835100D68410 /* UIView+LayoutFrame.h */,
 				D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */,
+				D637E90E1FC65F2000D68410 /* MBProgressHUD+ZSS.h */,
+				D637E90F1FC65F2000D68410 /* MBProgressHUD+ZSS.m */,
+				D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -396,13 +404,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */,
-				D6215DCF1FBEB9030090FE80 /* ZSMarketViewController.xib in Resources */,
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
+				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
+				D637E9121FC6603000D68410 /* SVProgressHUD.bundle in Resources */,
 				D6215DB01FBE82310090FE80 /* Info.plist in Resources */,
 				D637E9081FC588CF00D68410 /* DaiKuanTableViewCell.xib in Resources */,
 				D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */,
@@ -477,14 +486,15 @@
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
-				D6215DCE1FBEB9030090FE80 /* ZSMarketViewController.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
+				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
 				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,
 				D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */,
 				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,
+				D637E9101FC65F2000D68410 /* MBProgressHUD+ZSS.m in Sources */,
 				D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

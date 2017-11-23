@@ -23,7 +23,7 @@
     self.highlighted = NO;
     float topMargin = 6.f;
     //float bottomMargin = 5.f;
-    UILabel *titleLabel = self.titleLabel;
+    //UILabel *titleLabel = self.titleLabel;
     UIImageView *iconView = self.imageView;
     iconView.bounds = CGRectMake(0, 0, 25, 38);
     //titleLabel.bounds = CGRectMake(0, 0, self.bounds.size.width, 14);

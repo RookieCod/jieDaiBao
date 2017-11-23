@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 #import "ZSHomeViewController.h"
-#import "ZSMarketViewController.h"
 #import "ZSNewsViewController.h"
 #import "ZSMyAppViewController.h"
 #import "ZSTabBarViewController.h"
+#import "ZSDaiKuanListViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +28,7 @@
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = @"http://106.75.84.49:8080/";
     
-    networkConfig.debugLogEnabled = YES;
+    networkConfig.debugLogEnabled = NO;
     
     [self customGlobalBarAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -59,8 +59,8 @@
     ZSHomeViewController *homeVC = [[ZSHomeViewController alloc] init];
     UINavigationController* homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
-    ZSMarketViewController *marketVC = [[ZSMarketViewController alloc] init];
-    UINavigationController* marketNav = [[UINavigationController alloc] initWithRootViewController:marketVC];
+    ZSDaiKuanListViewController *daiKuanVC = [[ZSDaiKuanListViewController alloc] init];
+    UINavigationController* marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
     
     ZSNewsViewController *newsVC = [[ZSNewsViewController alloc] init];
     UINavigationController* newsNav = [[UINavigationController alloc] initWithRootViewController:newsVC];
@@ -70,7 +70,7 @@
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, marketNav, newsNav, myAppNav, nil];
-    //self.tabBarController.tabBar.tintColor = [UIColor colorWithRed:68/255.0 green:173/255.0 blue:159/255.0 alpha:1];
+    
     self.tabBarVC = [[ZSTabBarViewController alloc] initWithNibName:@"ZSTabBarViewController" bundle:nil];
     self.tabBarVC.view.frame = CGRectMake(0, 0, MAINWIDTH, 49);
     self.tabBarVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
