@@ -46,7 +46,7 @@ CycleScrollViewDatasource>
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"首页";
-    
+    self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self requestContent];
     
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeTangDouTableViewCell" bundle:nil] forCellReuseIdentifier:TangDouTableViewCell];
@@ -210,9 +210,9 @@ CycleScrollViewDatasource>
     if (indexPath.section == 0) {
         return 60;
     } else if (indexPath.section == 1) {
-        return 97;
+        return 94;
     } else {
-        return 83;
+        return 80;
     }
 }
 
@@ -290,7 +290,7 @@ CycleScrollViewDatasource>
     if (section == 0) {
         return 0;
     }
-    return 25;
+    return 29;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -298,6 +298,10 @@ CycleScrollViewDatasource>
     
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
+
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINWIDTH, 26)];
+    backView.backgroundColor = [UIColor whiteColor];
+    [headerView addSubview:backView];
 
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.hidden = NO;
@@ -311,25 +315,34 @@ CycleScrollViewDatasource>
     
     UIImageView *rightImage = [[UIImageView alloc] init];
     rightImage.hidden = NO;
-    rightImage.image= [UIImage imageNamed:@""];
-    
+    rightImage.userInteractionEnabled = YES;
+    rightImage.image= [UIImage imageNamed:@"threePoint"];
     [headerView addSubview:titleLabel];
     [headerView addSubview:rightImage];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(headerView.mas_left).offset(20);
+        make.top.bottom.equalTo(headerView);
+    }];
+    [rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(headerView.mas_right).offset(-21);
+        make.top.equalTo(headerView.mas_top).offset(9.5);
+        make.size.mas_equalTo(CGSizeMake(24, 7));
+    }];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [[tap rac_gestureSignal] subscribeNext:^(id x) {
+        if (section == 1) {
+            ZSDaiKuanListViewController *daiKuan = [[ZSDaiKuanListViewController alloc] init];
+            [self.navigationController pushViewController:daiKuan animated:YES];
+        } else {
+            NSLog(@"%d",section);
+        }
+    }];
+    [rightImage addGestureRecognizer:tap];
+
     if (section == 0) {
         titleLabel.hidden = YES;
         rightImage.hidden = YES;
-    } else {
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(headerView.mas_left).offset(20);
-            make.top.bottom.equalTo(headerView);
-        }];
-        
-        [rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(headerView.mas_right).offset(20);
-            make.top.equalTo(headerView.mas_top).offset(5);
-            make.bottom.equalTo(headerView.mas_bottom).offset(5);
-            make.width.mas_equalTo(@(15));
-        }];
     }
     return headerView;
 }

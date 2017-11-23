@@ -46,7 +46,9 @@ ZSSegmentViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.baseTableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
+
     //默认选择项
     selectedIndex = 1;
     self.navigationItem.title = @"贷款";
@@ -88,7 +90,7 @@ ZSSegmentViewDelegate>
         [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view).offset(20);
             make.right.equalTo(self.view).offset(-20);
-            make.top.equalTo(self.view).offset(74);
+            make.top.equalTo(self.view).offset(64);
         }];
     }
 }
@@ -184,7 +186,7 @@ ZSSegmentViewDelegate>
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 94;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

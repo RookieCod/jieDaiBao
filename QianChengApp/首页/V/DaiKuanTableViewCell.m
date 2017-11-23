@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *qixianLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
+@property (weak, nonatomic) IBOutlet UILabel *productName;
 
 @end
 @implementation DaiKuanTableViewCell
@@ -31,6 +32,7 @@
     self.kuanTime.text = daiKuanModel.loanPermit;
     self.lilvLabel.text = [NSString stringWithFormat:@"%@",daiKuanModel.loanRate];
     self.qixianLabel.text = daiKuanModel.loanTerm;
+    self.productName.text = daiKuanModel.loanName;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
