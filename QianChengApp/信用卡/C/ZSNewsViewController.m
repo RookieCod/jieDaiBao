@@ -7,8 +7,12 @@
 //
 
 #import "ZSNewsViewController.h"
+#import "ZSCreditCardRequest.h"
 
 @interface ZSNewsViewController ()
+<UITableViewDelegate,
+UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *baseTableView;
 
 @end
 
@@ -17,6 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)requestContent
+{
+    ZSCreditCardRequest *cardRequest = [[ZSCreditCardRequest alloc] initWithBank:@"中心"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [cardRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

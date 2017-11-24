@@ -46,8 +46,8 @@
 - (void)reloadSubview:(NSInteger)index
 {
     if (index == 1) {
-        [self.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
-        self.leftButton.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        [self.leftButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+        
         self.leftButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor whiteColor];
@@ -56,6 +56,7 @@
     } else if (index == 2) {
         self.leftButton.backgroundColor = [UIColor whiteColor];
         [self.leftButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
+        [self.rightButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
         [self.leftButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -65,9 +66,11 @@
 {
     if (index == 1) {
         [self.leftButton setTitle:string forState:UIControlStateNormal];
+        [self.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
         [self.rightButton setTitle:@"默认排序" forState:UIControlStateNormal];
     } else {
         [self.rightButton setTitle:string forState:UIControlStateNormal];
+        [self.rightButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
         [self.leftButton setTitle:@"可贷额度" forState:UIControlStateNormal ];
     }
 }

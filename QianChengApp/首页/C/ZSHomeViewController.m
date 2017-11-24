@@ -258,8 +258,11 @@ CycleScrollViewDatasource>
     switch (index) {
         case 0:
         {
+            self.hidesBottomBarWhenPushed = YES;
             ZSDaiKuanListViewController *daiKuanListVC = [[ZSDaiKuanListViewController alloc] init];
             [self.navigationController pushViewController:daiKuanListVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+
         }
             break;
             
@@ -332,8 +335,10 @@ CycleScrollViewDatasource>
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
     [[tap rac_gestureSignal] subscribeNext:^(id x) {
         if (section == 1) {
+            self.hidesBottomBarWhenPushed = YES;
             ZSDaiKuanListViewController *daiKuan = [[ZSDaiKuanListViewController alloc] init];
             [self.navigationController pushViewController:daiKuan animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         } else {
 
         }

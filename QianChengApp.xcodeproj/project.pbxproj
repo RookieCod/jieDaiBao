@@ -47,6 +47,13 @@
 		D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */; };
 		D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */; };
 		D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */; };
+		D6C1786B1FC817EA00BD1199 /* ZSCreditCardRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1786A1FC817EA00BD1199 /* ZSCreditCardRequest.m */; };
+		D6C1786F1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1786D1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m */; };
+		D6C178701FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C1786E1FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib */; };
+		D6C178741FC819C500BD1199 /* ZSCardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178721FC819C500BD1199 /* ZSCardDetailViewController.m */; };
+		D6C178751FC819C500BD1199 /* ZSCardDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C178731FC819C500BD1199 /* ZSCardDetailViewController.xib */; };
+		D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178771FC819E100BD1199 /* CardDetailRequest.m */; };
+		D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +126,18 @@
 		D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanListRequest.m; sourceTree = "<group>"; };
 		D6C178631FC6F16900BD1199 /* LoanMoneyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanMoneyModel.h; sourceTree = "<group>"; };
 		D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanMoneyModel.m; sourceTree = "<group>"; };
+		D6C178691FC817EA00BD1199 /* ZSCreditCardRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSCreditCardRequest.h; sourceTree = "<group>"; };
+		D6C1786A1FC817EA00BD1199 /* ZSCreditCardRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSCreditCardRequest.m; sourceTree = "<group>"; };
+		D6C1786C1FC819A400BD1199 /* ZDDaiKuanDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDaiKuanDetailViewController.h; sourceTree = "<group>"; };
+		D6C1786D1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDaiKuanDetailViewController.m; sourceTree = "<group>"; };
+		D6C1786E1FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZDDaiKuanDetailViewController.xib; sourceTree = "<group>"; };
+		D6C178711FC819C500BD1199 /* ZSCardDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSCardDetailViewController.h; sourceTree = "<group>"; };
+		D6C178721FC819C500BD1199 /* ZSCardDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSCardDetailViewController.m; sourceTree = "<group>"; };
+		D6C178731FC819C500BD1199 /* ZSCardDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSCardDetailViewController.xib; sourceTree = "<group>"; };
+		D6C178761FC819E100BD1199 /* CardDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailRequest.h; sourceTree = "<group>"; };
+		D6C178771FC819E100BD1199 /* CardDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailRequest.m; sourceTree = "<group>"; };
+		D6C178791FC819F400BD1199 /* DaiKuanDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiKuanDetailRequest.h; sourceTree = "<group>"; };
+		D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanDetailRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,9 +204,9 @@
 		D6215D9D1FBE81E10090FE80 /* 信用卡 */ = {
 			isa = PBXGroup;
 			children = (
-				D6215DD01FBEB92A0090FE80 /* ZSNewsViewController.h */,
-				D6215DD11FBEB92A0090FE80 /* ZSNewsViewController.m */,
-				D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */,
+				D6C178661FC817BE00BD1199 /* C */,
+				D6C178681FC817BF00BD1199 /* M */,
+				D6C178671FC817BE00BD1199 /* V */,
 			);
 			path = "信用卡";
 			sourceTree = "<group>";
@@ -369,6 +388,9 @@
 				D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */,
 				D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */,
 				D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */,
+				D6C1786C1FC819A400BD1199 /* ZDDaiKuanDetailViewController.h */,
+				D6C1786D1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m */,
+				D6C1786E1FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -378,8 +400,41 @@
 			children = (
 				D6C1785B1FC6CA5000BD1199 /* DaiKuanListRequest.h */,
 				D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */,
+				D6C178791FC819F400BD1199 /* DaiKuanDetailRequest.h */,
+				D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */,
 				D6C178631FC6F16900BD1199 /* LoanMoneyModel.h */,
 				D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		D6C178661FC817BE00BD1199 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				D6215DD01FBEB92A0090FE80 /* ZSNewsViewController.h */,
+				D6215DD11FBEB92A0090FE80 /* ZSNewsViewController.m */,
+				D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */,
+				D6C178711FC819C500BD1199 /* ZSCardDetailViewController.h */,
+				D6C178721FC819C500BD1199 /* ZSCardDetailViewController.m */,
+				D6C178731FC819C500BD1199 /* ZSCardDetailViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		D6C178671FC817BE00BD1199 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		D6C178681FC817BF00BD1199 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				D6C178691FC817EA00BD1199 /* ZSCreditCardRequest.h */,
+				D6C1786A1FC817EA00BD1199 /* ZSCreditCardRequest.m */,
+				D6C178761FC819E100BD1199 /* CardDetailRequest.h */,
+				D6C178771FC819E100BD1199 /* CardDetailRequest.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -448,10 +503,12 @@
 				D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */,
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
 				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
+				D6C178701FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
 				D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
+				D6C178751FC819C500BD1199 /* ZSCardDetailViewController.xib in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
 				D637E9121FC6603000D68410 /* SVProgressHUD.bundle in Resources */,
@@ -525,6 +582,7 @@
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
 				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
+				D6C178741FC819C500BD1199 /* ZSCardDetailViewController.m in Sources */,
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
 				D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */,
 				D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */,
@@ -534,12 +592,16 @@
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
+				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
+				D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */,
+				D6C1786F1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m in Sources */,
 				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,
 				D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */,
 				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,
+				D6C1786B1FC817EA00BD1199 /* ZSCreditCardRequest.m in Sources */,
 				D637E9101FC65F2000D68410 /* MBProgressHUD+ZSS.m in Sources */,
 				D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */,
 			);
