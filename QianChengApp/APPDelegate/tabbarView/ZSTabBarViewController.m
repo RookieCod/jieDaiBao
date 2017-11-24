@@ -62,6 +62,10 @@
         
         selectedIndex = (int)button.tag;
     }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tapWithIndex:)]) {
+        [self.delegate tapWithIndex:(button.tag - 1)];
+    }
 }
 
 - (void)setBarItemIndex:(NSInteger)index

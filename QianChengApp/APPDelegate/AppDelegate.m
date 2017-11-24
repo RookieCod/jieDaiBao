@@ -13,7 +13,7 @@
 #import "ZSTabBarViewController.h"
 #import "ZSDaiKuanListViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<MyTabBarDelegate>
 
 @property (nonatomic, retain) ZSTabBarViewController * tabBarVC;
 
@@ -72,9 +72,22 @@
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:homeNav, marketNav, newsNav, myAppNav, nil];
     
     self.tabBarVC = [[ZSTabBarViewController alloc] initWithNibName:@"ZSTabBarViewController" bundle:nil];
+    self.tabBarVC.delegate = self;
     self.tabBarVC.view.frame = CGRectMake(0, 0, MAINWIDTH, 49);
     self.tabBarVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.tabBarController.tabBar addSubview:self.tabBarVC.view];
+}
+
+- (void)tapWithIndex:(NSInteger)index
+{
+    if (self.tabBarController.selectedIndex != index) {
+        
+        [self.tabBarController setSelectedIndex:index];
+    }
+    else {
+        UINavigationController* itemNav = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:index];
+        [itemNav popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

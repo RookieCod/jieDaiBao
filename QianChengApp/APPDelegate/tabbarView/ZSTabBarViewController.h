@@ -14,9 +14,19 @@ static  NSString * const tabBarNameArray[] = {
     [2] = @"资讯",
     [3] = @"我的",
 };
+@protocol MyTabBarDelegate;
 
 @interface ZSTabBarViewController : UIViewController
 
+/** id */
+@property (nonatomic, assign) id<MyTabBarDelegate> delegate;
+
 - (void)setBarItemIndex:(NSInteger)index;
+
+@end
+
+@protocol MyTabBarDelegate <NSObject>
+
+- (void)tapWithIndex:(NSInteger)index;
 
 @end

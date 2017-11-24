@@ -46,12 +46,16 @@
 - (void)reloadSubview:(NSInteger)index
 {
     if (index == 1) {
+        [self.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
+        self.leftButton.imageView.transform = CGAffineTransformMakeRotation(M_PI);
         self.leftButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor whiteColor];
+        [self.rightButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
         [self.rightButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
     } else if (index == 2) {
         self.leftButton.backgroundColor = [UIColor whiteColor];
+        [self.leftButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
         [self.leftButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
