@@ -31,6 +31,9 @@
     self.layer.borderColor = [[UIColor colorWithHexString:@"B22614"] CGColor];
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;
+
+    self.leftButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.rightButton.titleLabel.textAlignment= NSTextAlignmentCenter;
 }
 
 - (IBAction)buttonDidClick:(id)sender {
@@ -46,17 +49,14 @@
 - (void)reloadSubview:(NSInteger)index
 {
     if (index == 1) {
-        [self.leftButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
-        
         self.leftButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor whiteColor];
-        [self.rightButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
+        
         [self.rightButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
     } else if (index == 2) {
         self.leftButton.backgroundColor = [UIColor whiteColor];
-        [self.leftButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
-        [self.rightButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+
         [self.leftButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         [self.rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -66,11 +66,11 @@
 {
     if (index == 1) {
         [self.leftButton setTitle:string forState:UIControlStateNormal];
-        [self.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
+
         [self.rightButton setTitle:@"默认排序" forState:UIControlStateNormal];
     } else {
         [self.rightButton setTitle:string forState:UIControlStateNormal];
-        [self.rightButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
+
         [self.leftButton setTitle:@"可贷额度" forState:UIControlStateNormal ];
     }
 }

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZSDaiKuanListViewController : UIViewController
+typedef NS_ENUM(NSUInteger, DaiKuanListPushTye) {
+    DaiKuanListPushTyeFromHome,
+    DaiKuanListPushTyeFromTab,
+};
 
+@interface ZSDaiKuanListViewController : UIViewController
+@property (nonatomic, assign) DaiKuanListPushTye pushType;
 @end
