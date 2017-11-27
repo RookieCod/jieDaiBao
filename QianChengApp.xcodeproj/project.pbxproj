@@ -25,6 +25,7 @@
 		D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DD21FBEB92A0090FE80 /* ZSNewsViewController.xib */; };
 		D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DD61FBEB93B0090FE80 /* ZSMyAppViewController.m */; };
 		D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6215DD71FBEB93B0090FE80 /* ZSMyAppViewController.xib */; };
+		D62CCDEA1FCBA4BF00EDD2D1 /* CardBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D62CCDE91FCBA4BF00EDD2D1 /* CardBankModel.m */; };
 		D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D41FC2822600D68410 /* CycleScrollView.m */; };
 		D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8D71FC2835100D68410 /* UIView+LayoutFrame.m */; };
 		D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E8E61FC40B5800D68410 /* HomeRequest.m */; };
@@ -88,6 +89,8 @@
 		D6215DD51FBEB93B0090FE80 /* ZSMyAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSMyAppViewController.h; sourceTree = "<group>"; };
 		D6215DD61FBEB93B0090FE80 /* ZSMyAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSMyAppViewController.m; sourceTree = "<group>"; };
 		D6215DD71FBEB93B0090FE80 /* ZSMyAppViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSMyAppViewController.xib; sourceTree = "<group>"; };
+		D62CCDE81FCBA4BF00EDD2D1 /* CardBankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardBankModel.h; sourceTree = "<group>"; };
+		D62CCDE91FCBA4BF00EDD2D1 /* CardBankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardBankModel.m; sourceTree = "<group>"; };
 		D637E8D31FC2822600D68410 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		D637E8D41FC2822600D68410 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		D637E8D61FC2835100D68410 /* UIView+LayoutFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutFrame.h"; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 				D6C1786A1FC817EA00BD1199 /* ZSCreditCardRequest.m */,
 				D6C178761FC819E100BD1199 /* CardDetailRequest.h */,
 				D6C178771FC819E100BD1199 /* CardDetailRequest.m */,
+				D62CCDE81FCBA4BF00EDD2D1 /* CardBankModel.h */,
+				D62CCDE91FCBA4BF00EDD2D1 /* CardBankModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
+				D62CCDEA1FCBA4BF00EDD2D1 /* CardBankModel.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,

@@ -18,6 +18,7 @@
 #import "DaiKuanTableViewCell.h"
 #import "HomeCardTableViewCell.h"
 #import "ZSDaiKuanListViewController.h"
+#import "ZSNewsViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -265,7 +266,14 @@ CycleScrollViewDatasource>
 
         }
             break;
-            
+        case 1:
+        {
+            self.hidesBottomBarWhenPushed = YES;
+            ZSNewsViewController *cardVC = [[ZSNewsViewController alloc] init];
+            [self.navigationController pushViewController:cardVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        }
+            break;
         default:
             break;
     }
