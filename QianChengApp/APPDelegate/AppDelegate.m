@@ -60,6 +60,7 @@
     UINavigationController* homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
     ZSDaiKuanListViewController *daiKuanVC = [[ZSDaiKuanListViewController alloc] init];
+    daiKuanVC.pushType = DaiKuanListPushTyeFromTab;
     UINavigationController* marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
     
     ZSNewsViewController *newsVC = [[ZSNewsViewController alloc] init];

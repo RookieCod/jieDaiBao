@@ -12,6 +12,7 @@
 #import "DaiKuanListRequest.h"
 #import "DaiKuanModel.h"
 #import "LoanMoneyModel.h"
+#import "ZDDaiKuanDetailViewController.h"
 
 @interface ZSDaiKuanListViewController ()
 <UITableViewDelegate,
@@ -49,6 +50,7 @@ ZSSegmentViewDelegate>
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.baseTableView.contentInset = UIEdgeInsetsMake(35, 0, 0, 0);
 
+
     //默认选择项
     selectedIndex = 0;
     self.navigationItem.title = @"贷款";
@@ -58,6 +60,16 @@ ZSSegmentViewDelegate>
     [self initHeaderView];
     
     [self.baseTableView registerNib:[UINib nibWithNibName:@"DaiKuanTableViewCell" bundle:nil] forCellReuseIdentifier:daiKuanCellIdentifier];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.pushType == DaiKuanListPushTyeFromHome) {
+        self.navigationItem.leftBarButtonItem = [self backButtonBar];
+    } else {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 - (void)requestContent
@@ -263,8 +275,13 @@ ZSSegmentViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     //跳转
+    self.hidesBottomBarWhenPushed = YES;
+    ZDDaiKuanDetailViewController *detailVC = [[ZDDaiKuanDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    if (self.pushType == DaiKuanListPushTyeFromTab) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
