@@ -64,6 +64,7 @@
     UINavigationController* marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
     
     ZSNewsViewController *newsVC = [[ZSNewsViewController alloc] init];
+    newsVC.pushType = CardListPushTypeFromTab;
     UINavigationController* newsNav = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
     ZSMyAppViewController *myAppVC = [[ZSMyAppViewController alloc] init];

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSUInteger, CardListPushType) {
+    CardListPushTypeFromHome,
+    CardListPushTypeFromTab,
+};
 @interface ZSNewsViewController : UIViewController
 
+/** 推出方式 */
+@property (nonatomic, assign) CardListPushType pushType;
 @end

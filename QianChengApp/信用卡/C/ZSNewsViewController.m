@@ -11,6 +11,7 @@
 #import "HomeCardModel.h"
 #import "CardBankModel.h"
 #import "HomeCardTableViewCell.h"
+#import "ZSCardDetailViewController.h"
 
 @interface ZSNewsViewController ()
 <UITableViewDelegate,
@@ -265,6 +266,17 @@ UITableViewDataSource>
     HomeCardModel *cardModel = self.bankModelArray[indexPath.row];
     cell.cardModel = cardModel;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ZSCardDetailViewController *cardDetail = [[ZSCardDetailViewController alloc] init];
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:cardDetail animated:YES];
+    if (self.pushType == CardListPushTypeFromTab) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
