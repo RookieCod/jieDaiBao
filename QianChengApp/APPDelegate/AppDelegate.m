@@ -29,7 +29,7 @@
     networkConfig.baseUrl = @"http://106.75.84.49:8080/";
     
     networkConfig.debugLogEnabled = NO;
-    
+
     [self customGlobalBarAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -10,6 +10,5 @@
 
 @interface DaiKuanDetailRequest : YTKRequest
 
-- (instancetype)initWithLoanId:(NSNumber *)loanId;
-
+- (instancetype)initWithLoanId:(NSString *)loanId;
 @end

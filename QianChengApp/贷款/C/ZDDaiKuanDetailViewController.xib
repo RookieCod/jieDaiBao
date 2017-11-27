@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDDaiKuanDetailViewController">
             <connections>
+                <outlet property="baseTableView" destination="oCs-sB-zgp" id="kgY-3K-Ptu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +18,76 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oCs-sB-zgp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="U3P-4l-l4c"/>
+                        <outlet property="delegate" destination="-1" id="HL5-OP-Fw2"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-wt-Nrf">
+                    <rect key="frame" x="0.0" y="615" width="375" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-py-222">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="52"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="collect_icon">
+                                <color key="titleColor" red="0.69803921568627447" green="0.14901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="collectButtonClick:" destination="-1" eventType="touchUpInside" id="W3e-H7-pgk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHC-fV-a2I">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="52"/>
+                            <color key="backgroundColor" red="0.69803921568627447" green="0.14901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="立即申请">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted" title="立即申请">
+                                <color key="titleColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="applyButtonClick:" destination="-1" eventType="touchUpInside" id="QI7-Yj-J8E"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="nHC-fV-a2I" firstAttribute="width" secondItem="FQq-py-222" secondAttribute="width" id="6FA-jA-hoK"/>
+                        <constraint firstAttribute="height" constant="52" id="7m8-8U-U1I"/>
+                        <constraint firstItem="nHC-fV-a2I" firstAttribute="leading" secondItem="FQq-py-222" secondAttribute="trailing" id="BFk-Bg-IkG"/>
+                        <constraint firstItem="FQq-py-222" firstAttribute="leading" secondItem="ZNQ-wt-Nrf" secondAttribute="leading" id="HLY-57-vrf"/>
+                        <constraint firstAttribute="bottom" secondItem="nHC-fV-a2I" secondAttribute="bottom" id="XdP-A5-T9A"/>
+                        <constraint firstItem="nHC-fV-a2I" firstAttribute="top" secondItem="ZNQ-wt-Nrf" secondAttribute="top" id="YA7-t9-pEZ"/>
+                        <constraint firstItem="nHC-fV-a2I" firstAttribute="leading" secondItem="FQq-py-222" secondAttribute="trailing" id="bVc-jI-TQY"/>
+                        <constraint firstAttribute="trailing" secondItem="nHC-fV-a2I" secondAttribute="trailing" id="h1h-8F-Q7Y"/>
+                        <constraint firstItem="FQq-py-222" firstAttribute="top" secondItem="ZNQ-wt-Nrf" secondAttribute="top" id="wwC-6A-iZq"/>
+                        <constraint firstAttribute="bottom" secondItem="FQq-py-222" secondAttribute="bottom" id="xP5-B3-A7K"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <constraints>
+                <constraint firstItem="ZNQ-wt-Nrf" firstAttribute="top" secondItem="oCs-sB-zgp" secondAttribute="bottom" id="R0U-FL-jsQ"/>
+                <constraint firstItem="ZNQ-wt-Nrf" firstAttribute="top" secondItem="oCs-sB-zgp" secondAttribute="bottom" id="REn-eb-k18"/>
+                <constraint firstAttribute="bottom" secondItem="ZNQ-wt-Nrf" secondAttribute="bottom" id="Ujf-pd-Llo"/>
+                <constraint firstAttribute="trailing" secondItem="ZNQ-wt-Nrf" secondAttribute="trailing" id="YkX-LM-ent"/>
+                <constraint firstItem="oCs-sB-zgp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bz3-1w-oJI"/>
+                <constraint firstAttribute="trailing" secondItem="oCs-sB-zgp" secondAttribute="trailing" id="hAa-Sj-At0"/>
+                <constraint firstItem="ZNQ-wt-Nrf" firstAttribute="top" secondItem="oCs-sB-zgp" secondAttribute="bottom" id="im5-Yw-TX4"/>
+                <constraint firstItem="oCs-sB-zgp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="p6X-fp-RCz"/>
+                <constraint firstItem="ZNQ-wt-Nrf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vNo-Kn-wY4"/>
+            </constraints>
+            <point key="canvasLocation" x="70.5" y="81.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="collect_icon" width="26" height="38"/>
+    </resources>
 </document>

@@ -12,7 +12,9 @@
 
 - (UIBarButtonItem *)backButtonBar
 {
-    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"xiabai"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+
+    UIBarButtonItem *rbtn = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_image"] style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     return rbtn;
 }
 

@@ -19,6 +19,7 @@
 #import "HomeCardTableViewCell.h"
 #import "ZSDaiKuanListViewController.h"
 #import "ZSNewsViewController.h"
+#import "ZDDaiKuanDetailViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -363,6 +364,15 @@ CycleScrollViewDatasource>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (indexPath.section == 1) {
+        self.hidesBottomBarWhenPushed = YES;
+        ZDDaiKuanDetailViewController *detailVC = [[ZDDaiKuanDetailViewController alloc] init];
+        DaiKuanModel *daikuanModel = self.daiKuanModelArray[indexPath.row];
+        detailVC.loanId = [NSString stringWithFormat:@"%@",daikuanModel.loanId];
+        [self.navigationController pushViewController:detailVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+
+    }
 }
 
 - (void)didReceiveMemoryWarning {

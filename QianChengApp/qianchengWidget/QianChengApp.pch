@@ -24,4 +24,5 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "MBProgressHUD+ZSS.h"
 #import "UIViewController+ButtonBarItem.h"
+#import "IQKeyboardManager.h"
 #endif /* QianChengApp_pch */

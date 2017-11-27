@@ -10,7 +10,7 @@
 
 @interface DaiKuanDetailRequest ()
 {
-    NSNumber *_loanId;
+    NSString *_loanId;
 }
 @end
 @implementation DaiKuanDetailRequest

@@ -278,6 +278,8 @@ ZSSegmentViewDelegate>
     //跳转
     self.hidesBottomBarWhenPushed = YES;
     ZDDaiKuanDetailViewController *detailVC = [[ZDDaiKuanDetailViewController alloc] init];
+    DaiKuanModel *daikuanModel = self.loanListArray[indexPath.row];
+    detailVC.loanId = [NSString stringWithFormat:@"%@",daikuanModel.loanId];
     [self.navigationController pushViewController:detailVC animated:YES];
     if (self.pushType == DaiKuanListPushTyeFromTab) {
         self.hidesBottomBarWhenPushed = NO;

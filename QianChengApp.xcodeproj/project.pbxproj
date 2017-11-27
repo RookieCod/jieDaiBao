@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B424F527C38E985EFCFD386C /* libPods-QianChengApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75648AE3F7E99A7D77994D84 /* libPods-QianChengApp.a */; };
+		D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */; };
+		D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */; };
+		D61600071FCC4ACF008E3FF9 /* DaiDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */; };
+		D61600081FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600061FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib */; };
+		D616000C1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D616000A1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m */; };
+		D616000D1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D616000B1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib */; };
+		D61600111FCC5369008E3FF9 /* DaiDetailConditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D616000F1FCC5369008E3FF9 /* DaiDetailConditionCell.m */; };
+		D61600121FCC5369008E3FF9 /* DaiDetailConditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600101FCC5369008E3FF9 /* DaiDetailConditionCell.xib */; };
+		D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600141FCC5CB8008E3FF9 /* DaiDetailModel.m */; };
 		D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DA01FBE81E10090FE80 /* AppDelegate.m */; };
 		D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA61FBE82300090FE80 /* Assets.xcassets */; };
 		D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA71FBE82300090FE80 /* LaunchScreen.storyboard */; };
@@ -62,6 +71,20 @@
 		0C6ABC434D53A18BA2F7E352 /* Pods-QianChengApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QianChengApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp.release.xcconfig"; sourceTree = "<group>"; };
 		75648AE3F7E99A7D77994D84 /* libPods-QianChengApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QianChengApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD0896958AAECCDB0E92024 /* Pods-QianChengApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QianChengApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QianChengApp/Pods-QianChengApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailProductCell.m; sourceTree = "<group>"; };
+		D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailProductCell.xib; sourceTree = "<group>"; };
+		D61600041FCC4ACF008E3FF9 /* DaiDetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailInfoCell.h; sourceTree = "<group>"; };
+		D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailInfoCell.m; sourceTree = "<group>"; };
+		D61600061FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailInfoCell.xib; sourceTree = "<group>"; };
+		D61600091FCC4E02008E3FF9 /* DaiDetailJiSuanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailJiSuanCell.h; sourceTree = "<group>"; };
+		D616000A1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailJiSuanCell.m; sourceTree = "<group>"; };
+		D616000B1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailJiSuanCell.xib; sourceTree = "<group>"; };
+		D616000E1FCC5369008E3FF9 /* DaiDetailConditionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailConditionCell.h; sourceTree = "<group>"; };
+		D616000F1FCC5369008E3FF9 /* DaiDetailConditionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailConditionCell.m; sourceTree = "<group>"; };
+		D61600101FCC5369008E3FF9 /* DaiDetailConditionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailConditionCell.xib; sourceTree = "<group>"; };
+		D61600131FCC5CB8008E3FF9 /* DaiDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailModel.h; sourceTree = "<group>"; };
+		D61600141FCC5CB8008E3FF9 /* DaiDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailModel.m; sourceTree = "<group>"; };
+		D616FFFF1FCC497D008E3FF9 /* DaiDetailProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailProductCell.h; sourceTree = "<group>"; };
 		D6215D841FBE80DB0090FE80 /* QianChengApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QianChengApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6215D9F1FBE81E10090FE80 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6215DA01FBE81E10090FE80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -386,6 +409,18 @@
 				D6C178561FC6A7D700BD1199 /* ZSSegmentView.h */,
 				D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */,
 				D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */,
+				D616FFFF1FCC497D008E3FF9 /* DaiDetailProductCell.h */,
+				D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */,
+				D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */,
+				D61600041FCC4ACF008E3FF9 /* DaiDetailInfoCell.h */,
+				D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */,
+				D61600061FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib */,
+				D61600091FCC4E02008E3FF9 /* DaiDetailJiSuanCell.h */,
+				D616000A1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m */,
+				D616000B1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib */,
+				D616000E1FCC5369008E3FF9 /* DaiDetailConditionCell.h */,
+				D616000F1FCC5369008E3FF9 /* DaiDetailConditionCell.m */,
+				D61600101FCC5369008E3FF9 /* DaiDetailConditionCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -412,6 +447,8 @@
 				D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */,
 				D6C178631FC6F16900BD1199 /* LoanMoneyModel.h */,
 				D6C178641FC6F16900BD1199 /* LoanMoneyModel.m */,
+				D61600131FCC5CB8008E3FF9 /* DaiDetailModel.h */,
+				D61600141FCC5CB8008E3FF9 /* DaiDetailModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -511,13 +548,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */,
+				D61600081FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib in Resources */,
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
+				D61600121FCC5369008E3FF9 /* DaiDetailConditionCell.xib in Resources */,
 				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
 				D6C178701FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
+				D616000D1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib in Resources */,
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
 				D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
+				D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */,
 				D6C178751FC819C500BD1199 /* ZSCardDetailViewController.xib in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
@@ -590,9 +631,11 @@
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */,
+				D616000C1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m in Sources */,
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
 				D6215DD31FBEB92A0090FE80 /* ZSNewsViewController.m in Sources */,
 				D637E8E71FC40B5800D68410 /* HomeRequest.m in Sources */,
+				D61600071FCC4ACF008E3FF9 /* DaiDetailInfoCell.m in Sources */,
 				D6C178741FC819C500BD1199 /* ZSCardDetailViewController.m in Sources */,
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
 				D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */,
@@ -601,13 +644,16 @@
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
+				D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
 				D62CCDEA1FCBA4BF00EDD2D1 /* CardBankModel.m in Sources */,
+				D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
 				D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */,
+				D61600111FCC5369008E3FF9 /* DaiDetailConditionCell.m in Sources */,
 				D6C1786F1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m in Sources */,
 				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,

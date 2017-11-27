@@ -10,4 +10,6 @@
 
 @interface ZDDaiKuanDetailViewController : UIViewController
 
+/* 贷款id */
+@property (nonatomic, strong) NSString *loanId;
 @end
