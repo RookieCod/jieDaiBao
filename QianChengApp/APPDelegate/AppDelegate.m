@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ZSHomeViewController.h"
 #import "ZSNewsViewController.h"
-#import "ZSMyAppViewController.h"
+#import "MyAppViewController.h"
 #import "ZSTabBarViewController.h"
 #import "ZSDaiKuanListViewController.h"
 
@@ -24,7 +24,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = @"http://106.75.84.49:8080/";
     
@@ -67,7 +69,7 @@
     newsVC.pushType = CardListPushTypeFromTab;
     UINavigationController* newsNav = [[UINavigationController alloc] initWithRootViewController:newsVC];
     
-    ZSMyAppViewController *myAppVC = [[ZSMyAppViewController alloc] init];
+    MyAppViewController *myAppVC = [[MyAppViewController alloc] init];
     UINavigationController* myAppNav = [[UINavigationController alloc] initWithRootViewController:myAppVC];
     
     self.tabBarController = [[UITabBarController alloc] init];

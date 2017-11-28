@@ -1,22 +1,24 @@
 //
-//  ZSMyAppViewController.m
+//  ZSLoginViewController.m
 //  QianChengApp
 //
-//  Created by zhangsong on 2017/11/17.
+//  Created by 张松 on 2017/11/28.
 //  Copyright © 2017年 zhangsong. All rights reserved.
 //
 
-#import "ZSMyAppViewController.h"
+#import "ZSLoginViewController.h"
 
-@interface ZSMyAppViewController ()
+@interface ZSLoginViewController ()
 
 @end
 
-@implementation ZSMyAppViewController
+@implementation ZSLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"登录";
+    self.navigationItem.leftBarButtonItem = [self backButtonBar];
 }
 
 - (void)didReceiveMemoryWarning {

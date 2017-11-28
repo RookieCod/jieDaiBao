@@ -42,7 +42,7 @@ UITextFieldDelegate>
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"贷款详情";
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
 
     self.navigationItem.leftBarButtonItem = [self backButtonBar];
 
@@ -66,13 +66,12 @@ UITextFieldDelegate>
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [IQKeyboardManager sharedManager].enable = YES;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [IQKeyboardManager sharedManager].enable = NO;
 }
 
 - (void)requestContent
@@ -242,11 +241,19 @@ UITextFieldDelegate>
 }
 
 - (IBAction)collectButtonClick:(id)sender {
+    if ([ZSUntils isNeedToUserLogin:^{
 
+    }]) {
+        return;
+    }
 }
 
 - (IBAction)applyButtonClick:(id)sender {
-    
+    if ([ZSUntils isNeedToUserLogin:^{
+        NSLog(@"abcd");
+    }]) {
+        return;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

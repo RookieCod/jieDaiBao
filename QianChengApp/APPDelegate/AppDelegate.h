@@ -13,5 +13,8 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
+
+/*  */
+@property (nonatomic, strong) NSString *userSession;
 @end
 
