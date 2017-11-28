@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DetailTwoCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="DetailTwoCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="232.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sV2-cU-fLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="229.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等       级" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRg-P2-cp3">
                         <rect key="frame" x="32" y="55" width="55.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -77,7 +81,7 @@
                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-6M-Mnc">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="基本信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-6M-Mnc">
                         <rect key="frame" x="32" y="0.0" width="343" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="gbY-mN-mJf"/>
@@ -87,7 +91,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-5N-HjF">
-                        <rect key="frame" x="0.0" y="40" width="375" height="1"/>
+                        <rect key="frame" x="0.0" y="-9" width="375" height="1"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Jqb-hn-8ei"/>
@@ -103,9 +107,12 @@
                     <constraint firstItem="YKw-kQ-SjF" firstAttribute="top" secondItem="dRg-P2-cp3" secondAttribute="bottom" constant="12" id="7Kc-Na-101"/>
                     <constraint firstItem="AJE-C7-CT3" firstAttribute="top" secondItem="98g-He-ik1" secondAttribute="bottom" constant="12" id="AdN-iq-rss"/>
                     <constraint firstItem="ZKh-z3-pzS" firstAttribute="leading" secondItem="qrd-Qg-XDx" secondAttribute="leading" id="E7H-Fu-i9l"/>
+                    <constraint firstItem="sV2-cU-fLd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="I9D-92-Z3W"/>
                     <constraint firstItem="77s-St-yUq" firstAttribute="top" secondItem="dRg-P2-cp3" secondAttribute="top" id="KU4-mI-Mvg"/>
                     <constraint firstItem="AWX-5N-HjF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LKS-nu-wBJ"/>
-                    <constraint firstItem="AWX-5N-HjF" firstAttribute="top" secondItem="A6h-6M-Mnc" secondAttribute="bottom" id="PVN-vi-hjG"/>
+                    <constraint firstAttribute="bottom" secondItem="sV2-cU-fLd" secondAttribute="bottom" constant="3" id="LVR-cJ-88m"/>
+                    <constraint firstAttribute="trailing" secondItem="sV2-cU-fLd" secondAttribute="trailing" id="OSm-Y5-kzO"/>
+                    <constraint firstItem="sV2-cU-fLd" firstAttribute="top" secondItem="AWX-5N-HjF" secondAttribute="bottom" constant="8" symbolic="YES" id="RYa-NJ-0OZ"/>
                     <constraint firstItem="AJE-C7-CT3" firstAttribute="leading" secondItem="YKw-kQ-SjF" secondAttribute="leading" id="Vpp-h9-t9P"/>
                     <constraint firstItem="98g-He-ik1" firstAttribute="top" secondItem="YKw-kQ-SjF" secondAttribute="bottom" constant="12" id="ZsI-u7-gDx"/>
                     <constraint firstItem="dRg-P2-cp3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="cIX-op-sDR"/>
@@ -117,12 +124,21 @@
                     <constraint firstItem="edU-vU-Sav" firstAttribute="leading" secondItem="YKw-kQ-SjF" secondAttribute="leading" id="jyZ-JU-9CW"/>
                     <constraint firstItem="qrd-Qg-XDx" firstAttribute="top" secondItem="YKw-kQ-SjF" secondAttribute="top" id="n5o-jc-0PS"/>
                     <constraint firstItem="SIP-Of-5me" firstAttribute="leading" secondItem="qrd-Qg-XDx" secondAttribute="leading" id="nZD-Fm-ZkQ"/>
+                    <constraint firstItem="sV2-cU-fLd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pnv-sr-tXT"/>
                     <constraint firstItem="SIP-Of-5me" firstAttribute="top" secondItem="98g-He-ik1" secondAttribute="top" id="qxH-bo-ja5"/>
                     <constraint firstItem="X4P-dY-bSf" firstAttribute="leading" secondItem="qrd-Qg-XDx" secondAttribute="leading" id="tEP-tb-nBK"/>
                     <constraint firstItem="X4P-dY-bSf" firstAttribute="top" secondItem="edU-vU-Sav" secondAttribute="top" id="tgg-12-YOb"/>
                     <constraint firstItem="A6h-6M-Mnc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="xIq-yB-kKf"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="bankLabel" destination="SIP-Of-5me" id="rmt-MW-lnK"/>
+                <outlet property="biZhongLabel" destination="qrd-Qg-XDx" id="7sO-mG-dce"/>
+                <outlet property="guiZeLabel" destination="X4P-dY-bSf" id="Nhb-aX-gyJ"/>
+                <outlet property="levelLabel" destination="77s-St-yUq" id="7Bm-8d-kTr"/>
+                <outlet property="qiXianLabel" destination="ZKh-z3-pzS" id="dmX-9U-vY0"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </tableViewCell>
     </objects>

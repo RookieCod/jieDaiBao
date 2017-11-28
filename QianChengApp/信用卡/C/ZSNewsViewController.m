@@ -52,17 +52,24 @@ UITableViewDataSource>
     // Do any additional setup after loading the view from its nib.
     
     selected = 0;
+    self.bankName = @"0";
     self.navigationItem.title = @"信用卡";
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.baseTableView.contentInset = UIEdgeInsetsMake(self.filterView.height, 0, 0, 0);
+    self.baseTableView.contentInset = UIEdgeInsetsMake(self.filterView.height + 5, 0, 0, 0);
     [self requestContent];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil]
              forCellReuseIdentifier:homeCardCellIdentifier];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.conditionView.hidden = YES;
+}
+
 - (void)requestContent
 {
-    ZSCreditCardRequest *cardRequest = [[ZSCreditCardRequest alloc] initWithBank:@"0"];
+    ZSCreditCardRequest *cardRequest = [[ZSCreditCardRequest alloc] initWithBank:self.bankName];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [cardRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -89,14 +96,15 @@ UITableViewDataSource>
     [self.view addSubview:self.filterView];
     
     [self.filterView addSubview:self.titleLabel];
-    [self.filterView addSubview:self.filterImage];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.filterView).offset(100);
+        make.centerX.equalTo(self.filterView.mas_centerX);
         make.top.bottom.equalTo(self.filterView);
+        make.width.mas_equalTo(@(200));
     }];
+    [self.filterView addSubview:self.filterImage];
     
     [self.filterImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLabel.mas_right).offset(20);
+        make.left.equalTo(self.titleLabel.mas_right).offset(10);
         make.top.equalTo(self.filterView.mas_top).offset(10);
         make.size.mas_equalTo(CGSizeMake(21, 11));
     }];
@@ -108,7 +116,7 @@ UITableViewDataSource>
 {
     if (!_filterView) {
         _filterView = [[UIView alloc] initWithFrame:CGRectMake(20, 64, MAINWIDTH - 40, 30)];
-        _filterView.backgroundColor = [UIColor whiteColor];
+        _filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         _filterView.layer.borderWidth = 1;
         _filterView.layer.borderColor = [UIColor colorWithHexString:@"B22614"].CGColor;
         _filterView.layer.cornerRadius = 5;
@@ -140,6 +148,11 @@ UITableViewDataSource>
 - (void)createSelectViewWithCondition:(NSArray *)conditionArray index:(NSInteger)index
 {
     [self.view addSubview:self.conditionView];
+    for (UIView *subView in [self.conditionView subviews]) {
+        if ([subView isKindOfClass:[UIButton class]]) {
+            [subView removeFromSuperview];
+        }
+    }
     CGFloat originY = 20;
     for (int i = 0; i < conditionArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -165,6 +178,8 @@ UITableViewDataSource>
                 self.bankName = bankModel.cardBank;
                 [self selectedChanged:index title:bankModel.cardBank];
             }
+            self.conditionView.hidden = YES;
+
             [self requestContent];
             }];
         
@@ -185,27 +200,24 @@ UITableViewDataSource>
 
 - (void)reloadFilterViewSelected:(NSInteger)selected
 {
-    if (selected == 0) {
-        self.filterView.backgroundColor = [UIColor whiteColor];
-        self.titleLabel.textColor = [UIColor colorWithHexString:@"B22614"];
-    } else {
-        self.filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
-        self.titleLabel.textColor = [UIColor whiteColor];
-    }
+    self.filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+    self.titleLabel.textColor = [UIColor whiteColor];
 }
 
 - (void)selectedChanged:(NSInteger)index title:(NSString *)title
 {
-    if (index == 0) {
-        //全部银行
-        self.filterView.backgroundColor = [UIColor whiteColor];
-        self.titleLabel.textColor = [UIColor colorWithHexString:@"B22614"];
-        self.titleLabel.text = title;
-    } else {
-        self.filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
-        self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.text = title;
-    }
+//    if (index == 0) {
+//        //全部银行
+//        self.filterView.backgroundColor = [UIColor whiteColor];
+//        self.titleLabel.textColor = [UIColor colorWithHexString:@"B22614"];
+//        self.titleLabel.text = title;
+//    } else {
+//        
+//    }
+    self.filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.titleLabel.text = title;
+    selected = 0;
 }
 
 - (UIView *)conditionView
@@ -225,7 +237,8 @@ UITableViewDataSource>
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.backgroundColor  = [UIColor clearColor];
         _titleLabel.font = [UIFont systemFontOfSize:13];
-        _titleLabel.textColor = [UIColor colorWithHexString:@"B22614"];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.text = @"全部银行";
     }
     return _titleLabel;

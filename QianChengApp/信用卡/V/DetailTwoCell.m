@@ -8,11 +8,28 @@
 
 #import "DetailTwoCell.h"
 
+@interface DetailTwoCell()
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
+@property (weak, nonatomic) IBOutlet UILabel *biZhongLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bankLabel;
+@property (weak, nonatomic) IBOutlet UILabel *qiXianLabel;
+@property (weak, nonatomic) IBOutlet UILabel *guiZeLabel;
+
+@end
 @implementation DetailTwoCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+
+- (void)setCardDetailModel:(CardDetailModel *)cardDetailModel
+{
+    self.levelLabel.text = cardDetailModel.cardLevel;
+    self.biZhongLabel.text = cardDetailModel.cardType;
+    self.bankLabel.text = cardDetailModel.cardAgency;
+    self.qiXianLabel.text = cardDetailModel.cardFree;
+    //self.guiZeLabel.text = cardDetailModel.
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

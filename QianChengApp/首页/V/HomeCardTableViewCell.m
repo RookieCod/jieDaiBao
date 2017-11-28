@@ -30,7 +30,9 @@
 
 - (void)setDetailModel:(CardDetailModel *)detailModel
 {
-    
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:detailModel.cardPic] placeholderImage:nil];
+    self.bankName.text = detailModel.cardBank;
+    self.bankDesc.text = detailModel.cardEssay;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

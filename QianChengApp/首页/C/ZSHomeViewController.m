@@ -20,6 +20,7 @@
 #import "ZSDaiKuanListViewController.h"
 #import "ZSNewsViewController.h"
 #import "ZDDaiKuanDetailViewController.h"
+#import "ZSCardDetailViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -372,6 +373,13 @@ CycleScrollViewDatasource>
         [self.navigationController pushViewController:detailVC animated:YES];
         self.hidesBottomBarWhenPushed = NO;
 
+    } else if (indexPath.section == 2) {
+        self.hidesBottomBarWhenPushed = YES;
+        ZSCardDetailViewController *cardDetailVC = [[ZSCardDetailViewController alloc] init];
+        HomeCardModel *cardModel = self.homeCardModelArray[indexPath.row];
+        cardDetailVC.cardid = [NSString stringWithFormat:@"%@",cardModel.cardId];
+        [self.navigationController pushViewController:cardDetailVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     }
 }
 

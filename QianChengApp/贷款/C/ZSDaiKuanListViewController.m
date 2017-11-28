@@ -72,6 +72,12 @@ ZSSegmentViewDelegate>
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.conditionView.hidden = YES;
+}
+
 - (void)requestContent
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

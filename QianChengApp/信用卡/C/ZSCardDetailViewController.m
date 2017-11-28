@@ -28,7 +28,10 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"信用卡详情";
     self.navigationItem.leftBarButtonItem = [self backButtonBar];
-    
+
+    self.baseTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
+
+    [self requestContent];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil] forCellReuseIdentifier:homeCardCellIdentifier];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"DetailTwoCell" bundle:nil]
              forCellReuseIdentifier:detailTwoCell];
@@ -47,8 +50,8 @@
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSDictionary *responseDic = request.responseObject;
-        if ([responseDic[@"data"] integerValue] == 0) {
-            NSDictionary *detailDic = responseDic[@"cardDtail"];
+        if ([responseDic[@"code"] integerValue] == 00) {
+            NSDictionary *detailDic = responseDic[@"data"][@"cardDtail"];
             self.detailModel = [CardDetailModel mj_objectWithKeyValues:detailDic];
             [self.baseTableView reloadData];
         }
@@ -71,11 +74,11 @@
     if (indexPath.row == 0) {
         return 83;
     } else if (indexPath.row == 1) {
-        return 233;
+        return 223;
     } else if (indexPath.row == 2) {
-        return 164;
+        return 204;
     } else {
-        return 147;
+        return 193;
     }
 }
 
@@ -123,6 +126,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)collectButtonClick:(id)sender {
+}
+- (IBAction)applyButtonClick:(id)sender {
 }
 
 /*
