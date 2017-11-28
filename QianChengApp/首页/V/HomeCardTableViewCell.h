@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeCardModel.h"
+#import "CardDetailModel.h"
 
 #define homeCardCellIdentifier @"HomeCardTableViewCell"
 
 @interface HomeCardTableViewCell : UITableViewCell
 /** <#description#> */
 @property (nonatomic, strong) HomeCardModel *cardModel;
+
+/** <#description#> */
+@property (nonatomic, strong) CardDetailModel *detailModel;
 @end

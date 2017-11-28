@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZSCardDetailViewController : UIViewController
-
+/** cardid */
+@property (nonatomic, strong) NSString *cardid;
 @end

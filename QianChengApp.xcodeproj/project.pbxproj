@@ -65,6 +65,13 @@
 		D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178771FC819E100BD1199 /* CardDetailRequest.m */; };
 		D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */; };
 		D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */; };
+		D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF78891FCD057A00A61D3F /* CardDetailModel.m */; };
+		D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF788C1FCD09A800A61D3F /* DetailTwoCell.m */; };
+		D6FF788F1FCD09A800A61D3F /* DetailTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF788D1FCD09A800A61D3F /* DetailTwoCell.xib */; };
+		D6FF78931FCD09B900A61D3F /* CardDetailThreeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF78911FCD09B900A61D3F /* CardDetailThreeCell.m */; };
+		D6FF78941FCD09B900A61D3F /* CardDetailThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF78921FCD09B900A61D3F /* CardDetailThreeCell.xib */; };
+		D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF78961FCD09CA00A61D3F /* CardDetailFourCell.m */; };
+		D6FF78991FCD09CA00A61D3F /* CardDetailFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF78971FCD09CA00A61D3F /* CardDetailFourCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +174,17 @@
 		D6C1787A1FC819F400BD1199 /* DaiKuanDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiKuanDetailRequest.m; sourceTree = "<group>"; };
 		D6DA82C11FC840A20058FCC3 /* UIViewController+ButtonBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ButtonBarItem.h"; sourceTree = "<group>"; };
 		D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ButtonBarItem.m"; sourceTree = "<group>"; };
+		D6FF78881FCD057A00A61D3F /* CardDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailModel.h; sourceTree = "<group>"; };
+		D6FF78891FCD057A00A61D3F /* CardDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailModel.m; sourceTree = "<group>"; };
+		D6FF788B1FCD09A800A61D3F /* DetailTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailTwoCell.h; sourceTree = "<group>"; };
+		D6FF788C1FCD09A800A61D3F /* DetailTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailTwoCell.m; sourceTree = "<group>"; };
+		D6FF788D1FCD09A800A61D3F /* DetailTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTwoCell.xib; sourceTree = "<group>"; };
+		D6FF78901FCD09B900A61D3F /* CardDetailThreeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailThreeCell.h; sourceTree = "<group>"; };
+		D6FF78911FCD09B900A61D3F /* CardDetailThreeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailThreeCell.m; sourceTree = "<group>"; };
+		D6FF78921FCD09B900A61D3F /* CardDetailThreeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailThreeCell.xib; sourceTree = "<group>"; };
+		D6FF78951FCD09CA00A61D3F /* CardDetailFourCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailFourCell.h; sourceTree = "<group>"; };
+		D6FF78961FCD09CA00A61D3F /* CardDetailFourCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailFourCell.m; sourceTree = "<group>"; };
+		D6FF78971FCD09CA00A61D3F /* CardDetailFourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardDetailFourCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +487,15 @@
 		D6C178671FC817BE00BD1199 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				D6FF788B1FCD09A800A61D3F /* DetailTwoCell.h */,
+				D6FF788C1FCD09A800A61D3F /* DetailTwoCell.m */,
+				D6FF788D1FCD09A800A61D3F /* DetailTwoCell.xib */,
+				D6FF78901FCD09B900A61D3F /* CardDetailThreeCell.h */,
+				D6FF78911FCD09B900A61D3F /* CardDetailThreeCell.m */,
+				D6FF78921FCD09B900A61D3F /* CardDetailThreeCell.xib */,
+				D6FF78951FCD09CA00A61D3F /* CardDetailFourCell.h */,
+				D6FF78961FCD09CA00A61D3F /* CardDetailFourCell.m */,
+				D6FF78971FCD09CA00A61D3F /* CardDetailFourCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -482,6 +509,8 @@
 				D6C178771FC819E100BD1199 /* CardDetailRequest.m */,
 				D62CCDE81FCBA4BF00EDD2D1 /* CardBankModel.h */,
 				D62CCDE91FCBA4BF00EDD2D1 /* CardBankModel.m */,
+				D6FF78881FCD057A00A61D3F /* CardDetailModel.h */,
+				D6FF78891FCD057A00A61D3F /* CardDetailModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -547,9 +576,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6FF78991FCD09CA00A61D3F /* CardDetailFourCell.xib in Resources */,
 				D6215DD91FBEB93B0090FE80 /* ZSMyAppViewController.xib in Resources */,
 				D61600081FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib in Resources */,
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
+				D6FF78941FCD09B900A61D3F /* CardDetailThreeCell.xib in Resources */,
 				D61600121FCC5369008E3FF9 /* DaiDetailConditionCell.xib in Resources */,
 				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
 				D6C178701FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib in Resources */,
@@ -566,6 +597,7 @@
 				D6215DB01FBE82310090FE80 /* Info.plist in Resources */,
 				D637E9081FC588CF00D68410 /* DaiKuanTableViewCell.xib in Resources */,
 				D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */,
+				D6FF788F1FCD09A800A61D3F /* DetailTwoCell.xib in Resources */,
 				D6215DBD1FBE86B30090FE80 /* ZSTabBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +662,8 @@
 				D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
+				D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */,
+				D6FF78931FCD09B900A61D3F /* CardDetailThreeCell.m in Sources */,
 				D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */,
 				D616000C1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.m in Sources */,
 				D6215DD81FBEB93B0090FE80 /* ZSMyAppViewController.m in Sources */,
@@ -640,9 +674,11 @@
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
 				D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */,
 				D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */,
+				D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */,
 				D637E8FD1FC577AC00D68410 /* HotXinYongRequest.m in Sources */,
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
+				D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,

@@ -28,6 +28,11 @@
     self.bankDesc.text = cardModel.cardEssay;
 }
 
+- (void)setDetailModel:(CardDetailModel *)detailModel
+{
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
