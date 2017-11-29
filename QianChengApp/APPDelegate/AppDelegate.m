@@ -30,7 +30,7 @@
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = @"http://106.75.84.49:8080/";
     
-    networkConfig.debugLogEnabled = NO;
+    networkConfig.debugLogEnabled = YES;
 
     [self customGlobalBarAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

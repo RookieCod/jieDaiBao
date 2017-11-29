@@ -51,6 +51,15 @@
 		D637E9121FC6603000D68410 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */; };
 		D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */; };
 		D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */; };
+		D6AE1F121FCEFD8600D45553 /* RegistYanZheng.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F111FCEFD8600D45553 /* RegistYanZheng.m */; };
+		D6AE1F151FCF050200D45553 /* RegistFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F141FCF050200D45553 /* RegistFooterView.m */; };
+		D6AE1F171FCF054700D45553 /* RegistFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6AE1F161FCF054700D45553 /* RegistFooterView.xib */; };
+		D6AE1F1A1FCF0A2900D45553 /* RegistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F191FCF0A2900D45553 /* RegistRequest.m */; };
+		D6AE1F1D1FCF108F00D45553 /* PasswordLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F1C1FCF108F00D45553 /* PasswordLoginView.m */; };
+		D6AE1F1F1FCF10A100D45553 /* PasswordLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6AE1F1E1FCF10A100D45553 /* PasswordLoginView.xib */; };
+		D6AE1F221FCF1D8000D45553 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F211FCF1D8000D45553 /* LoginRequest.m */; };
+		D6AE1F251FCF1E8300D45553 /* YanZhengLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F241FCF1E8300D45553 /* YanZhengLoginView.m */; };
+		D6AE1F271FCF1E9A00D45553 /* YanZhengLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6AE1F261FCF1E9A00D45553 /* YanZhengLoginView.xib */; };
 		D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */; };
 		D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */; };
 		D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */; };
@@ -165,6 +174,21 @@
 		D637E9131FC6683100D68410 /* ZSDaiKuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSDaiKuanListViewController.h; sourceTree = "<group>"; };
 		D637E9141FC6683100D68410 /* ZSDaiKuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSDaiKuanListViewController.m; sourceTree = "<group>"; };
 		D637E9151FC6683100D68410 /* ZSDaiKuanListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSDaiKuanListViewController.xib; sourceTree = "<group>"; };
+		D6AE1F101FCEFD8600D45553 /* RegistYanZheng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistYanZheng.h; sourceTree = "<group>"; };
+		D6AE1F111FCEFD8600D45553 /* RegistYanZheng.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistYanZheng.m; sourceTree = "<group>"; };
+		D6AE1F131FCF050200D45553 /* RegistFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistFooterView.h; sourceTree = "<group>"; };
+		D6AE1F141FCF050200D45553 /* RegistFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistFooterView.m; sourceTree = "<group>"; };
+		D6AE1F161FCF054700D45553 /* RegistFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistFooterView.xib; sourceTree = "<group>"; };
+		D6AE1F181FCF0A2900D45553 /* RegistRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistRequest.h; sourceTree = "<group>"; };
+		D6AE1F191FCF0A2900D45553 /* RegistRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistRequest.m; sourceTree = "<group>"; };
+		D6AE1F1B1FCF108F00D45553 /* PasswordLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordLoginView.h; sourceTree = "<group>"; };
+		D6AE1F1C1FCF108F00D45553 /* PasswordLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordLoginView.m; sourceTree = "<group>"; };
+		D6AE1F1E1FCF10A100D45553 /* PasswordLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordLoginView.xib; sourceTree = "<group>"; };
+		D6AE1F201FCF1D8000D45553 /* LoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		D6AE1F211FCF1D8000D45553 /* LoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
+		D6AE1F231FCF1E8300D45553 /* YanZhengLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YanZhengLoginView.h; sourceTree = "<group>"; };
+		D6AE1F241FCF1E8300D45553 /* YanZhengLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YanZhengLoginView.m; sourceTree = "<group>"; };
+		D6AE1F261FCF1E9A00D45553 /* YanZhengLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YanZhengLoginView.xib; sourceTree = "<group>"; };
 		D6C178561FC6A7D700BD1199 /* ZSSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSSegmentView.h; sourceTree = "<group>"; };
 		D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSSegmentView.m; sourceTree = "<group>"; };
 		D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSSegmentView.xib; sourceTree = "<group>"; };
@@ -574,6 +598,12 @@
 		D6CF52D01FCDB29200524EEB /* M */ = {
 			isa = PBXGroup;
 			children = (
+				D6AE1F101FCEFD8600D45553 /* RegistYanZheng.h */,
+				D6AE1F111FCEFD8600D45553 /* RegistYanZheng.m */,
+				D6AE1F181FCF0A2900D45553 /* RegistRequest.h */,
+				D6AE1F191FCF0A2900D45553 /* RegistRequest.m */,
+				D6AE1F201FCF1D8000D45553 /* LoginRequest.h */,
+				D6AE1F211FCF1D8000D45553 /* LoginRequest.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -596,6 +626,15 @@
 				D6CF52F91FCDC5DE00524EEB /* RegistYanZhengCell.h */,
 				D6CF52FA1FCDC5DE00524EEB /* RegistYanZhengCell.m */,
 				D6CF52FB1FCDC5DE00524EEB /* RegistYanZhengCell.xib */,
+				D6AE1F131FCF050200D45553 /* RegistFooterView.h */,
+				D6AE1F141FCF050200D45553 /* RegistFooterView.m */,
+				D6AE1F161FCF054700D45553 /* RegistFooterView.xib */,
+				D6AE1F1B1FCF108F00D45553 /* PasswordLoginView.h */,
+				D6AE1F1C1FCF108F00D45553 /* PasswordLoginView.m */,
+				D6AE1F1E1FCF10A100D45553 /* PasswordLoginView.xib */,
+				D6AE1F231FCF1E8300D45553 /* YanZhengLoginView.h */,
+				D6AE1F241FCF1E8300D45553 /* YanZhengLoginView.m */,
+				D6AE1F261FCF1E9A00D45553 /* YanZhengLoginView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -667,15 +706,18 @@
 				D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */,
 				D6FF78941FCD09B900A61D3F /* CardDetailThreeCell.xib in Resources */,
 				D6CF52F81FCDC37000524EEB /* RegistCell.xib in Resources */,
+				D6AE1F171FCF054700D45553 /* RegistFooterView.xib in Resources */,
 				D61600121FCC5369008E3FF9 /* DaiDetailConditionCell.xib in Resources */,
 				D637E9171FC6683100D68410 /* ZSDaiKuanListViewController.xib in Resources */,
 				D6C178701FC819A400BD1199 /* ZDDaiKuanDetailViewController.xib in Resources */,
 				D6215DD41FBEB92A0090FE80 /* ZSNewsViewController.xib in Resources */,
 				D616000D1FCC4E02008E3FF9 /* DaiDetailJiSuanCell.xib in Resources */,
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
+				D6AE1F1F1FCF10A100D45553 /* PasswordLoginView.xib in Resources */,
 				D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
 				D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */,
+				D6AE1F271FCF1E9A00D45553 /* YanZhengLoginView.xib in Resources */,
 				D6C178751FC819C500BD1199 /* ZSCardDetailViewController.xib in Resources */,
 				D6CF52E41FCDB7A700524EEB /* ZSLoginViewController.xib in Resources */,
 				D6CF52FD1FCDC5DE00524EEB /* RegistYanZhengCell.xib in Resources */,
@@ -758,6 +800,7 @@
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */,
+				D6AE1F151FCF050200D45553 /* RegistFooterView.m in Sources */,
 				D6FF78931FCD09B900A61D3F /* CardDetailThreeCell.m in Sources */,
 				D6CF52E81FCDB8CE00524EEB /* MyAppTableViewCell.m in Sources */,
 				D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */,
@@ -768,6 +811,7 @@
 				D6C178741FC819C500BD1199 /* ZSCardDetailViewController.m in Sources */,
 				D637E8EA1FC50D7400D68410 /* BannerModel.m in Sources */,
 				D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */,
+				D6AE1F121FCEFD8600D45553 /* RegistYanZheng.m in Sources */,
 				D637E9001FC582AC00D68410 /* DaiKuanModel.m in Sources */,
 				D6CF52DE1FCDB6B900524EEB /* MyAppViewController.m in Sources */,
 				D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */,
@@ -778,12 +822,14 @@
 				D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */,
+				D6AE1F251FCF1E8300D45553 /* YanZhengLoginView.m in Sources */,
 				D6215DC41FBEB6340090FE80 /* UIColor+Addtions.m in Sources */,
 				D62CCDEA1FCBA4BF00EDD2D1 /* CardBankModel.m in Sources */,
 				D6CF52EC1FCDBC9400524EEB /* MyAppFooterView.m in Sources */,
 				D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
+				D6AE1F1A1FCF0A2900D45553 /* RegistRequest.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
 				D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */,
@@ -795,7 +841,9 @@
 				D6CF52E31FCDB7A700524EEB /* ZSLoginViewController.m in Sources */,
 				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,
 				D6C1786B1FC817EA00BD1199 /* ZSCreditCardRequest.m in Sources */,
+				D6AE1F1D1FCF108F00D45553 /* PasswordLoginView.m in Sources */,
 				D637E9101FC65F2000D68410 /* MBProgressHUD+ZSS.m in Sources */,
+				D6AE1F221FCF1D8000D45553 /* LoginRequest.m in Sources */,
 				D637E90C1FC588DD00D68410 /* HomeCardTableViewCell.m in Sources */,
 				D6CF52FC1FCDC5DE00524EEB /* RegistYanZhengCell.m in Sources */,
 			);
