@@ -17,6 +17,8 @@
 		D61600111FCC5369008E3FF9 /* DaiDetailConditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D616000F1FCC5369008E3FF9 /* DaiDetailConditionCell.m */; };
 		D61600121FCC5369008E3FF9 /* DaiDetailConditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600101FCC5369008E3FF9 /* DaiDetailConditionCell.xib */; };
 		D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600141FCC5CB8008E3FF9 /* DaiDetailModel.m */; };
+		D61F47651FD0674D006FAD27 /* ForgetResetPwdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D61F47641FD0674D006FAD27 /* ForgetResetPwdRequest.m */; };
+		D61F47681FD06B2B006FAD27 /* ReloginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D61F47671FD06B2B006FAD27 /* ReloginRequest.m */; };
 		D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6215DA01FBE81E10090FE80 /* AppDelegate.m */; };
 		D6215DAD1FBE82310090FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA61FBE82300090FE80 /* Assets.xcassets */; };
 		D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6215DA71FBE82300090FE80 /* LaunchScreen.storyboard */; };
@@ -89,6 +91,10 @@
 		D6CF52FC1FCDC5DE00524EEB /* RegistYanZhengCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6CF52FA1FCDC5DE00524EEB /* RegistYanZhengCell.m */; };
 		D6CF52FD1FCDC5DE00524EEB /* RegistYanZhengCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6CF52FB1FCDC5DE00524EEB /* RegistYanZhengCell.xib */; };
 		D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */; };
+		D6EF057C1FD054AC00C5C576 /* ResetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EF057A1FD054AC00C5C576 /* ResetPwdViewController.m */; };
+		D6EF057D1FD054AC00C5C576 /* ResetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6EF057B1FD054AC00C5C576 /* ResetPwdViewController.xib */; };
+		D6EF05811FD05B2100C5C576 /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EF057F1FD05B2100C5C576 /* ResetViewController.m */; };
+		D6EF05821FD05B2100C5C576 /* ResetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6EF05801FD05B2100C5C576 /* ResetViewController.xib */; };
 		D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF78891FCD057A00A61D3F /* CardDetailModel.m */; };
 		D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF788C1FCD09A800A61D3F /* DetailTwoCell.m */; };
 		D6FF788F1FCD09A800A61D3F /* DetailTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF788D1FCD09A800A61D3F /* DetailTwoCell.xib */; };
@@ -116,6 +122,10 @@
 		D61600131FCC5CB8008E3FF9 /* DaiDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailModel.h; sourceTree = "<group>"; };
 		D61600141FCC5CB8008E3FF9 /* DaiDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailModel.m; sourceTree = "<group>"; };
 		D616FFFF1FCC497D008E3FF9 /* DaiDetailProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailProductCell.h; sourceTree = "<group>"; };
+		D61F47631FD0674D006FAD27 /* ForgetResetPwdRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetResetPwdRequest.h; sourceTree = "<group>"; };
+		D61F47641FD0674D006FAD27 /* ForgetResetPwdRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetResetPwdRequest.m; sourceTree = "<group>"; };
+		D61F47661FD06B2B006FAD27 /* ReloginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReloginRequest.h; sourceTree = "<group>"; };
+		D61F47671FD06B2B006FAD27 /* ReloginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloginRequest.m; sourceTree = "<group>"; };
 		D6215D841FBE80DB0090FE80 /* QianChengApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QianChengApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6215D9F1FBE81E10090FE80 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6215DA01FBE81E10090FE80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -236,6 +246,12 @@
 		D6CF52FB1FCDC5DE00524EEB /* RegistYanZhengCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistYanZhengCell.xib; sourceTree = "<group>"; };
 		D6DA82C11FC840A20058FCC3 /* UIViewController+ButtonBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ButtonBarItem.h"; sourceTree = "<group>"; };
 		D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ButtonBarItem.m"; sourceTree = "<group>"; };
+		D6EF05791FD054AC00C5C576 /* ResetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetPwdViewController.h; sourceTree = "<group>"; };
+		D6EF057A1FD054AC00C5C576 /* ResetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetPwdViewController.m; sourceTree = "<group>"; };
+		D6EF057B1FD054AC00C5C576 /* ResetPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPwdViewController.xib; sourceTree = "<group>"; };
+		D6EF057E1FD05B2100C5C576 /* ResetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetViewController.h; sourceTree = "<group>"; };
+		D6EF057F1FD05B2100C5C576 /* ResetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetViewController.m; sourceTree = "<group>"; };
+		D6EF05801FD05B2100C5C576 /* ResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetViewController.xib; sourceTree = "<group>"; };
 		D6FF78881FCD057A00A61D3F /* CardDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailModel.h; sourceTree = "<group>"; };
 		D6FF78891FCD057A00A61D3F /* CardDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailModel.m; sourceTree = "<group>"; };
 		D6FF788B1FCD09A800A61D3F /* DetailTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailTwoCell.h; sourceTree = "<group>"; };
@@ -591,6 +607,12 @@
 				D6CF52EF1FCDBF2A00524EEB /* RegistViewController.h */,
 				D6CF52F01FCDBF2A00524EEB /* RegistViewController.m */,
 				D6CF52F11FCDBF2A00524EEB /* RegistViewController.xib */,
+				D6EF05791FD054AC00C5C576 /* ResetPwdViewController.h */,
+				D6EF057A1FD054AC00C5C576 /* ResetPwdViewController.m */,
+				D6EF057B1FD054AC00C5C576 /* ResetPwdViewController.xib */,
+				D6EF057E1FD05B2100C5C576 /* ResetViewController.h */,
+				D6EF057F1FD05B2100C5C576 /* ResetViewController.m */,
+				D6EF05801FD05B2100C5C576 /* ResetViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -604,6 +626,10 @@
 				D6AE1F191FCF0A2900D45553 /* RegistRequest.m */,
 				D6AE1F201FCF1D8000D45553 /* LoginRequest.h */,
 				D6AE1F211FCF1D8000D45553 /* LoginRequest.m */,
+				D61F47631FD0674D006FAD27 /* ForgetResetPwdRequest.h */,
+				D61F47641FD0674D006FAD27 /* ForgetResetPwdRequest.m */,
+				D61F47661FD06B2B006FAD27 /* ReloginRequest.h */,
+				D61F47671FD06B2B006FAD27 /* ReloginRequest.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -700,6 +726,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6EF057D1FD054AC00C5C576 /* ResetPwdViewController.xib in Resources */,
+				D6EF05821FD05B2100C5C576 /* ResetViewController.xib in Resources */,
 				D6FF78991FCD09CA00A61D3F /* CardDetailFourCell.xib in Resources */,
 				D6CF52EE1FCDBCA400524EEB /* MyAppFooterView.xib in Resources */,
 				D61600081FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib in Resources */,
@@ -795,6 +823,7 @@
 				D637E8F11FC515DD00D68410 /* HomeTangDouTableViewCell.m in Sources */,
 				D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */,
 				D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */,
+				D61F47651FD0674D006FAD27 /* ForgetResetPwdRequest.m in Sources */,
 				D6CF52D81FCDB2BE00524EEB /* MyAppHeaderView.m in Sources */,
 				D6CF52F71FCDC37000524EEB /* RegistCell.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
@@ -829,6 +858,7 @@
 				D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
+				D6EF05811FD05B2100C5C576 /* ResetViewController.m in Sources */,
 				D6AE1F1A1FCF0A2900D45553 /* RegistRequest.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
@@ -836,9 +866,11 @@
 				D61600111FCC5369008E3FF9 /* DaiDetailConditionCell.m in Sources */,
 				D6C1786F1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m in Sources */,
 				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
+				D61F47681FD06B2B006FAD27 /* ReloginRequest.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,
 				D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */,
 				D6CF52E31FCDB7A700524EEB /* ZSLoginViewController.m in Sources */,
+				D6EF057C1FD054AC00C5C576 /* ResetPwdViewController.m in Sources */,
 				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,
 				D6C1786B1FC817EA00BD1199 /* ZSCreditCardRequest.m in Sources */,
 				D6AE1F1D1FCF108F00D45553 /* PasswordLoginView.m in Sources */,

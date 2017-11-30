@@ -10,6 +10,8 @@
 #import "PasswordLoginView.h"
 #import "YanZhengLoginView.h"
 #import "LoginRequest.h"
+#import "ResetPwdViewController.h"
+#import "RegistYanZheng.h"
 
 @interface ZSLoginViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentView;
@@ -26,6 +28,13 @@
 
 /*  */
 @property (nonatomic, strong) UITextField *pwdField;
+
+@property (assign, nonatomic) dispatch_queue_t queue;
+
+@property (strong, nonatomic) dispatch_source_t timer;
+
+/*  */
+@property (nonatomic, strong) UIButton *forgetButton;
 
 @end
 
@@ -67,13 +76,28 @@
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         LoginRequest *request = [[LoginRequest alloc] initWithPhoneNum:self.phoneField.text password:self.pwdField.text type:[NSString stringWithFormat:@"%ld",self.segmentView.selectedSegmentIndex + 1]];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
             MJExtensionLog(@"%@",dic);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if ([dic[@"code"] integerValue] == 00) {
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@"phone"]];
+                [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self back:nil];
+                });
+            }
+
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
         }];
     }];
+}
+
+- (void)back:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)initView
@@ -100,9 +124,107 @@
         make.size.mas_equalTo(CGSizeMake(289, 40));
     }];
 
+    [self.view addSubview:self.forgetButton];
+    [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.pwdLogin.mas_bottom).offset(120);
+        make.right.equalTo(self.view.mas_right).offset(-43);
+        make.size.mas_equalTo(CGSizeMake(80, 20));
+    }];
+
     self.pwdLogin.hidden = YES;
     self.verifyLogin.hidden = YES;
+    @weakify(self);
+    [[self.verifyLogin.getYanBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        if (![self yanZhengMaCheck]) {
+            return ;
+        }
+
+        RegistYanZheng *request = [[RegistYanZheng alloc] initWithPhoneNum:self.verifyLogin.phone.text
+                    password:@""
+                        type:@"1"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            NSDictionary *dic = request.responseObject;
+            [MBProgressHUD showMessage:dic[@"errorMsg"] toView:self.view];
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+        }];;
+
+
+    }];
+
+    [[self.forgetButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        ResetPwdViewController *resetVC = [[ResetPwdViewController alloc] init];
+        [self.navigationController pushViewController:resetVC animated:YES];
+    }];
 }
+
+- (BOOL)yanZhengMaCheck
+{
+    if (self.verifyLogin.phone.text.length == 0) {
+        [MBProgressHUD showError:@"请输入手机号" toView:self.view];
+        return NO;
+    }
+    if (![ZSUntils mobileNumFormatCheck:self.verifyLogin.phone.text]) {
+        [MBProgressHUD showError:@"请输入正确的手机号" toView:self.view];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)startTimer
+{
+    self.verifyLogin.getYanBtn.enabled = NO;
+    if (!self.verifyLogin.getYanBtn.enabled) {
+        __block NSInteger timeout = 60; //倒计时时间
+        self.queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,self.queue);
+
+        dispatch_source_set_timer(self.timer,dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
+        dispatch_source_set_event_handler(self.timer, ^{
+            if(timeout < 0){ //倒计时结束，关闭
+                dispatch_source_cancel(self.timer);
+                //                dispatch_release(self.timer);
+                self.timer = nil;
+                self.queue = nil;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //设置界面的按钮显示 根据自己需求设置
+                    [self.verifyLogin.getYanBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+                    self.verifyLogin.getYanBtn.enabled = YES;
+                    //                    self.countDownButton.userInteractionEnabled = YES;
+                });
+            }else{
+                NSInteger seconds = timeout;
+                NSString *text = @"重新获取";
+
+                NSString *strTime = [NSString stringWithFormat:@"%@(%ldS)",text,(long)seconds];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //设置界面的按钮显示 根据自己需求设置
+                    [self.verifyLogin.getYanBtn setTitle:strTime forState:UIControlStateNormal];
+                });
+                timeout--;
+            }
+        });
+        dispatch_resume(self.timer);
+    }
+}
+
+- (void)stopCountDown
+{
+    if (_timer)
+    {
+        dispatch_source_cancel(self.timer);
+
+        self.timer = nil;
+        self.queue = nil;
+    }
+    [self.verifyLogin.getYanBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    self.verifyLogin.getYanBtn.enabled = YES;
+}
+
 - (PasswordLoginView *)pwdLogin
 {
     if (!_pwdLogin) {
@@ -129,6 +251,21 @@
     }
 
     return _loginButton;
+}
+
+- (UIButton *)forgetButton
+{
+    if (!_forgetButton) {
+        _forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_forgetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _forgetButton.backgroundColor = [UIColor whiteColor];
+        [_forgetButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
+        _forgetButton.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        [_forgetButton setTitle:@"忘记密码?" forState:UIControlStateNormal];
+        _forgetButton.backgroundColor = [UIColor clearColor];
+    }
+
+    return _forgetButton;
 }
 
 - (void)didReceiveMemoryWarning {

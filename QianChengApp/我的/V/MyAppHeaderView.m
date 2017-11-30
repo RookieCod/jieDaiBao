@@ -9,7 +9,6 @@
 #import "MyAppHeaderView.h"
 @interface MyAppHeaderView()
 
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
 
 @end
 @implementation MyAppHeaderView

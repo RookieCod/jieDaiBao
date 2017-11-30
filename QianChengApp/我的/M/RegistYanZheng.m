@@ -17,12 +17,12 @@
 @end
 
 @implementation RegistYanZheng
-- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password
+- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password type:(NSString *)type
 {
     if (self = [super init]) {
         _phoneNum = phoneNum;
         _password = password;
-        _type = @"1";
+        _type = type;
     }
     return self;
 }

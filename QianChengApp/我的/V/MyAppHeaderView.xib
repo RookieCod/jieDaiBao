@@ -73,7 +73,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="loginButton" destination="CAc-QJ-vbF" id="9c2-pa-qaH"/>
-                <outlet property="phoneNumLabel" destination="7Ky-vK-pOR" id="pG9-Iz-Viv"/>
+                <outlet property="phoneNumLabel" destination="7Ky-vK-pOR" id="Kgy-zI-o1d"/>
                 <outlet property="registButton" destination="Mqc-DX-xfI" id="NmC-7X-20J"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="-95.5"/>

@@ -33,6 +33,9 @@
                 <constraint firstItem="6eU-TE-dMj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wD2-yT-ihM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="reLoginButton" destination="6eU-TE-dMj" id="bOh-mW-WYy"/>
+            </connections>
         </view>
     </objects>
 </document>

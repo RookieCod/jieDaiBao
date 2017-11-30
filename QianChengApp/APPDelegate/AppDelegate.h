@@ -16,5 +16,12 @@
 
 /*  */
 @property (nonatomic, strong) NSString *userSession;
+
+/*  */
+@property (nonatomic, strong) NSString *userPhone;
+
+- (void)saveUserInfo:(NSString *)userSession userPhone:(NSString *)phone;
+- (void)clearUserInfo;
+
 @end
 

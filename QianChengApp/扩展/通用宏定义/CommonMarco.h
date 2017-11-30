@@ -12,5 +12,7 @@
 #define MAINHEIGHT [[UIScreen mainScreen] bounds].size.height
 #define MAINWIDTH [[UIScreen mainScreen] bounds].size.width
 
+#define UserSession @"userSession"
+#define UserPhone   @"userPhone"
 
 #endif /* CommonMarco_h */

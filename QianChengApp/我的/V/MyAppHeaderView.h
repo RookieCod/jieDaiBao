@@ -11,4 +11,7 @@
 @interface MyAppHeaderView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registButton;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumLabel;
+
+
 @end

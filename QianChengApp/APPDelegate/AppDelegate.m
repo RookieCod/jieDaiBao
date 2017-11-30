@@ -32,6 +32,7 @@
     
     networkConfig.debugLogEnabled = YES;
 
+    [self getUserSessionFromLocal];
     [self customGlobalBarAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -92,6 +93,34 @@
         UINavigationController* itemNav = (UINavigationController*)[self.tabBarController.viewControllers objectAtIndex:index];
         [itemNav popToRootViewControllerAnimated:YES];
     }
+}
+
+- (void)getUserSessionFromLocal
+{
+    self.userSession = [[NSUserDefaults standardUserDefaults] objectForKey:UserSession];
+    self.userPhone = [[NSUserDefaults standardUserDefaults] objectForKey:UserPhone];
+    if (!self.userSession) {
+        self.userSession = @"";
+        self.userPhone = @"";
+    }
+}
+
+- (void)saveUserInfo:(NSString *)userSession userPhone:(NSString *)phone
+{
+    [[NSUserDefaults standardUserDefaults] setObject:userSession forKey:UserSession];
+    [[NSUserDefaults standardUserDefaults] setObject:phone forKey:UserPhone];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [self getUserSessionFromLocal];
+
+}
+- (void)clearUserInfo
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:UserSession];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:UserPhone];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    [self getUserSessionFromLocal];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

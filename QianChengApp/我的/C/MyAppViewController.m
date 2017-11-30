@@ -12,6 +12,8 @@
 #import "MyAppFooterView.h"
 #import "ZSLoginViewController.h"
 #import "RegistViewController.h"
+#import "ResetPwdViewController.h"
+#import "ReloginRequest.h"
 
 static  NSString * const cellNameArray[] = {
     [0] = @"我的收藏",
@@ -20,7 +22,7 @@ static  NSString * const cellNameArray[] = {
     [3] = @"去评价",
     [4] = @"版本号",
 };
-@interface MyAppViewController ()
+@interface MyAppViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
 
 /*  */
@@ -45,7 +47,10 @@ static  NSString * const cellNameArray[] = {
     [[self.headerView.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         ZSLoginViewController *loginVC = [[ZSLoginViewController alloc] init];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        [self presentViewController:loginNav
+                           animated:YES
+                         completion:nil];
     }];
 
     [[self.headerView.registButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -57,6 +62,32 @@ static  NSString * const cellNameArray[] = {
 
     [self.baseTableView registerNib:[UINib nibWithNibName:@"MyAppTableViewCell" bundle:nil]
              forCellReuseIdentifier:myAppTableViewCell];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self reloadHeaderAndFooter];
+}
+
+- (void)reloadHeaderAndFooter
+{
+    if ([ZSUntils getApplicationDelegate].userSession.length > 0) {
+        //登录状态
+        self.headerView.loginButton.hidden = YES;
+        self.headerView.registButton.hidden = YES;
+        self.headerView.phoneNumLabel.hidden = NO;
+        self.headerView.phoneNumLabel.text = [ZSUntils getApplicationDelegate].userPhone;
+        
+        self.baseTableView.tableFooterView = self.footerView;
+    } else {
+        self.headerView.loginButton.hidden = NO;
+        self.headerView.registButton.hidden = NO;
+        self.headerView.phoneNumLabel.hidden = YES;
+        
+        self.baseTableView.tableFooterView = nil;
+    }
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -81,7 +112,17 @@ static  NSString * const cellNameArray[] = {
     return [[UITableViewCell alloc] init];
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        //收藏
+    } else if (indexPath.row == 1) {
+        //修改密码
+        ResetPwdViewController *reset = [[ResetPwdViewController alloc] init];
+        
+        [self.navigationController pushViewController:reset animated:YES];
+    }
+}
 - (MyAppHeaderView *)headerView
 {
     if (!_headerView) {
@@ -94,7 +135,20 @@ static  NSString * const cellNameArray[] = {
 {
     if (!_footerView) {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"MyAppFooterView" owner:nil options:nil] lastObject];
+        [[_footerView.reLoginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            ReloginRequest *request = [[ReloginRequest alloc] init];
+            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                NSDictionary *dic = request.responseObject;
+                [MBProgressHUD showMessage:dic[@"errorMsg"] toView:self.view];
+                if ([dic[@"code"] integerValue] == 00) {
+                    [[ZSUntils getApplicationDelegate] clearUserInfo];
 
+                    [self reloadHeaderAndFooter];
+                }
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+            }];
+        }];
     }
     return _footerView;
 

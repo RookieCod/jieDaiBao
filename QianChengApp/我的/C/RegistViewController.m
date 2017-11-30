@@ -12,6 +12,7 @@
 #import "RegistYanZheng.h"
 #import "RegistFooterView.h"
 #import "RegistRequest.h"
+#import "ZSLoginViewController.h"
 
 @interface RegistViewController ()
 
@@ -111,8 +112,6 @@
             }
             //开始获取验证码
             [self requestContent];
-            [self startTimer];
-
         }];
         return cell;
     }
@@ -128,8 +127,18 @@
         [MBProgressHUD showError:@"请输入正确的手机号" toView:self.view];
         return NO;
     }
-    if (self.passwordField.text == 0) {
+
+    if ( [ZSUntils getStringIsSpace:self.passwordField.text]) {
+        [MBProgressHUD showError:@"请输入正确密码格式" toView:self.view];
+        return NO;
+    }
+
+    if (self.passwordField.text.length == 0) {
         [MBProgressHUD showError:@"请输入密码" toView:self.view];
+        return NO;
+    }
+    if (self.passwordField.text.length < 6) {
+        [MBProgressHUD showError:@"密码长度必须大于6位" toView:self.view];
         return NO;
     }
 
@@ -138,9 +147,14 @@
 
 - (void)requestContent
 {
-    RegistYanZheng *request = [[RegistYanZheng alloc] initWithPhoneNum:self.phoneNumField.text password:self.passwordField.text];
+    RegistYanZheng *request = [[RegistYanZheng alloc] initWithPhoneNum:self.phoneNumField.text password:self.passwordField.text type:@"1"];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         MJExtensionLog(@"%@",request.responseObject);
+        NSDictionary *dic = request.responseObject;
+        [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+        if (dic[@"data"] == 00) {
+            [self startTimer];
+        }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
     }];
@@ -150,7 +164,7 @@
 {
     self.yanZhengButton.enabled = NO;
     if (!self.yanZhengButton.enabled) {
-        __block NSInteger timeout = 10; //倒计时时间
+        __block NSInteger timeout = 60; //倒计时时间
         self.queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,self.queue);
 
@@ -209,6 +223,19 @@
                 [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
                     NSDictionary *responseDic = request.responseObject;
                     MJExtensionLog(@"dic = %@",responseDic);
+                    if ([responseDic[@"code"] integerValue] == 00) {
+                        [MBProgressHUD showSuccess:responseDic[@"errorMsg"] toView:self.view];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            //跳到登陆页面进行登录
+                            if ([ZSUntils isNeedToUserLogin:^{
+                                [self.navigationController popViewControllerAnimated:YES];
+                            }]) {
+                                return ;
+                            }
+                        });
+                    } else {
+                        [MBProgressHUD showError:responseDic[@"errorMsg"] toView:self.view];
+                    }
                 } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
                 }];

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyAppFooterView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *reLoginButton;
 
 @end

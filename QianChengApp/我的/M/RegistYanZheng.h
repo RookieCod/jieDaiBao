@@ -10,5 +10,5 @@
 
 @interface RegistYanZheng : YTKRequest
 
-- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password;
+- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password type:(NSString *)type;
 @end
