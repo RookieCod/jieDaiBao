@@ -26,4 +26,5 @@
 #import "UIViewController+ButtonBarItem.h"
 #import "IQKeyboardManager.h"
 #import "ZSUntils.h"
+#import "NSString+Addtion.h"
 #endif /* QianChengApp_pch */

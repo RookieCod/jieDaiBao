@@ -50,8 +50,7 @@
 
     if (self.segmentView.selectedSegmentIndex == 0) {
         self.pwdLogin.hidden = NO;
-        self.phoneField = self.pwdLogin.phone;
-        self.pwdField = self.pwdLogin.pwd;
+        self.verifyLogin.hidden = YES;
     }
 
 
@@ -75,7 +74,12 @@
 
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
-        LoginRequest *request = [[LoginRequest alloc] initWithPhoneNum:self.phoneField.text password:self.pwdField.text type:[NSString stringWithFormat:@"%ld",self.segmentView.selectedSegmentIndex + 1]];
+        LoginRequest *request;
+        if (self.segmentView.selectedSegmentIndex == 0) {
+            request = [[LoginRequest alloc] initWithPhoneNum:self.pwdLogin.phone.text password:self.pwdLogin.pwd.text type:@"1"];
+        } else {
+            request = [[LoginRequest alloc] initWithPhoneNum:self.verifyLogin.phone.text password:self.verifyLogin.verify.text type:@"2"];
+        }
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
@@ -142,7 +146,7 @@
 
         RegistYanZheng *request = [[RegistYanZheng alloc] initWithPhoneNum:self.verifyLogin.phone.text
                     password:@""
-                        type:@"1"];
+                        type:@"3"];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];

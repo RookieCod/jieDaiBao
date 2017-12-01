@@ -62,6 +62,12 @@
 		D6AE1F221FCF1D8000D45553 /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F211FCF1D8000D45553 /* LoginRequest.m */; };
 		D6AE1F251FCF1E8300D45553 /* YanZhengLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AE1F241FCF1E8300D45553 /* YanZhengLoginView.m */; };
 		D6AE1F271FCF1E9A00D45553 /* YanZhengLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6AE1F261FCF1E9A00D45553 /* YanZhengLoginView.xib */; };
+		D6B7AC791FD12AA300FCBEAD /* ZSInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B7AC771FD12AA300FCBEAD /* ZSInfoListViewController.m */; };
+		D6B7AC7A1FD12AA300FCBEAD /* ZSInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B7AC781FD12AA300FCBEAD /* ZSInfoListViewController.xib */; };
+		D6B7AC7D1FD12B7000FCBEAD /* InfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B7AC7C1FD12B7000FCBEAD /* InfoList.m */; };
+		D6B7AC811FD12CF300FCBEAD /* InfoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B7AC7F1FD12CF300FCBEAD /* InfoDetailViewController.m */; };
+		D6B7AC821FD12CF300FCBEAD /* InfoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B7AC801FD12CF300FCBEAD /* InfoDetailViewController.xib */; };
+		D6B7AC851FD132C800FCBEAD /* NSString+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B7AC841FD132C800FCBEAD /* NSString+Addtion.m */; };
 		D6C178581FC6A7D700BD1199 /* ZSSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */; };
 		D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */; };
 		D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C1785C1FC6CA5000BD1199 /* DaiKuanListRequest.m */; };
@@ -199,6 +205,16 @@
 		D6AE1F231FCF1E8300D45553 /* YanZhengLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YanZhengLoginView.h; sourceTree = "<group>"; };
 		D6AE1F241FCF1E8300D45553 /* YanZhengLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YanZhengLoginView.m; sourceTree = "<group>"; };
 		D6AE1F261FCF1E9A00D45553 /* YanZhengLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YanZhengLoginView.xib; sourceTree = "<group>"; };
+		D6B7AC761FD12AA300FCBEAD /* ZSInfoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSInfoListViewController.h; sourceTree = "<group>"; };
+		D6B7AC771FD12AA300FCBEAD /* ZSInfoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSInfoListViewController.m; sourceTree = "<group>"; };
+		D6B7AC781FD12AA300FCBEAD /* ZSInfoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSInfoListViewController.xib; sourceTree = "<group>"; };
+		D6B7AC7B1FD12B7000FCBEAD /* InfoList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoList.h; sourceTree = "<group>"; };
+		D6B7AC7C1FD12B7000FCBEAD /* InfoList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoList.m; sourceTree = "<group>"; };
+		D6B7AC7E1FD12CF300FCBEAD /* InfoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoDetailViewController.h; sourceTree = "<group>"; };
+		D6B7AC7F1FD12CF300FCBEAD /* InfoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoDetailViewController.m; sourceTree = "<group>"; };
+		D6B7AC801FD12CF300FCBEAD /* InfoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailViewController.xib; sourceTree = "<group>"; };
+		D6B7AC831FD132C800FCBEAD /* NSString+Addtion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Addtion.h"; sourceTree = "<group>"; };
+		D6B7AC841FD132C800FCBEAD /* NSString+Addtion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addtion.m"; sourceTree = "<group>"; };
 		D6C178561FC6A7D700BD1199 /* ZSSegmentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSSegmentView.h; sourceTree = "<group>"; };
 		D6C178571FC6A7D700BD1199 /* ZSSegmentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSSegmentView.m; sourceTree = "<group>"; };
 		D6C178591FC6A7E900BD1199 /* ZSSegmentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZSSegmentView.xib; sourceTree = "<group>"; };
@@ -435,6 +451,8 @@
 				D637E9111FC6602F00D68410 /* SVProgressHUD.bundle */,
 				D6DA82C11FC840A20058FCC3 /* UIViewController+ButtonBarItem.h */,
 				D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */,
+				D6B7AC831FD132C800FCBEAD /* NSString+Addtion.h */,
+				D6B7AC841FD132C800FCBEAD /* NSString+Addtion.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -462,6 +480,12 @@
 				D6215DC61FBEB8BC0090FE80 /* ZSHomeViewController.h */,
 				D6215DC71FBEB8BC0090FE80 /* ZSHomeViewController.m */,
 				D6215DC81FBEB8BC0090FE80 /* ZSHomeViewController.xib */,
+				D6B7AC761FD12AA300FCBEAD /* ZSInfoListViewController.h */,
+				D6B7AC771FD12AA300FCBEAD /* ZSInfoListViewController.m */,
+				D6B7AC781FD12AA300FCBEAD /* ZSInfoListViewController.xib */,
+				D6B7AC7E1FD12CF300FCBEAD /* InfoDetailViewController.h */,
+				D6B7AC7F1FD12CF300FCBEAD /* InfoDetailViewController.m */,
+				D6B7AC801FD12CF300FCBEAD /* InfoDetailViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -481,6 +505,8 @@
 				D637E8FF1FC582AC00D68410 /* DaiKuanModel.m */,
 				D637E9011FC5847B00D68410 /* HomeCardModel.h */,
 				D637E9021FC5847B00D68410 /* HomeCardModel.m */,
+				D6B7AC7B1FD12B7000FCBEAD /* InfoList.h */,
+				D6B7AC7C1FD12B7000FCBEAD /* InfoList.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -728,6 +754,7 @@
 			files = (
 				D6EF057D1FD054AC00C5C576 /* ResetPwdViewController.xib in Resources */,
 				D6EF05821FD05B2100C5C576 /* ResetViewController.xib in Resources */,
+				D6B7AC821FD12CF300FCBEAD /* InfoDetailViewController.xib in Resources */,
 				D6FF78991FCD09CA00A61D3F /* CardDetailFourCell.xib in Resources */,
 				D6CF52EE1FCDBCA400524EEB /* MyAppFooterView.xib in Resources */,
 				D61600081FCC4ACF008E3FF9 /* DaiDetailInfoCell.xib in Resources */,
@@ -743,6 +770,7 @@
 				D637E90D1FC588DD00D68410 /* HomeCardTableViewCell.xib in Resources */,
 				D6AE1F1F1FCF10A100D45553 /* PasswordLoginView.xib in Resources */,
 				D6C1785A1FC6A7E900BD1199 /* ZSSegmentView.xib in Resources */,
+				D6B7AC7A1FD12AA300FCBEAD /* ZSInfoListViewController.xib in Resources */,
 				D6215DAF1FBE82310090FE80 /* Main.storyboard in Resources */,
 				D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */,
 				D6AE1F271FCF1E9A00D45553 /* YanZhengLoginView.xib in Resources */,
@@ -824,9 +852,11 @@
 				D6C1785D1FC6CA5000BD1199 /* DaiKuanListRequest.m in Sources */,
 				D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */,
 				D61F47651FD0674D006FAD27 /* ForgetResetPwdRequest.m in Sources */,
+				D6B7AC7D1FD12B7000FCBEAD /* InfoList.m in Sources */,
 				D6CF52D81FCDB2BE00524EEB /* MyAppHeaderView.m in Sources */,
 				D6CF52F71FCDC37000524EEB /* RegistCell.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
+				D6B7AC811FD12CF300FCBEAD /* InfoDetailViewController.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */,
 				D6AE1F151FCF050200D45553 /* RegistFooterView.m in Sources */,
@@ -849,6 +879,7 @@
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */,
+				D6B7AC851FD132C800FCBEAD /* NSString+Addtion.m in Sources */,
 				D6215DB51FBE84F50090FE80 /* ZSTabBarItem.m in Sources */,
 				D61600151FCC5CB8008E3FF9 /* DaiDetailModel.m in Sources */,
 				D6AE1F251FCF1E8300D45553 /* YanZhengLoginView.m in Sources */,
@@ -860,6 +891,7 @@
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
 				D6EF05811FD05B2100C5C576 /* ResetViewController.m in Sources */,
 				D6AE1F1A1FCF0A2900D45553 /* RegistRequest.m in Sources */,
+				D6B7AC791FD12AA300FCBEAD /* ZSInfoListViewController.m in Sources */,
 				D637E9161FC6683100D68410 /* ZSDaiKuanListViewController.m in Sources */,
 				D637E8D51FC2822600D68410 /* CycleScrollView.m in Sources */,
 				D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */,
