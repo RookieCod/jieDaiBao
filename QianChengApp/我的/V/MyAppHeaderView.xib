@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QXf-w0-Gyn">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QXf-w0-Gyn">
                     <rect key="frame" x="153.5" y="25" width="68" height="68"/>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -79,4 +79,7 @@
             <point key="canvasLocation" x="33.5" y="-95.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="logo" width="68" height="68"/>
+    </resources>
 </document>

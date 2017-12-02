@@ -21,6 +21,8 @@
 #import "ZSNewsViewController.h"
 #import "ZDDaiKuanDetailViewController.h"
 #import "ZSCardDetailViewController.h"
+#import "ZSInfoListViewController.h"
+#import "WebViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -41,6 +43,8 @@ CycleScrollViewDatasource>
 
 /** tableHeaderView */
 @property (nonatomic, strong) CycleScrollView *tableHeaderView;
+
+/*  */
 @end
 
 @implementation ZSHomeViewController
@@ -153,7 +157,14 @@ CycleScrollViewDatasource>
 #pragma mark CycleScrollViewDelegate
 - (void)cycleView:(CycleScrollView *)cycleView didSelectPageAtIndex:(NSUInteger)index
 {
-    
+    BannerModel *model = self.bannerModelArray[index];
+    self.hidesBottomBarWhenPushed = YES;
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.title = model.bannerName;
+    webVC.webUrl = model.bannerUrl;
+    [self.navigationController pushViewController:webVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+
 }
 - (void)cycleView:(CycleScrollView *)cycleView didShowPageAtIndex:(NSUInteger)index
 {
@@ -276,6 +287,14 @@ CycleScrollViewDatasource>
             self.hidesBottomBarWhenPushed = NO;
         }
             break;
+        case 2:
+        {
+            self.hidesBottomBarWhenPushed = YES;
+            ZSInfoListViewController *infoList = [[ZSInfoListViewController alloc] init];
+            [self.navigationController pushViewController:infoList animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        }
+            break;
         default:
             break;
     }
@@ -350,7 +369,10 @@ CycleScrollViewDatasource>
             [self.navigationController pushViewController:daiKuan animated:YES];
             self.hidesBottomBarWhenPushed = NO;
         } else {
-
+            self.hidesBottomBarWhenPushed = YES;
+            ZSNewsViewController *cardVC = [[ZSNewsViewController alloc] init];
+            [self.navigationController pushViewController:cardVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         }
     }];
     [rightImage addGestureRecognizer:tap];

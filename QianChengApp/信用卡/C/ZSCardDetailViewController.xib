@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZSCardDetailViewController">
             <connections>
                 <outlet property="baseTableView" destination="R5P-MK-su4" id="LsT-F5-WSu"/>
+                <outlet property="bottomView" destination="IHe-PP-ADd" id="sd8-G2-dON"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

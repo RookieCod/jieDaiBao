@@ -10,5 +10,5 @@
 
 @interface ZSCardDetailViewController : UIViewController
 /** cardid */
-@property (nonatomic, strong) NSString *cardid;
+@property (nonatomic, strong) NSNumber *cardid;
 @end

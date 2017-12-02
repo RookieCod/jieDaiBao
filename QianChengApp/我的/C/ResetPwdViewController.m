@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view from its nib.
 
     if (self.pushType == pushTypeForget) {
-        self.navigationItem.title = @"设置新密码";
+        self.navigationItem.title = @"忘记密码";
     } else {
         self.navigationItem.title = @"修改密码";
     }
@@ -61,6 +61,7 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
             if ([dic[@"code"] integerValue] == 00) {
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:@""];
                 //成功
                 [self startTimer];
             }

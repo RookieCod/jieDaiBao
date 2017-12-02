@@ -14,5 +14,5 @@ typedef NS_ENUM(NSUInteger, pushType) {
 };
 @interface ResetPwdViewController : UIViewController
 /*  */
-@property (nonatomic, assign) pushType *pushType;
+@property (nonatomic, assign) pushType pushType;
 @end

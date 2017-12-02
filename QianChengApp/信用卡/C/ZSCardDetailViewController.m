@@ -13,9 +13,11 @@
 #import "DetailTwoCell.h"
 #import "CardDetailThreeCell.h"
 #import "CardDetailFourCell.h"
+#import "WebViewController.h"
 
 @interface ZSCardDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 /** model */
 @property (nonatomic, strong) CardDetailModel *detailModel;
@@ -28,9 +30,10 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"信用卡详情";
     self.navigationItem.leftBarButtonItem = [self backButtonBar];
-
+    self.bottomView.layer.borderColor = [UIColor colorWithHexString:@"b22614"].CGColor;
+    self.bottomView.layer.borderWidth = 1;
     self.baseTableView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0);
-
+    self.baseTableView.separatorStyle =UITableViewCellSeparatorStyleNone;
     [self requestContent];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil] forCellReuseIdentifier:homeCardCellIdentifier];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"DetailTwoCell" bundle:nil]
@@ -128,8 +131,20 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)collectButtonClick:(id)sender {
+    if ([ZSUntils isNeedToUserLogin:nil]) {
+        return;
+    }
 }
 - (IBAction)applyButtonClick:(id)sender {
+    if ([ZSUntils isNeedToUserLogin:nil]) {
+        return;
+    }
+
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.title = self.detailModel.cardBank;
+    webVC.webUrl = self.detailModel.cardUrl;
+    [self.navigationController pushViewController:webVC animated:YES];
+
 }
 
 /*

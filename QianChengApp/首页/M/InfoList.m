@@ -9,5 +9,14 @@
 #import "InfoList.h"
 
 @implementation InfoList
+- (NSString *)requestUrl
+{
+    return @"information/list";
+}
+
+- (YTKRequestMethod)requestMethod
+{
+    return YTKRequestMethodPOST;
+}
 
 @end

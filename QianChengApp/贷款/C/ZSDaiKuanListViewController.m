@@ -139,8 +139,14 @@ ZSSegmentViewDelegate>
 
                 self.conditionView.hidden = NO;
                 [self.segmentView reloadSubview:1];
+
             } else {
                 self.conditionView.hidden = !self.conditionView.hidden;
+                if (self.conditionView.isHidden == YES) {
+                    [self.segmentView.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
+                } else {
+                    [self.segmentView.leftButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+                }
             }
             selectedIndex = 1;
 
@@ -155,6 +161,11 @@ ZSSegmentViewDelegate>
                 self.conditionView.hidden = NO;
             } else {
                 self.conditionView.hidden = !self.conditionView.hidden;
+                if (self.conditionView.isHidden == YES) {
+                    [self.segmentView.rightButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
+                } else {
+                    [self.segmentView.rightButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+                }
             }
             selectedIndex = 2;
 

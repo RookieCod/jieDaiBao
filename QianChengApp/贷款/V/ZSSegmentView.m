@@ -9,8 +9,7 @@
 #import "ZSSegmentView.h"
 
 @interface ZSSegmentView()
-@property (weak, nonatomic) IBOutlet UIButton *leftButton;
-@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+
 
 @end
 @implementation ZSSegmentView
@@ -26,7 +25,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    
+
+    self.leftButton.titleLabel.
     self.layer.borderWidth = 1;
     self.layer.borderColor = [[UIColor colorWithHexString:@"B22614"] CGColor];
     self.layer.cornerRadius = 5;
@@ -41,6 +41,15 @@
     UIButton *button = (UIButton *)sender;
     
     NSInteger index = button.tag - 1000;
+
+    if (index == 1) {
+        [self.leftButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+        [self.rightButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
+    } else {
+        [self.leftButton setImage:[UIImage imageNamed:@"shanghong"] forState:UIControlStateNormal];
+        [self.rightButton setImage:[UIImage imageNamed:@"xiabai"] forState:UIControlStateNormal];
+    }
+
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectedSegmentView:atIndex:)]) {
         [self.delegate selectedSegmentView:self atIndex:index];
     }
@@ -50,9 +59,11 @@
 {
     if (index == 1) {
         self.leftButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+
+
         [self.leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.rightButton.backgroundColor = [UIColor whiteColor];
-        
+
         [self.rightButton setTitleColor:[UIColor colorWithHexString:@"B22614"] forState:UIControlStateNormal];
     } else if (index == 2) {
         self.leftButton.backgroundColor = [UIColor whiteColor];
@@ -66,11 +77,11 @@
 {
     if (index == 1) {
         [self.leftButton setTitle:string forState:UIControlStateNormal];
-
+        [self.leftButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
         [self.rightButton setTitle:@"默认排序" forState:UIControlStateNormal];
     } else {
         [self.rightButton setTitle:string forState:UIControlStateNormal];
-
+        [self.rightButton setImage:[UIImage imageNamed:@"shangbai"] forState:UIControlStateNormal];
         [self.leftButton setTitle:@"可贷额度" forState:UIControlStateNormal ];
     }
 }

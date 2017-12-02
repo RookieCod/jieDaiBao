@@ -9,11 +9,11 @@
 #import "CardDetailRequest.h"
 @interface CardDetailRequest()
 {
-    NSString *_cardId;
+    NSNumber *_cardId;
 }
 @end
 @implementation CardDetailRequest
-- (instancetype)initWithBank:(NSString *)cardId
+- (instancetype)initWithBank:(NSNumber *)cardId
 {
     if (self = [super init]) {
         _cardId = cardId;

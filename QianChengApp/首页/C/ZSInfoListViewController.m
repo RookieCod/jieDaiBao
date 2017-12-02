@@ -10,6 +10,7 @@
 #import "InfoDetailViewController.h"
 #import "HomeCardTableViewCell.h"
 #import "InfoList.h"
+#import "InfoListModel.h"
 
 @interface ZSInfoListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
@@ -29,6 +30,7 @@
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil]
              forCellReuseIdentifier:homeCardCellIdentifier];
+    [self requestContent];
 }
 
 - (void)requestContent
@@ -38,9 +40,14 @@
         NSDictionary *dic = request.responseObject;
         MJExtensionLog(@"dic = %@",dic);
         //模型
-        //self.listArray
-        
-        [self.baseTableView reloadData];
+        if ([dic[@"code"] integerValue] == 00) {
+            self.listArray = [InfoListModel mj_objectArrayWithKeyValuesArray:dic[@"data"][@"informationList"]];
+            [self.baseTableView reloadData];
+
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+        }
+
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -68,9 +75,10 @@
 
 - (HomeCardTableViewCell *)homeCardCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
 {
+    self.hidesBottomBarWhenPushed = YES;
     HomeCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCardCellIdentifier forIndexPath:indexPath];
-    HomeCardModel *cardModel = self.listArray[indexPath.row];
-    cell.cardModel = cardModel;
+    InfoListModel *cardModel = self.listArray[indexPath.row];
+    cell.infoListModel = cardModel;
     return cell;
 }
 
@@ -78,6 +86,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     InfoDetailViewController *infoDetail = [[InfoDetailViewController alloc] init];
+    InfoListModel *model = self.listArray[indexPath.row];
+    infoDetail.infoId = model.informationId;
     
     [self.navigationController pushViewController:infoDetail animated:YES];
 }

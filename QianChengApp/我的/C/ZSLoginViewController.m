@@ -86,7 +86,7 @@
             MJExtensionLog(@"%@",dic);
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             if ([dic[@"code"] integerValue] == 00) {
-                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@"phone"]];
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@"account"]];
                 [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self back:nil];

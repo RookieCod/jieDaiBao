@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomButton.h"
 
 @class ZSSegmentView;
 
@@ -19,6 +20,8 @@
 
 /** delegate */
 @property (nonatomic, assign) id<ZSSegmentViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet CustomButton *leftButton;
+@property (weak, nonatomic) IBOutlet CustomButton *rightButton;
 
 - (void)reloadSubview:(NSInteger)index;
 

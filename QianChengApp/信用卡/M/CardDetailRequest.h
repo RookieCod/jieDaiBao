@@ -10,6 +10,6 @@
 
 @interface CardDetailRequest : YTKRequest
 
-- (instancetype)initWithBank:(NSString *)cardId;
+- (instancetype)initWithBank:(NSNumber *)cardId;
 
 @end

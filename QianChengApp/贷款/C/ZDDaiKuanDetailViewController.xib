@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDDaiKuanDetailViewController">
             <connections>
                 <outlet property="baseTableView" destination="oCs-sB-zgp" id="kgY-3K-Ptu"/>
+                <outlet property="bottomView" destination="ZNQ-wt-Nrf" id="M23-Rp-Xdp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

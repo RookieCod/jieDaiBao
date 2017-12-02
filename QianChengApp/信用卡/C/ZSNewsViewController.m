@@ -54,6 +54,7 @@ UITableViewDataSource>
     selected = 0;
     self.bankName = @"0";
     self.navigationItem.title = @"信用卡";
+    self.navigationItem.leftBarButtonItem = [self backButtonBar];
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.baseTableView.contentInset = UIEdgeInsetsMake(self.filterView.height + 5, 0, 0, 0);
     [self requestContent];
@@ -99,16 +100,16 @@ UITableViewDataSource>
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.filterView.mas_centerX);
         make.top.bottom.equalTo(self.filterView);
-        make.width.mas_equalTo(@(200));
     }];
     [self.filterView addSubview:self.filterImage];
-    
+    [self.filterImage setContentMode: UIViewContentModeScaleAspectFit];
     [self.filterImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleLabel.mas_right).offset(10);
+        make.left.equalTo(self.titleLabel.mas_right).offset(5);
         make.top.equalTo(self.filterView.mas_top).offset(10);
-        make.size.mas_equalTo(CGSizeMake(21, 11));
+        make.size.mas_equalTo(CGSizeMake(11, 11));
     }];
-    
+    [self.filterImage setImage:[UIImage imageNamed:@"shangbai"]];
+
     [self createSelectViewWithCondition:self.filterArray index:0];
 }
 
@@ -131,10 +132,12 @@ UITableViewDataSource>
                 //需要展开
                 [self reloadFilterViewSelected:1];
                 self.conditionView.hidden = NO;
+                [self.filterImage setImage:[UIImage imageNamed:@"xiabai"]];
                 selected = 1;
             } else {
                 [self reloadFilterViewSelected:0];
                 self.conditionView.hidden = YES;
+                [self.filterImage setImage:[UIImage imageNamed:@"shangbai"]];
                 selected = 0;
             }
             
@@ -178,6 +181,7 @@ UITableViewDataSource>
                 self.bankName = bankModel.cardBank;
                 [self selectedChanged:index title:bankModel.cardBank];
             }
+            [self.filterImage setImage:[UIImage imageNamed:@"shangbai"]];
             self.conditionView.hidden = YES;
 
             [self requestContent];
@@ -285,6 +289,9 @@ UITableViewDataSource>
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZSCardDetailViewController *cardDetail = [[ZSCardDetailViewController alloc] init];
+    HomeCardModel *cardModel = self.bankModelArray[indexPath.row];
+    cardDetail.cardid = cardModel.cardId;
+
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:cardDetail animated:YES];
     if (self.pushType == CardListPushTypeFromTab) {

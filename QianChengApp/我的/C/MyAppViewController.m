@@ -14,6 +14,8 @@
 #import "RegistViewController.h"
 #import "ResetPwdViewController.h"
 #import "ReloginRequest.h"
+#import "AboutViewController.h"
+#import "MyCollectViewController.h"
 
 static  NSString * const cellNameArray[] = {
     [0] = @"我的收藏",
@@ -39,7 +41,7 @@ static  NSString * const cellNameArray[] = {
     // Do any additional setup after loading the view from its nib.
 
     self.navigationItem.title = @"我的";
-    self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.baseTableView.tableHeaderView = self.headerView;
     self.baseTableView.tableFooterView = self.footerView;
 
@@ -109,20 +111,42 @@ static  NSString * const cellNameArray[] = {
 {
     MyAppTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myAppTableViewCell forIndexPath:indexPath];
     cell.nameLabel.text = cellNameArray[indexPath.row];
-    return [[UITableViewCell alloc] init];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [[[tap rac_gestureSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+        if (indexPath.row == 0) {
+            //收藏
+            if ([ZSUntils isNeedToUserLogin:nil]) {
+                return ;
+            }
+
+            self.hidesBottomBarWhenPushed = YES;
+            MyCollectViewController *collection = [[MyCollectViewController alloc] init];
+            [self.navigationController pushViewController:collection animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } else if (indexPath.row == 1) {
+            //修改密码
+            if ([ZSUntils isNeedToUserLogin:nil]) {
+                return ;
+            }
+            self.hidesBottomBarWhenPushed = YES;
+            ResetPwdViewController *reset = [[ResetPwdViewController alloc] init];
+            reset.pushType = pushTypeForget;
+            [self.navigationController pushViewController:reset animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } else if (indexPath.row == 2) {
+            self.hidesBottomBarWhenPushed = YES;
+            AboutViewController *aboutVC = [[AboutViewController  alloc] init];
+            [self.navigationController pushViewController:aboutVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } else if (indexPath.row == 3) {
+            
+        }
+    }];
+    [cell addGestureRecognizer:tap];
+    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        //收藏
-    } else if (indexPath.row == 1) {
-        //修改密码
-        ResetPwdViewController *reset = [[ResetPwdViewController alloc] init];
-        
-        [self.navigationController pushViewController:reset animated:YES];
-    }
-}
 - (MyAppHeaderView *)headerView
 {
     if (!_headerView) {
@@ -136,19 +160,33 @@ static  NSString * const cellNameArray[] = {
     if (!_footerView) {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"MyAppFooterView" owner:nil options:nil] lastObject];
         [[_footerView.reLoginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            ReloginRequest *request = [[ReloginRequest alloc] init];
-            [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                NSDictionary *dic = request.responseObject;
-                [MBProgressHUD showMessage:dic[@"errorMsg"] toView:self.view];
-                if ([dic[@"code"] integerValue] == 00) {
-                    [[ZSUntils getApplicationDelegate] clearUserInfo];
 
-                    [self reloadHeaderAndFooter];
-                }
-            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                     message:@"退出登录"
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            //取消:style:UIAlertActionStyleCancel
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:cancelAction];
 
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyle)UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                ReloginRequest *request = [[ReloginRequest alloc] init];
+                [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    NSDictionary *dic = request.responseObject;
+                    [MBProgressHUD showMessage:dic[@"errorMsg"] toView:self.view];
+                    if ([dic[@"code"] integerValue] == 00) {
+                        [[ZSUntils getApplicationDelegate] clearUserInfo];
+
+                        [self reloadHeaderAndFooter];
+                    }
+                } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+                }];
             }];
+            [alertController addAction:okAction];
+
+            [self presentViewController:alertController animated:YES completion:nil];
         }];
+
     }
     return _footerView;
 

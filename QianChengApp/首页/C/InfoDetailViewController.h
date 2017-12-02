@@ -11,5 +11,5 @@
 @interface InfoDetailViewController : UIViewController
 
 /** <#description#> */
-@property (nonatomic, strong) NSString *infoDetail;
+@property (nonatomic, strong) NSNumber *infoId;
 @end

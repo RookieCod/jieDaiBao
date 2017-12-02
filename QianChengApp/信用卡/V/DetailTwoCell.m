@@ -29,7 +29,7 @@
     self.biZhongLabel.text = cardDetailModel.cardType;
     self.bankLabel.text = cardDetailModel.cardAgency;
     self.qiXianLabel.text = cardDetailModel.cardFree;
-    //self.guiZeLabel.text = cardDetailModel.
+    self.guiZeLabel.text = cardDetailModel.cardIntegral;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

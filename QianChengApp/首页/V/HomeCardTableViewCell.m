@@ -35,6 +35,13 @@
     self.bankDesc.text = detailModel.cardEssay;
 }
 
+- (void)setInfoListModel:(InfoListModel *)infoListModel
+{
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:infoListModel.informationPic] placeholderImage:nil];
+    self.bankName.text = infoListModel.informationName;
+    self.bankDesc.text = infoListModel.informationEssay;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

@@ -13,12 +13,14 @@
 #import "DaiDetailJiSuanCell.h"
 #import "DaiDetailConditionCell.h"
 #import "DaiDetailModel.h"
+#import "WebViewController.h"
 
 @interface ZDDaiKuanDetailViewController ()
 <UITableViewDelegate,
 UITableViewDataSource,
 UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 /* 网络请求 */
 @property (nonatomic, strong) DaiKuanDetailRequest *netRequest;
@@ -42,7 +44,9 @@ UITextFieldDelegate>
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"贷款详情";
-    
+
+    self.bottomView.layer.borderWidth = 1;
+    self.bottomView.layer.borderColor = [UIColor colorWithHexString:@"b22614"].CGColor;
 
     self.navigationItem.leftBarButtonItem = [self backButtonBar];
 
@@ -250,10 +254,17 @@ UITextFieldDelegate>
 
 - (IBAction)applyButtonClick:(id)sender {
     if ([ZSUntils isNeedToUserLogin:^{
-        NSLog(@"abcd");
+        
     }]) {
         return;
     }
+
+    self.hidesBottomBarWhenPushed = YES;
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.title = self.detailModel.loanName;
+    webVC.webUrl = self.detailModel.loanUrl;
+    [self.navigationController pushViewController:webVC animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
