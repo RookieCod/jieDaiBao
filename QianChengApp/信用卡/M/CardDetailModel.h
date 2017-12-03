@@ -59,4 +59,13 @@
 
 /** <#description#> */
 @property (nonatomic, strong) NSNumber *cardId;
+
+/*  */
+@property (nonatomic, strong) NSNumber *cardCollection;
+
+/*  */
+@property (nonatomic, strong) NSString *cardCost;
+/*  */
+@property (nonatomic, strong) NSString *cardDrawing;
+
 @end

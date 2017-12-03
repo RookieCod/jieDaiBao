@@ -10,7 +10,7 @@
 
 @interface DaiKuanDetailRequest ()
 {
-    NSString *_loanId;
+    NSNumber *_loanId;
 }
 @end
 @implementation DaiKuanDetailRequest
@@ -36,6 +36,8 @@
 - (id)requestArgument
 {
     return @{
+             @"sessionid" : [ZSUntils getApplicationDelegate].userSession,
+
              @"loanid":_loanId,
              };
 }

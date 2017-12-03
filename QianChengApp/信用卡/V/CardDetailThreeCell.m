@@ -23,8 +23,8 @@
 }
 - (void)setCardDetailModel:(CardDetailModel *)cardDetailModel
 {
-//    self.nianFeiLabel.text = cardDetailModel.car
-//    self.biLiLabel.text = cardDetailModel.
+    self.nianFeiLabel.text = cardDetailModel.cardCost;
+    self.biLiLabel.text = cardDetailModel.cardDrawing;
     self.threeLabel.text = cardDetailModel.cardEnchashment;
     self.huanKuanLabel.text = cardDetailModel.cardRepayment;
 }

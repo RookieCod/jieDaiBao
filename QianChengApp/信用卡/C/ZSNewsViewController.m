@@ -54,12 +54,19 @@ UITableViewDataSource>
     selected = 0;
     self.bankName = @"0";
     self.navigationItem.title = @"信用卡";
-    self.navigationItem.leftBarButtonItem = [self backButtonBar];
+    if (self.pushType == CardListPushTypeFromHome) {
+        self.navigationItem.leftBarButtonItem = [self backButtonBar];
+    } else {
+        self.navigationItem.leftBarButtonItem = nil;
+
+    }
+
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.baseTableView.contentInset = UIEdgeInsetsMake(self.filterView.height + 5, 0, 0, 0);
-    [self requestContent];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil]
              forCellReuseIdentifier:homeCardCellIdentifier];
+    [self requestContent];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -18,13 +18,15 @@
 		D60BC5E51FD19D44001A6913 /* MyCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5E31FD19D44001A6913 /* MyCollectViewController.m */; };
 		D60BC5E61FD19D44001A6913 /* MyCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60BC5E41FD19D44001A6913 /* MyCollectViewController.xib */; };
 		D60BC5E91FD2B4FF001A6913 /* CollectDaiKuanView.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5E81FD2B4FF001A6913 /* CollectDaiKuanView.m */; };
-		D60BC5EB1FD2B510001A6913 /* CollectDaiKuanListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60BC5EA1FD2B510001A6913 /* CollectDaiKuanListView.xib */; };
+		D60BC5EB1FD2B510001A6913 /* CollectDaiKuanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60BC5EA1FD2B510001A6913 /* CollectDaiKuanView.xib */; };
 		D60BC5EE1FD2B55D001A6913 /* CollectCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5ED1FD2B55D001A6913 /* CollectCardView.m */; };
 		D60BC5F01FD2B56B001A6913 /* CollectCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60BC5EF1FD2B56B001A6913 /* CollectCardView.xib */; };
 		D60BC5F31FD2BCE4001A6913 /* CollectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5F21FD2BCE4001A6913 /* CollectRequest.m */; };
 		D60BC5F71FD2C0AD001A6913 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5F51FD2C0AD001A6913 /* WebViewController.m */; };
 		D60BC5F81FD2C0AD001A6913 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60BC5F61FD2C0AD001A6913 /* WebViewController.xib */; };
 		D60BC5FB1FD2CAD3001A6913 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5FA1FD2CAD3001A6913 /* CustomButton.m */; };
+		D60BC5FE1FD3DDF9001A6913 /* LoanCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */; };
+		D60BC6011FD3DE39001A6913 /* CardCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6001FD3DE39001A6913 /* CardCollectList.m */; };
 		D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */; };
 		D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */; };
 		D61600071FCC4ACF008E3FF9 /* DaiDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */; };
@@ -146,7 +148,7 @@
 		D60BC5E41FD19D44001A6913 /* MyCollectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectViewController.xib; sourceTree = "<group>"; };
 		D60BC5E71FD2B4FF001A6913 /* CollectDaiKuanView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectDaiKuanView.h; sourceTree = "<group>"; };
 		D60BC5E81FD2B4FF001A6913 /* CollectDaiKuanView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectDaiKuanView.m; sourceTree = "<group>"; };
-		D60BC5EA1FD2B510001A6913 /* CollectDaiKuanListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectDaiKuanListView.xib; sourceTree = "<group>"; };
+		D60BC5EA1FD2B510001A6913 /* CollectDaiKuanView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectDaiKuanView.xib; sourceTree = "<group>"; };
 		D60BC5EC1FD2B55D001A6913 /* CollectCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectCardView.h; sourceTree = "<group>"; };
 		D60BC5ED1FD2B55D001A6913 /* CollectCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectCardView.m; sourceTree = "<group>"; };
 		D60BC5EF1FD2B56B001A6913 /* CollectCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectCardView.xib; sourceTree = "<group>"; };
@@ -157,6 +159,10 @@
 		D60BC5F61FD2C0AD001A6913 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		D60BC5F91FD2CAD3001A6913 /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		D60BC5FA1FD2CAD3001A6913 /* CustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		D60BC5FC1FD3DDF9001A6913 /* LoanCollectList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoanCollectList.h; sourceTree = "<group>"; };
+		D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanCollectList.m; sourceTree = "<group>"; };
+		D60BC5FF1FD3DE39001A6913 /* CardCollectList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardCollectList.h; sourceTree = "<group>"; };
+		D60BC6001FD3DE39001A6913 /* CardCollectList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardCollectList.m; sourceTree = "<group>"; };
 		D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailProductCell.m; sourceTree = "<group>"; };
 		D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailProductCell.xib; sourceTree = "<group>"; };
 		D61600041FCC4ACF008E3FF9 /* DaiDetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailInfoCell.h; sourceTree = "<group>"; };
@@ -715,6 +721,10 @@
 				D61F47671FD06B2B006FAD27 /* ReloginRequest.m */,
 				D60BC5F11FD2BCE4001A6913 /* CollectRequest.h */,
 				D60BC5F21FD2BCE4001A6913 /* CollectRequest.m */,
+				D60BC5FC1FD3DDF9001A6913 /* LoanCollectList.h */,
+				D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */,
+				D60BC5FF1FD3DE39001A6913 /* CardCollectList.h */,
+				D60BC6001FD3DE39001A6913 /* CardCollectList.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -748,7 +758,7 @@
 				D60BC5D71FD19821001A6913 /* MyAppTableViewCell.xib */,
 				D60BC5E71FD2B4FF001A6913 /* CollectDaiKuanView.h */,
 				D60BC5E81FD2B4FF001A6913 /* CollectDaiKuanView.m */,
-				D60BC5EA1FD2B510001A6913 /* CollectDaiKuanListView.xib */,
+				D60BC5EA1FD2B510001A6913 /* CollectDaiKuanView.xib */,
 				D60BC5EC1FD2B55D001A6913 /* CollectCardView.h */,
 				D60BC5ED1FD2B55D001A6913 /* CollectCardView.m */,
 				D60BC5EF1FD2B56B001A6913 /* CollectCardView.xib */,
@@ -856,7 +866,7 @@
 				D60BC5D91FD19821001A6913 /* MyAppTableViewCell.xib in Resources */,
 				D6215DCA1FBEB8BC0090FE80 /* ZSHomeViewController.xib in Resources */,
 				D6FF788F1FCD09A800A61D3F /* DetailTwoCell.xib in Resources */,
-				D60BC5EB1FD2B510001A6913 /* CollectDaiKuanListView.xib in Resources */,
+				D60BC5EB1FD2B510001A6913 /* CollectDaiKuanView.xib in Resources */,
 				D6215DBD1FBE86B30090FE80 /* ZSTabBarViewController.xib in Resources */,
 				D6CF52DA1FCDB2CF00524EEB /* MyAppHeaderView.xib in Resources */,
 			);
@@ -930,6 +940,7 @@
 				D6B7AC811FD12CF300FCBEAD /* InfoDetailViewController.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */,
+				D60BC6011FD3DE39001A6913 /* CardCollectList.m in Sources */,
 				D6AE1F151FCF050200D45553 /* RegistFooterView.m in Sources */,
 				D6FF78931FCD09B900A61D3F /* CardDetailThreeCell.m in Sources */,
 				D6C178651FC6F16900BD1199 /* LoanMoneyModel.m in Sources */,
@@ -949,6 +960,7 @@
 				D6CF52DE1FCDB6B900524EEB /* MyAppViewController.m in Sources */,
 				D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */,
 				D637E8FD1FC577AC00D68410 /* HotXinYongRequest.m in Sources */,
+				D60BC5FE1FD3DDF9001A6913 /* LoanCollectList.m in Sources */,
 				D6CF52C31FCD9E4000524EEB /* ZSUntils.m in Sources */,
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
 				D60BC5E91FD2B4FF001A6913 /* CollectDaiKuanView.m in Sources */,

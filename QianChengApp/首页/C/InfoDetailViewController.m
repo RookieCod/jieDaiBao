@@ -49,7 +49,7 @@
     [self.baseScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(64);
         make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(@(MAINHEIGHT));
+        make.height.mas_equalTo(@(MAINHEIGHT - 50));
     }];
 
     //标题
@@ -96,7 +96,17 @@
         make.right.equalTo(self.view.mas_right).offset(-32);
     }];
 
-
+    //底部收藏按钮
+    UIButton *collectButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    collectButton.backgroundColor = [UIColor colorWithHexString:@"B22614"];
+    collectButton.tintColor = [UIColor colorWithHexString:@"b22614"];
+    [collectButton setImage:[UIImage imageNamed:@"collect_icon"] forState:UIControlStateNormal];
+    [self.view addSubview:collectButton];
+    [collectButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.baseScrollView.mas_bottom);
+        make.left.right.equalTo(self.view);
+        make.height.mas_equalTo(@(50));
+    }];
 
 }
 

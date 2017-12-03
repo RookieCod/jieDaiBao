@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="baseTableView" destination="oCs-sB-zgp" id="kgY-3K-Ptu"/>
                 <outlet property="bottomView" destination="ZNQ-wt-Nrf" id="M23-Rp-Xdp"/>
+                <outlet property="collectButton" destination="FQq-py-222" id="IIY-S6-OcZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +29,7 @@
                         <outlet property="delegate" destination="-1" id="HL5-OP-Fw2"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-wt-Nrf">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNQ-wt-Nrf">
                     <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-py-222">

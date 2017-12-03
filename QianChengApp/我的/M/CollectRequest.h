@@ -8,7 +8,12 @@
 
 #import <YTKNetwork/YTKNetwork.h>
 
+typedef NS_ENUM(NSUInteger, collectType) {
+    collectTypeDaiKuan,
+    collectTypeCard,
+};
+
 @interface CollectRequest : YTKRequest
-- (instancetype)initWithCollectType:(NSNumber *)type;
+- (instancetype)initWithProductId:(NSNumber *)productId CollectType:(NSNumber *)type cardType:(collectType)collectType;
 
 @end

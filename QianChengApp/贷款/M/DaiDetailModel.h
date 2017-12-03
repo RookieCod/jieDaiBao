@@ -44,4 +44,6 @@
 
 /* <##> */
 @property (nonatomic, strong) NSString *loanRemark;
+/*  */
+@property (nonatomic, strong) NSNumber *loanCollection;
 @end

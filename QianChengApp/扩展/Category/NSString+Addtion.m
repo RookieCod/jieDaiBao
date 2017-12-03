@@ -49,4 +49,11 @@
     return stringSize;
 }
 
++ (NSInteger)getNumberFromText:(NSString *)text
+{
+    NSCharacterSet* nonDigits =[[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSInteger remainSecond =[[text stringByTrimmingCharactersInSet:nonDigits] integerValue];
+    return remainSecond;
+}
+
 @end

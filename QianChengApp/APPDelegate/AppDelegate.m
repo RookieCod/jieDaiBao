@@ -13,6 +13,9 @@
 #import "ZSTabBarViewController.h"
 #import "ZSDaiKuanListViewController.h"
 
+#define productIP @"http://106.75.84.49:8080/"
+#define testIP @"http://192.168.1.126"
+
 @interface AppDelegate ()<MyTabBarDelegate>
 
 @property (nonatomic, retain) ZSTabBarViewController * tabBarVC;
@@ -21,14 +24,13 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
-    networkConfig.baseUrl = @"http://106.75.84.49:8080/";
+    networkConfig.baseUrl = testIP;
     
     networkConfig.debugLogEnabled = YES;
 

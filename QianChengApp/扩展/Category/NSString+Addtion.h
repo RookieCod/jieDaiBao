@@ -13,4 +13,6 @@
 + (CGSize)getStringSize:(NSString *)string withFont:(UIFont *)font withWidth:(int)width;
 
 + (CGSize)getStringSize:(NSString *)string withFont:(UIFont *)font withHeight:(NSUInteger)height;
+
++ (NSInteger)getNumberFromText:(NSString *)text;
 @end

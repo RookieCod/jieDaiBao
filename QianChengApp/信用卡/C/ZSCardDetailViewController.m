@@ -14,6 +14,7 @@
 #import "CardDetailThreeCell.h"
 #import "CardDetailFourCell.h"
 #import "WebViewController.h"
+#import "CollectRequest.h"
 
 @interface ZSCardDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
@@ -21,6 +22,9 @@
 
 /** model */
 @property (nonatomic, strong) CardDetailModel *detailModel;
+@property (weak, nonatomic) IBOutlet UIButton *collectButton;
+
+/*  */
 @end
 
 @implementation ZSCardDetailViewController
@@ -54,14 +58,28 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSDictionary *responseDic = request.responseObject;
         if ([responseDic[@"code"] integerValue] == 00) {
+            self.bottomView.hidden = NO;
             NSDictionary *detailDic = responseDic[@"data"][@"cardDtail"];
             self.detailModel = [CardDetailModel mj_objectWithKeyValues:detailDic];
             [self.baseTableView reloadData];
+            [self reloadBottomViewWithCollected:[self.detailModel.cardCollection boolValue]];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
+
+- (void)reloadBottomViewWithCollected:(BOOL)collected
+{
+    UIImage *image;
+    if (collected) {
+        image = [UIImage imageNamed:@"collect_icon"];
+    } else {
+        image = [UIImage imageNamed:@"collected_icon"];
+    }
+    [self.collectButton setImage:image forState:UIControlStateNormal];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -134,12 +152,31 @@
     if ([ZSUntils isNeedToUserLogin:nil]) {
         return;
     }
+
+    CollectRequest *request = [[CollectRequest alloc] initWithProductId:self.detailModel.cardId CollectType:@(![self.detailModel.cardCollection boolValue]) cardType:collectTypeCard];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        NSDictionary *dic = request.responseObject;
+        MJExtensionLog(@"%@",dic);
+        if ([dic[@"code"] integerValue] == 00) {
+            [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
+            //成功
+            self.detailModel.cardCollection = @(![self.detailModel.cardCollection boolValue]);
+            [self reloadBottomViewWithCollected:[self.detailModel.cardCollection boolValue]];
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+    }];
 }
 - (IBAction)applyButtonClick:(id)sender {
     if ([ZSUntils isNeedToUserLogin:nil]) {
         return;
     }
-
+    self.hidesBottomBarWhenPushed = YES;
     WebViewController *webVC = [[WebViewController alloc] init];
     webVC.title = self.detailModel.cardBank;
     webVC.webUrl = self.detailModel.cardUrl;

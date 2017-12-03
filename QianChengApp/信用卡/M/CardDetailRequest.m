@@ -35,6 +35,7 @@
 - (id)requestArgument
 {
     return @{
+             @"sessionid" : [ZSUntils getApplicationDelegate].userSession,
              @"cardid":_cardId,
              };
 }

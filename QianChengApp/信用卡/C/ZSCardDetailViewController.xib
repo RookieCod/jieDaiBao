@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="baseTableView" destination="R5P-MK-su4" id="LsT-F5-WSu"/>
                 <outlet property="bottomView" destination="IHe-PP-ADd" id="sd8-G2-dON"/>
+                <outlet property="collectButton" destination="Qxb-TD-X9q" id="JMX-Ai-cCu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +29,7 @@
                         <outlet property="delegate" destination="-1" id="Jsc-s1-gsD"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-PP-ADd">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHe-PP-ADd">
                     <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-TD-X9q">

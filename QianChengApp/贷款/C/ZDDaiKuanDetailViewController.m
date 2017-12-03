@@ -14,6 +14,7 @@
 #import "DaiDetailConditionCell.h"
 #import "DaiDetailModel.h"
 #import "WebViewController.h"
+#import "CollectRequest.h"
 
 @interface ZDDaiKuanDetailViewController ()
 <UITableViewDelegate,
@@ -36,6 +37,9 @@ UITextFieldDelegate>
 
 @property (nonatomic, strong) NSString *totalMoney;
 @property (nonatomic, strong) NSString *totalLixi;
+@property (weak, nonatomic) IBOutlet UIButton *collectButton;
+@property (nonatomic, strong) NSString *dayTime;
+
 @end
 
 @implementation ZDDaiKuanDetailViewController
@@ -84,15 +88,31 @@ UITextFieldDelegate>
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSDictionary *responseDic = request.responseObject;
         if ([responseDic[@"code"] integerValue] == 00) {
+            self.bottomView.hidden = NO;
             NSDictionary *dic = responseDic[@"data"][@"loanDtail"];
             self.detailModel = [DaiDetailModel mj_objectWithKeyValues:dic];
             self.loanTermArray = [self.detailModel.loanTerm componentsSeparatedByString:@"-"];
             [self.baseTableView reloadData];
+            [self reloadBottomViewWithCollected:[self.detailModel.loanCollection boolValue]];
             MJExtensionLog(@"%@",self.detailModel);
+        } else {
+            [MBProgressHUD showError:responseDic[@"errorMsg"] toView:self.view];
         }
+
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
     }];
+}
+
+- (void)reloadBottomViewWithCollected:(BOOL)collected
+{
+    UIImage *image;
+    if (collected) {
+        image = [UIImage imageNamed:@"collect_icon"];
+    } else {
+        image = [UIImage imageNamed:@"collected_icon"];
+    }
+    [self.collectButton setImage:image forState:UIControlStateNormal];
 }
 
 - (DaiKuanDetailRequest *)netRequest
@@ -171,20 +191,22 @@ UITextFieldDelegate>
     DaiDetailJiSuanCell *cell = [tableView dequeueReusableCellWithIdentifier:detailJiSuanCell forIndexPath:indexPath];
     cell.JinField.delegate = self;
     self.moneyField = cell.JinField;
+    cell.qiXianLabel.text = self.loanTermArray[0];
     [cell reloadMoneyWithTotal:self.totalMoney liXi:self.totalLixi];
     [[[cell.JinField rac_textSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(NSString *x) {
         MJExtensionLog(@"%@",x);
         if ([x integerValue] > [self.detailModel.loanMoneyMax integerValue]) {
             self.moneyField.text = [NSString stringWithFormat:@"%@",self.detailModel.loanMoneyMax];
             [MBProgressHUD showError:@"超出了最大贷款金额"];
-            return ;
         }
-        self.totalLixi = [NSString stringWithFormat:@"%.2f",[x floatValue] * [self.detailModel.loanRate floatValue]];
+        self.totalLixi = [NSString stringWithFormat:@"%.2f",[self.moneyField.text floatValue] * ([self.detailModel.loanRate floatValue]/100) * [NSString getNumberFromText:cell.qiXianLabel.text]];
         self.totalMoney = [NSString stringWithFormat:@"%.2f",[self.moneyField.text floatValue] + [self.totalLixi floatValue]];
         [cell reloadMoneyWithTotal:self.totalMoney liXi:self.totalLixi];
     }];
 
     [cell.tapSubject subscribeNext:^(id x) {
+        [cell.JinField resignFirstResponder];
+
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"选择贷款期限"
                                                                                  message:nil
                                                                           preferredStyle:UIAlertControllerStyleActionSheet];
@@ -202,6 +224,8 @@ UITextFieldDelegate>
                 } else {
                     cell.qiXianLabel.text = self.loanTermArray[1];
                 }
+                self.totalLixi = [NSString stringWithFormat:@"%.2f",[cell.JinField.text floatValue] * [self.detailModel.loanRate floatValue]/100 * [NSString getNumberFromText:cell.qiXianLabel.text]];
+                self.totalMoney = [NSString stringWithFormat:@"%.2f",[self.moneyField.text floatValue] + [self.totalLixi floatValue]];
                 [cell reloadMoneyWithTotal:self.totalMoney liXi:self.totalLixi];
             }];
             [alertController addAction:OKAction];
@@ -245,11 +269,30 @@ UITextFieldDelegate>
 }
 
 - (IBAction)collectButtonClick:(id)sender {
-    if ([ZSUntils isNeedToUserLogin:^{
-
-    }]) {
+    if ([ZSUntils isNeedToUserLogin:nil]) {
         return;
     }
+
+    CollectRequest *request = [[CollectRequest alloc] initWithProductId:self.detailModel.loanId CollectType:@(![self.detailModel.loanCollection boolValue]) cardType:collectTypeDaiKuan];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dic = request.responseObject;
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MJExtensionLog(@"%@",dic);
+        if ([dic[@"code"] integerValue] == 00) {
+            [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
+            //成功
+            self.detailModel.loanCollection = @(![self.detailModel.loanCollection boolValue]);
+            [self reloadBottomViewWithCollected:[self.detailModel.loanCollection boolValue]];
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+        }
+
+
+
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+    }];
 }
 
 - (IBAction)applyButtonClick:(id)sender {

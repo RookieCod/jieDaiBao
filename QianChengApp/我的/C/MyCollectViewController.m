@@ -12,6 +12,12 @@
 #import "DaiKuanTableViewCell.h"
 #import "HomeCardTableViewCell.h"
 #import "CollectRequest.h"
+#import "LoanCollectList.h"
+#import "CardCollectList.h"
+#import "DaiKuanModel.h"
+#import "HomeCardModel.h"
+#import "ZDDaiKuanDetailViewController.h"
+#import "ZSCardDetailViewController.h"
 
 @interface MyCollectViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentView;
@@ -40,8 +46,6 @@
     [self initView];
     self.daiKuanView.hidden = NO;
     self.cardView.hidden = YES;
-    [self requestContentDaiKuan];
-    [self.daiKuanView.daiKuanTable reloadData];
 
     [self.daiKuanView.daiKuanTable registerNib:[UINib nibWithNibName:@"DaiKuanTableViewCell" bundle:nil]
                         forCellReuseIdentifier:daiKuanCellIdentifier];
@@ -53,34 +57,64 @@
             self.cardView.hidden = YES;
 
             [self requestContentDaiKuan];
-            [self.daiKuanView.daiKuanTable reloadData];
         } else {
             self.daiKuanView.hidden = YES;
             self.cardView.hidden = NO;
 
             [self requestContentCard];
-            [self.cardView.cardTable reloadData];
         }
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.segmentView.selectedSegmentIndex == 0) {
+        [self requestContentDaiKuan];
+    } else {
+        [self requestContentCard];
+    }
+}
+
 - (void)requestContentDaiKuan
 {
-    CollectRequest *request = [[CollectRequest alloc] initWithCollectType:@(1)];
+    LoanCollectList *request = [[LoanCollectList alloc] init];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dic = request.responseObject;
+        MJExtensionLog(@"%@",dic);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if ([dic[@"code"] integerValue] == 00) {
+            self.daiKuanArray = [DaiKuanModel mj_objectArrayWithKeyValuesArray:dic[@"data"][@"loanList"]];
+            [self.daiKuanView.daiKuanTable reloadData];
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+        }
 
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        MJExtensionLog(@"%@",request);
 
     }];
 }
 
 - (void)requestContentCard
 {
-    CollectRequest *request = [[CollectRequest alloc] initWithCollectType:@(2)];
+    CardCollectList *request = [[CardCollectList alloc] init];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dic = request.responseObject;
+        MJExtensionLog(@"%@",dic);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if ([dic[@"code"] integerValue] == 00) {
+            self.cardArray = [HomeCardModel mj_objectArrayWithKeyValuesArray:dic[@"data"][@"cardList"]];
+            [self.cardView.cardTable reloadData];
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+
+        }
 
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-
+        MJExtensionLog(@"%@",request);
     }];
 }
 
@@ -126,22 +160,41 @@
 {
     if (tableView == self.daiKuanView.daiKuanTable) {
         return [self daiKuanCellWithTableView:tableView  atIndexPath:indexPath];
-    } else {
+    } else if (tableView == self.cardView.cardTable){
         return [self homeCardCellWithTableView:tableView atIndexPath:indexPath];
     }
+    return nil;
 }
 
 - (DaiKuanTableViewCell *)daiKuanCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
 {
     DaiKuanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:daiKuanCellIdentifier forIndexPath:indexPath];
+    cell.daiKuanModel = self.daiKuanArray[indexPath.row];
     return cell;
 }
 
 - (HomeCardTableViewCell *)homeCardCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
 {
     HomeCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCardCellIdentifier forIndexPath:indexPath];
-
+    cell.cardModel = self.cardArray[indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.daiKuanView.daiKuanTable) {
+        self.hidesBottomBarWhenPushed = YES;
+        ZDDaiKuanDetailViewController *daiKuanDetail = [[ZDDaiKuanDetailViewController alloc] init];
+        DaiKuanModel *model = [self.daiKuanArray objectAtIndex:indexPath.row];
+        daiKuanDetail.loanId = [NSString stringWithFormat:@"%@",model.loanId];
+        [self.navigationController pushViewController:daiKuanDetail animated:YES];
+    } else {
+        self.hidesBottomBarWhenPushed = YES;
+        ZSCardDetailViewController *cardDetail =[[ZSCardDetailViewController alloc] init];
+        HomeCardModel *model = self.cardArray[indexPath.row];
+        cardDetail.cardid = model.cardId;
+        [self.navigationController pushViewController:cardDetail animated:YES];
+    }
 }
 
 - (CollectDaiKuanView *)daiKuanView
