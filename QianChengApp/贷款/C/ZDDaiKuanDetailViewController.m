@@ -15,6 +15,7 @@
 #import "DaiDetailModel.h"
 #import "WebViewController.h"
 #import "CollectRequest.h"
+#import "TongjiRequest.h"
 
 @interface ZDDaiKuanDetailViewController ()
 <UITableViewDelegate,
@@ -85,9 +86,12 @@ UITextFieldDelegate>
 - (void)requestContent
 {
     DaiKuanDetailRequest *request = [[DaiKuanDetailRequest alloc] initWithLoanId:self.loanId];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSDictionary *responseDic = request.responseObject;
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         if ([responseDic[@"code"] integerValue] == 00) {
+            self.baseTableView.hidden = NO;
             self.bottomView.hidden = NO;
             NSDictionary *dic = responseDic[@"data"][@"loanDtail"];
             self.detailModel = [DaiDetailModel mj_objectWithKeyValues:dic];
@@ -100,7 +104,7 @@ UITextFieldDelegate>
         }
 
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -302,6 +306,9 @@ UITextFieldDelegate>
         return;
     }
 
+    TongjiRequest *request = [[TongjiRequest alloc] initWithLoanId:self.detailModel.loanId cardId:@(0)];
+    [request startWithCompletionBlockWithSuccess:nil failure:nil];
+    
     self.hidesBottomBarWhenPushed = YES;
     WebViewController *webVC = [[WebViewController alloc] init];
     webVC.title = self.detailModel.loanName;

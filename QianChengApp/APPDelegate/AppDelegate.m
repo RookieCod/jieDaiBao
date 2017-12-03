@@ -30,7 +30,7 @@
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
-    networkConfig.baseUrl = testIP;
+    networkConfig.baseUrl = productIP;
     
     networkConfig.debugLogEnabled = YES;
 

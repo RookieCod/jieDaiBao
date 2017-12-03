@@ -27,6 +27,7 @@
 		D60BC5FB1FD2CAD3001A6913 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5FA1FD2CAD3001A6913 /* CustomButton.m */; };
 		D60BC5FE1FD3DDF9001A6913 /* LoanCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */; };
 		D60BC6011FD3DE39001A6913 /* CardCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6001FD3DE39001A6913 /* CardCollectList.m */; };
+		D60BC6041FD40A67001A6913 /* TongjiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6031FD40A67001A6913 /* TongjiRequest.m */; };
 		D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */; };
 		D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */; };
 		D61600071FCC4ACF008E3FF9 /* DaiDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */; };
@@ -163,6 +164,8 @@
 		D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoanCollectList.m; sourceTree = "<group>"; };
 		D60BC5FF1FD3DE39001A6913 /* CardCollectList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardCollectList.h; sourceTree = "<group>"; };
 		D60BC6001FD3DE39001A6913 /* CardCollectList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardCollectList.m; sourceTree = "<group>"; };
+		D60BC6021FD40A67001A6913 /* TongjiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TongjiRequest.h; sourceTree = "<group>"; };
+		D60BC6031FD40A67001A6913 /* TongjiRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TongjiRequest.m; sourceTree = "<group>"; };
 		D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailProductCell.m; sourceTree = "<group>"; };
 		D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailProductCell.xib; sourceTree = "<group>"; };
 		D61600041FCC4ACF008E3FF9 /* DaiDetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailInfoCell.h; sourceTree = "<group>"; };
@@ -674,6 +677,8 @@
 				D62CCDE91FCBA4BF00EDD2D1 /* CardBankModel.m */,
 				D6FF78881FCD057A00A61D3F /* CardDetailModel.h */,
 				D6FF78891FCD057A00A61D3F /* CardDetailModel.m */,
+				D60BC6021FD40A67001A6913 /* TongjiRequest.h */,
+				D60BC6031FD40A67001A6913 /* TongjiRequest.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				D60BC5CE1FD187F9001A6913 /* InfoListModel.m in Sources */,
 				D6DA82C31FC840A20058FCC3 /* UIViewController+ButtonBarItem.m in Sources */,
 				D61F47651FD0674D006FAD27 /* ForgetResetPwdRequest.m in Sources */,
+				D60BC6041FD40A67001A6913 /* TongjiRequest.m in Sources */,
 				D6B7AC7D1FD12B7000FCBEAD /* InfoList.m in Sources */,
 				D6CF52D81FCDB2BE00524EEB /* MyAppHeaderView.m in Sources */,
 				D6CF52F71FCDC37000524EEB /* RegistCell.m in Sources */,

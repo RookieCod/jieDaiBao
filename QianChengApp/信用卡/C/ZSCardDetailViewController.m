@@ -15,6 +15,7 @@
 #import "CardDetailFourCell.h"
 #import "WebViewController.h"
 #import "CollectRequest.h"
+#import "TongjiRequest.h"
 
 @interface ZSCardDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
@@ -58,6 +59,7 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSDictionary *responseDic = request.responseObject;
         if ([responseDic[@"code"] integerValue] == 00) {
+            self.baseTableView.hidden = NO;
             self.bottomView.hidden = NO;
             NSDictionary *detailDic = responseDic[@"data"][@"cardDtail"];
             self.detailModel = [CardDetailModel mj_objectWithKeyValues:detailDic];
@@ -176,6 +178,10 @@
     if ([ZSUntils isNeedToUserLogin:nil]) {
         return;
     }
+
+    TongjiRequest *request = [[TongjiRequest alloc] initWithLoanId:@(0) cardId:self.detailModel.cardId];
+    [request startWithCompletionBlockWithSuccess:nil failure:nil];
+
     self.hidesBottomBarWhenPushed = YES;
     WebViewController *webVC = [[WebViewController alloc] init];
     webVC.title = self.detailModel.cardBank;
