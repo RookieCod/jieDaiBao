@@ -10,6 +10,8 @@
 
 #define myAppTableViewCell @"myAppTableViewCell"
 @interface MyAppTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *rightImage;
 
 @end

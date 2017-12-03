@@ -16,13 +16,13 @@
 #import "ReloginRequest.h"
 #import "AboutViewController.h"
 #import "MyCollectViewController.h"
+#import "WebViewController.h"
 
 static  NSString * const cellNameArray[] = {
     [0] = @"我的收藏",
     [1] = @"修改密码",
     [2] = @"关于",
-    [3] = @"去评价",
-    [4] = @"版本号",
+    [3] = @"版本号",
 };
 @interface MyAppViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
@@ -99,7 +99,7 @@ static  NSString * const cellNameArray[] = {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,6 +111,15 @@ static  NSString * const cellNameArray[] = {
 {
     MyAppTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myAppTableViewCell forIndexPath:indexPath];
     cell.nameLabel.text = cellNameArray[indexPath.row];
+
+    if (indexPath.row == 3) {
+        cell.rightImage.hidden = YES;
+        cell.versionLabel.hidden = NO;
+    } else {
+        cell.rightImage.hidden = NO;
+        cell.versionLabel.hidden = YES;
+    }
+
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
     [[[tap rac_gestureSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
@@ -136,12 +145,12 @@ static  NSString * const cellNameArray[] = {
             self.hidesBottomBarWhenPushed = NO;
         } else if (indexPath.row == 2) {
             self.hidesBottomBarWhenPushed = YES;
-            AboutViewController *aboutVC = [[AboutViewController  alloc] init];
-            [self.navigationController pushViewController:aboutVC animated:YES];
+            WebViewController *webVC = [[WebViewController alloc] init];
+            webVC.title = @"关于";
+            webVC.webUrl = @"";
+            [self.navigationController pushViewController:webVC animated:YES];
             self.hidesBottomBarWhenPushed = NO;
-        } else if (indexPath.row == 3) {
-            
-        }
+        } 
     }];
     [cell addGestureRecognizer:tap];
     return cell;
