@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-q0-Upp">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-q0-Upp">
                     <rect key="frame" x="32" y="5" width="15" height="15"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -23,13 +24,13 @@
                         <constraint firstAttribute="width" constant="15" id="mJs-cs-SBT"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-KT-KhQ">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-KT-KhQ">
                     <rect key="frame" x="57" y="5" width="27" height="16"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钱诚信贷宝服务协议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-y3-Ige">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钱诚信贷宝服务协议" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-y3-Ige">
                     <rect key="frame" x="84" y="5" width="119.5" height="16"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                     <color key="textColor" red="0.69803921568627447" green="0.14901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,10 +48,18 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xieyi" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-Tx-DPP">
+                    <rect key="frame" x="32" y="5" width="174" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="a0o-F4-ahe"/>
+                        <constraint firstAttribute="width" constant="174" id="hgY-ug-0zk"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zdp-q0-Upp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="67e-9p-jkc"/>
+                <constraint firstItem="eTR-Tx-DPP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="81J-It-iI3"/>
                 <constraint firstItem="eJR-KT-KhQ" firstAttribute="leading" secondItem="zdp-q0-Upp" secondAttribute="trailing" constant="10" id="PRh-Tw-IPb"/>
                 <constraint firstItem="y2K-W3-vcr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Pju-ma-jxb"/>
                 <constraint firstItem="FhQ-y3-Ige" firstAttribute="leading" secondItem="eJR-KT-KhQ" secondAttribute="trailing" id="WBr-Vn-mM3"/>
@@ -58,12 +67,17 @@
                 <constraint firstItem="y2K-W3-vcr" firstAttribute="top" secondItem="FhQ-y3-Ige" secondAttribute="bottom" constant="50" id="gxc-Bp-Flp"/>
                 <constraint firstItem="zdp-q0-Upp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="ocU-pI-B3L"/>
                 <constraint firstItem="FhQ-y3-Ige" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="rly-qE-BoL"/>
+                <constraint firstItem="eTR-Tx-DPP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="w3D-Og-xHz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="sureButton" destination="y2K-W3-vcr" id="Xds-h7-P4A"/>
+                <outlet property="xieyiImage" destination="eTR-Tx-DPP" id="Jc8-Al-5C6"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="xieyi" width="174" height="20"/>
+    </resources>
 </document>

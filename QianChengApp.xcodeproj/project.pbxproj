@@ -28,6 +28,9 @@
 		D60BC5FE1FD3DDF9001A6913 /* LoanCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC5FD1FD3DDF9001A6913 /* LoanCollectList.m */; };
 		D60BC6011FD3DE39001A6913 /* CardCollectList.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6001FD3DE39001A6913 /* CardCollectList.m */; };
 		D60BC6041FD40A67001A6913 /* TongjiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6031FD40A67001A6913 /* TongjiRequest.m */; };
+		D60BC6071FD57656001A6913 /* UIViewController+ReloadViewDidLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6061FD57656001A6913 /* UIViewController+ReloadViewDidLoad.m */; };
+		D60BC6141FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6101FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.m */; };
+		D60BC6151FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = D60BC6111FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.m */; };
 		D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */; };
 		D61600031FCC497D008E3FF9 /* DaiDetailProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */; };
 		D61600071FCC4ACF008E3FF9 /* DaiDetailInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D61600051FCC4ACF008E3FF9 /* DaiDetailInfoCell.m */; };
@@ -166,6 +169,13 @@
 		D60BC6001FD3DE39001A6913 /* CardCollectList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardCollectList.m; sourceTree = "<group>"; };
 		D60BC6021FD40A67001A6913 /* TongjiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TongjiRequest.h; sourceTree = "<group>"; };
 		D60BC6031FD40A67001A6913 /* TongjiRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TongjiRequest.m; sourceTree = "<group>"; };
+		D60BC6051FD57656001A6913 /* UIViewController+ReloadViewDidLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ReloadViewDidLoad.h"; sourceTree = "<group>"; };
+		D60BC6061FD57656001A6913 /* UIViewController+ReloadViewDidLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ReloadViewDidLoad.m"; sourceTree = "<group>"; };
+		D60BC60F1FD59DFD001A6913 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		D60BC6101FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		D60BC6111FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		D60BC6121FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		D60BC6131FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		D61600001FCC497D008E3FF9 /* DaiDetailProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiDetailProductCell.m; sourceTree = "<group>"; };
 		D61600011FCC497D008E3FF9 /* DaiDetailProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaiDetailProductCell.xib; sourceTree = "<group>"; };
 		D61600041FCC4ACF008E3FF9 /* DaiDetailInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaiDetailInfoCell.h; sourceTree = "<group>"; };
@@ -359,6 +369,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D60BC60E1FD59DFD001A6913 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D60BC60F1FD59DFD001A6913 /* SVPullToRefresh.h */,
+				D60BC6101FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.m */,
+				D60BC6111FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.m */,
+				D60BC6121FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.h */,
+				D60BC6131FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.h */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		D6215D7B1FBE80DB0090FE80 = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +493,7 @@
 		D6215DBE1FBE8BC60090FE80 /* 扩展 */ = {
 			isa = PBXGroup;
 			children = (
+				D60BC60E1FD59DFD001A6913 /* SVPullToRefresh */,
 				D637E8D11FC281F800D68410 /* 自定义控件 */,
 				D6215DC11FBEB5F80090FE80 /* Category */,
 				D6215DBF1FBE8BDD0090FE80 /* 通用宏定义 */,
@@ -502,6 +525,8 @@
 				D6DA82C21FC840A20058FCC3 /* UIViewController+ButtonBarItem.m */,
 				D6B7AC831FD132C800FCBEAD /* NSString+Addtion.h */,
 				D6B7AC841FD132C800FCBEAD /* NSString+Addtion.m */,
+				D60BC6051FD57656001A6913 /* UIViewController+ReloadViewDidLoad.h */,
+				D60BC6061FD57656001A6913 /* UIViewController+ReloadViewDidLoad.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -943,6 +968,7 @@
 				D6CF52D81FCDB2BE00524EEB /* MyAppHeaderView.m in Sources */,
 				D6CF52F71FCDC37000524EEB /* RegistCell.m in Sources */,
 				D637E8D81FC2835100D68410 /* UIView+LayoutFrame.m in Sources */,
+				D60BC6151FD59DFD001A6913 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				D6B7AC811FD12CF300FCBEAD /* InfoDetailViewController.m in Sources */,
 				D6215DBC1FBE86B30090FE80 /* ZSTabBarViewController.m in Sources */,
 				D6FF78981FCD09CA00A61D3F /* CardDetailFourCell.m in Sources */,
@@ -969,6 +995,7 @@
 				D60BC5FE1FD3DDF9001A6913 /* LoanCollectList.m in Sources */,
 				D6CF52C31FCD9E4000524EEB /* ZSUntils.m in Sources */,
 				D637E9071FC588CF00D68410 /* DaiKuanTableViewCell.m in Sources */,
+				D60BC6071FD57656001A6913 /* UIViewController+ReloadViewDidLoad.m in Sources */,
 				D60BC5E91FD2B4FF001A6913 /* CollectDaiKuanView.m in Sources */,
 				D6215DA41FBE81E10090FE80 /* AppDelegate.m in Sources */,
 				D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */,
@@ -993,6 +1020,7 @@
 				D6C178781FC819E100BD1199 /* CardDetailRequest.m in Sources */,
 				D61600111FCC5369008E3FF9 /* DaiDetailConditionCell.m in Sources */,
 				D6C1786F1FC819A400BD1199 /* ZDDaiKuanDetailViewController.m in Sources */,
+				D60BC6141FD59DFD001A6913 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				D637E9031FC5847B00D68410 /* HomeCardModel.m in Sources */,
 				D61F47681FD06B2B006FAD27 /* ReloginRequest.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,

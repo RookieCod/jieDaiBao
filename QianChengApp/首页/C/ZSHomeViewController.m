@@ -24,6 +24,7 @@
 #import "ZSInfoListViewController.h"
 #import "WebViewController.h"
 
+
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
 UITableViewDelegate,
@@ -45,6 +46,7 @@ CycleScrollViewDatasource>
 @property (nonatomic, strong) CycleScrollView *tableHeaderView;
 
 /*  */
+@property (nonatomic, strong) UIButton *reloadButton;
 @end
 
 @implementation ZSHomeViewController
@@ -54,8 +56,16 @@ CycleScrollViewDatasource>
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"首页";
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    @weakify(self);
+    [self.baseTableView addPullToRefreshWithActionHandler:^{
+        @strongify(self);
+        [self requestContent];
+    }];
+
     [self requestContent];
-    
+
+
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeTangDouTableViewCell" bundle:nil] forCellReuseIdentifier:TangDouTableViewCell];
     [self.baseTableView registerNib:[UINib nibWithNibName:@"DaiKuanTableViewCell" bundle:nil]
              forCellReuseIdentifier:daiKuanCellIdentifier];
@@ -76,17 +86,19 @@ CycleScrollViewDatasource>
     [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSArray *requestArray = batchRequest.requestArray;
-        
         HomeRequest *bannerRequest = requestArray[0];
         HotDaiKuanRequest *daikuanRequest = requestArray[1];
         HotXinYongRequest *xinYongRequest = requestArray[2];
-        
+        [self.baseTableView.pullToRefreshView stopAnimating];
         [self dealWithBannerResponse:bannerRequest.responseObject];
         [self dealWithDaiKuanResponse:daikuanRequest.responseObject];
         [self dealWithCardResponse:xinYongRequest.responseObject];
         
     } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (self.baseTableView.pullToRefreshView.state != SVPullToRefreshStateStopped) {
+            [self.baseTableView.pullToRefreshView stopAnimating];
+        }
     }];
 }
 
@@ -166,6 +178,23 @@ CycleScrollViewDatasource>
     self.hidesBottomBarWhenPushed = NO;
 
 }
+
+- (UIButton *)reloadButton
+{
+    if (!_reloadButton) {
+        _reloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _reloadButton.backgroundColor = [UIColor colorWithHexString:@"b22614"];
+        [_reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
+        [_reloadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        @weakify(self);
+        [[_reloadButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            @strongify(self);
+            [self requestContent];
+        }];
+    }
+    return _reloadButton;
+}
+
 - (void)cycleView:(CycleScrollView *)cycleView didShowPageAtIndex:(NSUInteger)index
 {
     

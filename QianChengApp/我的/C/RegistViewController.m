@@ -13,6 +13,7 @@
 #import "RegistFooterView.h"
 #import "RegistRequest.h"
 #import "ZSLoginViewController.h"
+#import "WebViewController.h"
 
 @interface RegistViewController ()
 
@@ -94,6 +95,7 @@
         cell.leftLabel.text = @"登录密码";
         cell.rightImage.hidden = NO;
         cell.inputField.placeholder = @"请设置6-16位，包含数字和字符";
+        cell.inputField.secureTextEntry = YES;
         self.passwordField = cell.inputField;
         [[cell.inputField rac_textSignal] subscribeNext:^(NSString *x) {
             MJExtensionLog(@"%@",x);
@@ -152,7 +154,7 @@
         MJExtensionLog(@"%@",request.responseObject);
         NSDictionary *dic = request.responseObject;
         [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
-        if (dic[@"data"] == 00) {
+        if ([dic[@"code"] integerValue] == 00) {
             [self startTimer];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -215,6 +217,17 @@
     if (!_footerView) {
         _footerView = [[[NSBundle mainBundle] loadNibNamed:@"RegistFooterView" owner:nil options:nil] lastObject];
         @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+        [[tap rac_gestureSignal] subscribeNext:^(id x) {
+            @strongify(self);
+            self.hidesBottomBarWhenPushed = YES;
+            WebViewController *webVC = [[WebViewController alloc] init];
+            webVC.title = @"钱诚信贷宝服务协议";
+            webVC.webUrl = @"http://106.75.84.49:8080/other/agreement.html";
+            [self.navigationController pushViewController:webVC animated:YES];
+        }];
+        [_footerView addGestureRecognizer:tap];
+
         [[[_footerView.sureButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
             @strongify(self);
             if ([self check] && (self.yanZhengField.text.length > 0)) {

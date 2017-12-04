@@ -28,9 +28,9 @@
 - (void)setDaiKuanModel:(DaiKuanModel *)daiKuanModel
 {
     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:daiKuanModel.loanPic] placeholderImage:nil];
-    self.daiKuanFanwei.text = [NSString stringWithFormat:@"%@-%@",daiKuanModel.loanMoneyMin,daiKuanModel.loanMoneyMax];
+    self.daiKuanFanwei.text = [NSString stringWithFormat:@"%@元-%@元",daiKuanModel.loanMoneyMin,daiKuanModel.loanMoneyMax];
     self.kuanTime.text = daiKuanModel.loanPermit;
-    self.lilvLabel.text = [NSString stringWithFormat:@"%@",daiKuanModel.loanRate];
+    self.lilvLabel.text = [NSString stringWithFormat:@"%@%@",daiKuanModel.loanRate,@"%"];
     self.qixianLabel.text = daiKuanModel.loanTerm;
     self.productName.text = daiKuanModel.loanName;
 }

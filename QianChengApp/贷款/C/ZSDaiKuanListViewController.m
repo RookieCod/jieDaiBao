@@ -115,7 +115,7 @@ ZSSegmentViewDelegate>
         [self.segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.view).offset(20);
             make.right.equalTo(self.view).offset(-20);
-            make.top.equalTo(self.view).offset(64);
+            make.top.equalTo(self.view.mas_top);
         }];
     }
 }
@@ -244,7 +244,7 @@ ZSSegmentViewDelegate>
         originY += 20 + 7;
     }
     conditionViewHeight = originY;
-    self.conditionView.frame = CGRectMake(20, 94, MAINWIDTH - 40, originY);
+    self.conditionView.frame = CGRectMake(20, 30, MAINWIDTH - 40, originY);
     //[self.view insertSubview:self.conditionView belowSubview:self.segmentView];
 }
 

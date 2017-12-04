@@ -47,7 +47,7 @@
             if ([dic[@"code"] integerValue] == 00) {
                 //修改成功
                 [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
-                [[ZSUntils getApplicationDelegate] clearUserInfo];
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@""]];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 });

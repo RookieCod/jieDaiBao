@@ -10,5 +10,6 @@
 
 @interface RegistFooterView : UIView
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
+@property (weak, nonatomic) IBOutlet UIImageView *xieyiImage;
 
 @end

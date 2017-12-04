@@ -39,26 +39,38 @@ static  NSString * const cellNameArray[] = {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
     self.navigationItem.title = @"我的";
-    //self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.baseTableView.tableHeaderView = self.headerView;
-    self.baseTableView.tableFooterView = self.footerView;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    UIView * header = [[UIView alloc]init];
+    header.backgroundColor = [UIColor whiteColor];
+    [header addSubview:self.headerView];
+    header.height = 201;
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(header);
+    }];
 
+    self.baseTableView.tableHeaderView = header;
+
+    self.baseTableView.tableFooterView = self.footerView;
     @weakify(self);
     [[self.headerView.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
+        self.hidesBottomBarWhenPushed = YES;
         ZSLoginViewController *loginVC = [[ZSLoginViewController alloc] init];
         UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginVC];
         [self presentViewController:loginNav
                            animated:YES
                          completion:nil];
+        self.hidesBottomBarWhenPushed = NO;
     }];
 
     [[self.headerView.registButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
+        self.hidesBottomBarWhenPushed = YES;
         RegistViewController *registVC = [[RegistViewController alloc] init];
         [self.navigationController pushViewController:registVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
     }];
 
 
@@ -69,6 +81,7 @@ static  NSString * const cellNameArray[] = {
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
     [self reloadHeaderAndFooter];
 }
 
@@ -147,7 +160,7 @@ static  NSString * const cellNameArray[] = {
             self.hidesBottomBarWhenPushed = YES;
             WebViewController *webVC = [[WebViewController alloc] init];
             webVC.title = @"关于";
-            webVC.webUrl = @"";
+            webVC.webUrl = @"http://106.75.84.49:8080/other/about.html";
             [self.navigationController pushViewController:webVC animated:YES];
             self.hidesBottomBarWhenPushed = NO;
         } 

@@ -123,7 +123,7 @@ UITableViewDataSource>
 - (UIView *)filterView
 {
     if (!_filterView) {
-        _filterView = [[UIView alloc] initWithFrame:CGRectMake(20, 64, MAINWIDTH - 40, 30)];
+        _filterView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, MAINWIDTH - 40, 30)];
         _filterView.backgroundColor = [UIColor colorWithHexString:@"B22614"];
         _filterView.layer.borderWidth = 1;
         _filterView.layer.borderColor = [UIColor colorWithHexString:@"B22614"].CGColor;
@@ -205,7 +205,7 @@ UITableViewDataSource>
         originY += 20 + 7;
     }
     conditionViewHeight = originY;
-    self.conditionView.frame = CGRectMake(20, 94, MAINWIDTH - 40, originY);
+    self.conditionView.frame = CGRectMake(20, 30, MAINWIDTH - 40, originY);
     //[self.view insertSubview:self.conditionView belowSubview:self.segmentView];
 }
 

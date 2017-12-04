@@ -38,7 +38,7 @@
 
     [self.view addSubview:self.resetPwdView];
     [self.resetPwdView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(74);
+        make.top.equalTo(self.view.mas_top).offset(0);
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(@(95));
     }];
@@ -46,7 +46,7 @@
     [self.view addSubview:self.loginButton];
     [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.view.mas_top).offset(219);
+        make.top.equalTo(self.view.mas_top).offset(155);
         make.size.mas_equalTo(CGSizeMake(289, 40));
     }];
 
@@ -61,7 +61,7 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
             if ([dic[@"code"] integerValue] == 00) {
-                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:@""];
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:@"account"];
                 //成功
                 [self startTimer];
             }

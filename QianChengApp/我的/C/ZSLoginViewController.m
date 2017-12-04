@@ -99,6 +99,15 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if ([ZSUntils getApplicationDelegate].userSession.length > 0) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -171,6 +180,7 @@
 
     [[self.forgetButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
+        self.hidesBottomBarWhenPushed = YES;
         ResetPwdViewController *resetVC = [[ResetPwdViewController alloc] init];
         [self.navigationController pushViewController:resetVC animated:YES];
     }];

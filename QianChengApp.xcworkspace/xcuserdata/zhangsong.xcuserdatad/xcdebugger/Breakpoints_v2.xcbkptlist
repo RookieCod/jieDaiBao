@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QianChengApp/&#x8d37;&#x6b3e;/C/ZDDaiKuanDetailViewController.m"
-            timestampString = "533991925.467786"
+            timestampString = "534082693.017317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
@@ -83,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QianChengApp/&#x8d37;&#x6b3e;/C/ZDDaiKuanDetailViewController.m"
-            timestampString = "533991925.470436"
+            filePath = "QianChengApp/&#x6211;&#x7684;/C/ResetPwdViewController.m"
+            timestampString = "534094576.186725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "-requestContent"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -99,14 +99,78 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QianChengApp/&#x6211;&#x7684;/C/ZSLoginViewController.m"
-            timestampString = "534074792.108431"
+            filePath = "QianChengApp/&#x6211;&#x7684;/C/ResetPwdViewController.m"
+            timestampString = "534094576.18681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QianChengApp/&#x6211;&#x7684;/C/ResetPwdViewController.m"
+            timestampString = "534094576.186869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QianChengApp/&#x8d37;&#x6b3e;/C/ZDDaiKuanDetailViewController.m"
+            timestampString = "534095403.717484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-requestContent"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZDDaiKuanDetailViewController requestContent]"
+                  moduleName = "QianChengApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangsong/Desktop/JieDaiBao/QianChengApp/%E8%B4%B7%E6%AC%BE/C/ZDDaiKuanDetailViewController.m"
+                  timestampString = "534095403.940019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "270">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47-[ZDDaiKuanDetailViewController requestContent]_block_invoke"
+                  moduleName = "QianChengApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhangsong/Desktop/JieDaiBao/QianChengApp/%E8%B4%B7%E6%AC%BE/C/ZDDaiKuanDetailViewController.m"
+                  timestampString = "534095403.941835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
