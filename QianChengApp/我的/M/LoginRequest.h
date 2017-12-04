@@ -10,5 +10,5 @@
 
 @interface LoginRequest : YTKRequest
 
-- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password type:(NSString *)type;
+- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password verify:(NSString *)verify type:(NSString *)type;
 @end

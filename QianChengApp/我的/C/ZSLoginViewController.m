@@ -76,10 +76,11 @@
         @strongify(self);
         LoginRequest *request;
         if (self.segmentView.selectedSegmentIndex == 0) {
-            request = [[LoginRequest alloc] initWithPhoneNum:self.pwdLogin.phone.text password:self.pwdLogin.pwd.text type:@"1"];
+            request = [[LoginRequest alloc] initWithPhoneNum:self.pwdLogin.phone.text password:self.pwdLogin.pwd.text verify:@"" type:@"1"];
         } else {
-            request = [[LoginRequest alloc] initWithPhoneNum:self.verifyLogin.phone.text password:self.verifyLogin.verify.text type:@"2"];
+            request = [[LoginRequest alloc] initWithPhoneNum:self.verifyLogin.phone.text password:@"" verify:self.verifyLogin.verify.text type:@"2"];
         }
+        
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
@@ -92,11 +93,16 @@
                     [self back:nil];
                 });
             }
-
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
         }];
     }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self stopCountDown];
 }
 
 - (void)back:(id)sender
@@ -151,7 +157,11 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSDictionary *dic = request.responseObject;
+            if ([dic[@"code"] integerValue] == 00) {
+                [self startTimer];
+            }
             [MBProgressHUD showMessage:dic[@"errorMsg"] toView:self.view];
+            
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
         }];;

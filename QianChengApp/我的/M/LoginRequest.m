@@ -12,15 +12,17 @@
     NSString *_phoneNum;
     NSString *_password;
     NSString *_type;
+    NSString *_verify;
 }
 @end
 
 @implementation LoginRequest
-- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password type:(NSString *)type
+- (instancetype)initWithPhoneNum:(NSString *)phoneNum password:(NSString *)password verify:(NSString *)verify type:(NSString *)type;
 {
     if (self = [super init]) {
         _phoneNum = phoneNum;
         _password = password;
+        _verify = verify;
         _type = type;
     }
     return self;
@@ -42,6 +44,7 @@
     return @{
              @"account":_phoneNum,
              @"pwd":_password,
+             @"verify":_verify,
              @"type":_type,
              };
 }
