@@ -10,5 +10,5 @@
 
 @interface LoanMoneyModel : NSObject
 /** <#description#> */
-@property (nonatomic, strong) NSNumber *loanMoneyMin;
+@property (nonatomic, strong) NSNumber *loanMoneyMax;
 @end

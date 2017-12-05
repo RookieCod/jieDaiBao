@@ -196,7 +196,7 @@ ZSSegmentViewDelegate>
                 [button setTitle:conditionArray[i] forState:UIControlStateNormal];
             } else {
                 LoanMoneyModel *model = conditionArray[i];
-                [button setTitle:[NSString stringWithFormat:@"%@",model.loanMoneyMin] forState:UIControlStateNormal];
+                [button setTitle:[NSString stringWithFormat:@"%@",model.loanMoneyMax] forState:UIControlStateNormal];
             }
 
         } else {
@@ -215,8 +215,8 @@ ZSSegmentViewDelegate>
                     self.request.money = @"0";
                     [self.segmentView reloadTitle:@"可贷额度" index:1];
                 } else {
-                    self.request.money = [NSString stringWithFormat:@"%@",model.loanMoneyMin];
-                    [self.segmentView reloadTitle:[NSString stringWithFormat:@"%@",model.loanMoneyMin] index:1];
+                    self.request.money = [NSString stringWithFormat:@"%@",model.loanMoneyMax];
+                    [self.segmentView reloadTitle:[NSString stringWithFormat:@"%@",model.loanMoneyMax] index:1];
                 }
                 self.request.sort = @"0";
             } else {

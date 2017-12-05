@@ -20,6 +20,9 @@
 @property (strong, nonatomic) dispatch_source_t timer;
 /*  */
 @property (nonatomic, strong) NSString *verify;
+
+/** sessionId */
+@property (nonatomic, strong) NSString *sessionId;
 @end
 
 @implementation ResetPwdViewController
@@ -61,9 +64,12 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = request.responseObject;
             if ([dic[@"code"] integerValue] == 00) {
-                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:@"account"];
+                [MBProgressHUD showSuccess:@"验证码已发送" toView:self.view];
+                self.sessionId = dic[@"data"][@"sessionId"];
                 //成功
                 [self startTimer];
+            } else {
+                [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
             }
 
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -83,8 +89,14 @@
             [MBProgressHUD showError:@"请输入正确验证码" toView:self.view];
             return;
         }
+        
+        if (self.sessionId.length == 0) {
+            [MBProgressHUD showError:@"请输入正确验证码" toView:self.view];
+            return;
+        }
 
         ResetViewController *vc = [[ResetViewController alloc] init];
+        vc.sessionId = self.sessionId;
         [self.navigationController pushViewController:vc animated:YES];
     }];
 }

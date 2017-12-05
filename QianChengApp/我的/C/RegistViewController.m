@@ -139,8 +139,8 @@
         [MBProgressHUD showError:@"请输入密码" toView:self.view];
         return NO;
     }
-    if (self.passwordField.text.length < 6) {
-        [MBProgressHUD showError:@"密码长度必须大于6位" toView:self.view];
+    if (self.passwordField.text.length < 6 || self.passwordField.text.length > 16) {
+        [MBProgressHUD showError:@"密码长度必须为6-16位" toView:self.view];
         return NO;
     }
 
@@ -153,9 +153,12 @@
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         MJExtensionLog(@"%@",request.responseObject);
         NSDictionary *dic = request.responseObject;
-        [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
         if ([dic[@"code"] integerValue] == 00) {
+            [MBProgressHUD showSuccess:@"验证码已发送" toView:self.view];
             [self startTimer];
+        } else {
+            [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
+
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
@@ -238,13 +241,9 @@
                     MJExtensionLog(@"dic = %@",responseDic);
                     if ([responseDic[@"code"] integerValue] == 00) {
                         [MBProgressHUD showSuccess:responseDic[@"errorMsg"] toView:self.view];
+
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            //跳到登陆页面进行登录
-                            if ([ZSUntils isNeedToUserLogin:^{
-                                [self.navigationController popViewControllerAnimated:YES];
-                            }]) {
-                                return ;
-                            }
+                            [self.navigationController popViewControllerAnimated:YES];
                         });
                     } else {
                         [MBProgressHUD showError:responseDic[@"errorMsg"] toView:self.view];

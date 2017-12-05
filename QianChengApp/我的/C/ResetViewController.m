@@ -41,13 +41,13 @@
         }
 
         //请求接口
-        ForgetResetPwdRequest *requst = [[ForgetResetPwdRequest alloc] initWithSessionId:[ZSUntils getApplicationDelegate].userSession newsPwd:self.mima1Field.text];
+        ForgetResetPwdRequest *requst = [[ForgetResetPwdRequest alloc] initWithSessionId:self.sessionId newsPwd:self.mima1Field.text];
         [requst startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSDictionary *dic = requst.responseObject;
             if ([dic[@"code"] integerValue] == 00) {
                 //修改成功
                 [MBProgressHUD showSuccess:dic[@"errorMsg"] toView:self.view];
-                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@""]];
+                [[ZSUntils getApplicationDelegate] saveUserInfo:dic[@"data"][@"sessionId"] userPhone:dic[@"data"][@"account"]];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 });
