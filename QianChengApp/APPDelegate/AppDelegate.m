@@ -13,8 +13,8 @@
 #import "ZSTabBarViewController.h"
 #import "ZSDaiKuanListViewController.h"
 
-#define productIP @"http://106.75.84.49:8080/"
-#define testIP @"http://192.168.1.126"
+#define testIP @"http://106.75.84.49:8080/"
+#define productIP @"http://product.ccqsign.com/webapp-supermarket-h5/"
 
 @interface AppDelegate ()<MyTabBarDelegate>
 
@@ -32,7 +32,7 @@
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = productIP;
     
-    networkConfig.debugLogEnabled = YES;
+    networkConfig.debugLogEnabled = NO;
 
     [self getUserSessionFromLocal];
     [self customGlobalBarAppearance];
