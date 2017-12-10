@@ -59,41 +59,44 @@
     [self.baseScrollView addSubview:self.titleLabel];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.baseScrollView.mas_top).offset(13);
+        make.top.equalTo(self.baseScrollView.mas_top).offset(15);
+        make.height.mas_equalTo(@18);
     }];
 
     //来源
     self.sourceLabel = [[UILabel alloc] init];
     self.sourceLabel.textColor = [UIColor colorWithHexString:@"4a4a4a"];
-    self.sourceLabel.font = [UIFont systemFontOfSize:10];
+    self.sourceLabel.font = [UIFont systemFontOfSize:12];
     [self.baseScrollView addSubview:self.sourceLabel];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(80);
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(5);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
         make.width.mas_equalTo(@(120));
+        make.height.mas_equalTo(@12);
     }];
 
     self.timeLabel = [[UILabel alloc] init];
     self.timeLabel.textColor = [UIColor colorWithHexString:@"4a4a4a"];
-    self.timeLabel.font = [UIFont systemFontOfSize:10];
+    self.timeLabel.font = [UIFont systemFontOfSize:12];
     [self.baseScrollView addSubview:self.timeLabel];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.sourceLabel.mas_right).offset(20);
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(5);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
         make.right.equalTo(self.view.mas_right).offset(-80);
+        make.height.mas_equalTo(@12);
     }];
 
     //标题
     self.detaillabel = [[UILabel alloc] init];
     self.detaillabel.textColor = [UIColor colorWithHexString:@"4a4a4a"];
-    self.detaillabel.font = [UIFont boldSystemFontOfSize:14];
+    self.detaillabel.font = [UIFont systemFontOfSize:14];
     self.detaillabel.numberOfLines = 0;
     [self.baseScrollView addSubview:self.detaillabel];
     [self.detaillabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.timeLabel.mas_top).offset(19);
-        make.left.equalTo(self.view.mas_left).offset(32);
-        make.right.equalTo(self.view.mas_right).offset(-32);
+        make.top.equalTo(self.timeLabel.mas_top).offset(20);
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
     }];
 
     //底部收藏按钮
@@ -135,12 +138,13 @@
     self.detaillabel.text = self.detailModel.informationContent;
 
 
-    CGSize content;;
 
-
-
-        content = CGSizeMake(MAINWIDTH, MAINHEIGHT -54);
-    self.baseScrollView.contentSize = content;
+    CGSize stringSize = [NSString getStringSize:self.detailModel.informationContent withFont:[UIFont systemFontOfSize:14] withWidth:(MAINWIDTH - 40)];
+    if (stringSize.height < MAINHEIGHT - 75 - 64) {
+        self.baseScrollView.contentSize = CGSizeMake(MAINWIDTH, MAINHEIGHT);
+    } else {
+        self.baseScrollView.contentSize = CGSizeMake(MAINWIDTH, stringSize.height + 75 + 64);
+    }
 
 }
 
@@ -149,7 +153,7 @@
     if (!_baseScrollView) {
         _baseScrollView = [[UIScrollView alloc] init];
         _baseScrollView.backgroundColor = [UIColor clearColor];
-        _baseScrollView.showsVerticalScrollIndicator = NO;
+        _baseScrollView.showsVerticalScrollIndicator = YES;
         _baseScrollView.showsHorizontalScrollIndicator = NO;
         
     }

@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,13 +31,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W09-rc-uHk">
-                        <rect key="frame" x="159" y="15" width="35.5" height="17"/>
+                        <rect key="frame" x="150" y="15" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU8-6O-7pX">
-                        <rect key="frame" x="159" y="42" width="186" height="14.5"/>
+                        <rect key="frame" x="150" y="37" width="195" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -45,13 +46,13 @@
                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="IU8-6O-7pX" firstAttribute="leading" secondItem="W09-rc-uHk" secondAttribute="leading" id="2eq-8X-6cj"/>
-                    <constraint firstItem="IU8-6O-7pX" firstAttribute="top" secondItem="W09-rc-uHk" secondAttribute="bottom" constant="10" id="3Ql-GM-jqW"/>
+                    <constraint firstItem="IU8-6O-7pX" firstAttribute="top" secondItem="W09-rc-uHk" secondAttribute="bottom" constant="5" id="3Ql-GM-jqW"/>
                     <constraint firstItem="ash-9r-jJX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ckq-X4-3M2"/>
                     <constraint firstItem="W09-rc-uHk" firstAttribute="top" secondItem="jRr-se-yaE" secondAttribute="top" constant="5" id="H8K-ss-abJ"/>
                     <constraint firstAttribute="trailing" secondItem="ash-9r-jJX" secondAttribute="trailing" id="PPh-yY-4dU"/>
                     <constraint firstItem="jRr-se-yaE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UdG-Fn-2uz"/>
                     <constraint firstItem="ash-9r-jJX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ukq-hm-KIa"/>
-                    <constraint firstItem="W09-rc-uHk" firstAttribute="leading" secondItem="jRr-se-yaE" secondAttribute="trailing" constant="34" id="f5x-xt-d2J"/>
+                    <constraint firstItem="W09-rc-uHk" firstAttribute="leading" secondItem="jRr-se-yaE" secondAttribute="trailing" constant="25" id="f5x-xt-d2J"/>
                     <constraint firstItem="jRr-se-yaE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="fd6-Se-0gg"/>
                     <constraint firstAttribute="bottom" secondItem="ash-9r-jJX" secondAttribute="bottom" constant="3" id="gfv-aU-c4p"/>
                     <constraint firstAttribute="trailing" secondItem="IU8-6O-7pX" secondAttribute="trailing" constant="30" id="wA9-82-8mb"/>
