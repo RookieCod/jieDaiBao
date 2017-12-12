@@ -1,32 +1,30 @@
 //
-//  ZSInfoListViewController.m
+//  FasleInfoListViewController.m
 //  QianChengApp
 //
-//  Created by zhangsong on 2017/12/1.
+//  Created by zhangsong on 2017/12/12.
 //  Copyright © 2017年 zhangsong. All rights reserved.
 //
 
-#import "ZSInfoListViewController.h"
+#import "FasleInfoListViewController.h"
 #import "InfoDetailViewController.h"
 #import "HomeCardTableViewCell.h"
 #import "InfoList.h"
 #import "InfoListModel.h"
 
-@interface ZSInfoListViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FasleInfoListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *baseTableView;
-
 /** moxing */
 @property (nonatomic, strong) NSArray *listArray;
 @end
 
-@implementation ZSInfoListViewController
+@implementation FasleInfoListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"资讯";
-    self.hidesBottomBarWhenPushed = NO;
-    if (self.pushType == infoVCPushTypeFromHome) {
+    if (self.pushType == infoListVCPushTypeFromHome) {
         self.navigationItem.leftBarButtonItem = [self backButtonBar];
     } else {
         self.navigationItem.leftBarButtonItem = nil;
@@ -37,7 +35,6 @@
              forCellReuseIdentifier:homeCardCellIdentifier];
     [self requestContent];
 }
-
 - (void)requestContent
 {
     InfoList *request = [[InfoList alloc] initWithType:@"2"];
@@ -48,11 +45,11 @@
         if ([dic[@"code"] integerValue] == 00) {
             self.listArray = [InfoListModel mj_objectArrayWithKeyValuesArray:dic[@"data"][@"informationList"]];
             [self.baseTableView reloadData];
-
+            
         } else {
             [MBProgressHUD showError:dic[@"errorMsg"] toView:self.view];
         }
-
+        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -96,7 +93,7 @@
     
     [self.navigationController pushViewController:infoDetail animated:YES];
     
-    if (self.pushType == infoVCPushTypeFromTab) {
+    if (self.pushType == infoListVCPushTypeFromTab) {
         self.hidesBottomBarWhenPushed = NO;
     }
 }

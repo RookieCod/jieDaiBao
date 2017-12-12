@@ -9,5 +9,5 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface InfoList : YTKRequest
-
+- (instancetype)initWithType:(NSString *)type;
 @end

@@ -20,6 +20,8 @@
 /*  */
 @property (nonatomic, strong) NSString *userPhone;
 
+@property (nonatomic, assign) BOOL isProduct;
+
 - (void)saveUserInfo:(NSString *)userSession userPhone:(NSString *)phone;
 - (void)clearUserInfo;
 

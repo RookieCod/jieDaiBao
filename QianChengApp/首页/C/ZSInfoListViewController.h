@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, infoVCPushType) {
+    infoVCPushTypeFromHome,
+    infoVCPushTypeFromTab,
+};
+
 @interface ZSInfoListViewController : UIViewController
+@property (nonatomic, assign) infoVCPushType pushType;
 
 @end

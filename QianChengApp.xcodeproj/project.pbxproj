@@ -122,6 +122,9 @@
 		D6EF057D1FD054AC00C5C576 /* ResetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6EF057B1FD054AC00C5C576 /* ResetPwdViewController.xib */; };
 		D6EF05811FD05B2100C5C576 /* ResetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EF057F1FD05B2100C5C576 /* ResetViewController.m */; };
 		D6EF05821FD05B2100C5C576 /* ResetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6EF05801FD05B2100C5C576 /* ResetViewController.xib */; };
+		D6F8E73E1FDFCE5500BDE62D /* AppDelegateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F8E73D1FDFCE5500BDE62D /* AppDelegateRequest.m */; };
+		D6F8E7421FDFD11600BDE62D /* FasleInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F8E7401FDFD11600BDE62D /* FasleInfoListViewController.m */; };
+		D6F8E7431FDFD11600BDE62D /* FasleInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6F8E7411FDFD11600BDE62D /* FasleInfoListViewController.xib */; };
 		D6FF788A1FCD057A00A61D3F /* CardDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF78891FCD057A00A61D3F /* CardDetailModel.m */; };
 		D6FF788E1FCD09A800A61D3F /* DetailTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6FF788C1FCD09A800A61D3F /* DetailTwoCell.m */; };
 		D6FF788F1FCD09A800A61D3F /* DetailTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6FF788D1FCD09A800A61D3F /* DetailTwoCell.xib */; };
@@ -327,6 +330,11 @@
 		D6EF057E1FD05B2100C5C576 /* ResetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetViewController.h; sourceTree = "<group>"; };
 		D6EF057F1FD05B2100C5C576 /* ResetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResetViewController.m; sourceTree = "<group>"; };
 		D6EF05801FD05B2100C5C576 /* ResetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetViewController.xib; sourceTree = "<group>"; };
+		D6F8E73C1FDFCE5500BDE62D /* AppDelegateRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateRequest.h; sourceTree = "<group>"; };
+		D6F8E73D1FDFCE5500BDE62D /* AppDelegateRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateRequest.m; sourceTree = "<group>"; };
+		D6F8E73F1FDFD11600BDE62D /* FasleInfoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FasleInfoListViewController.h; sourceTree = "<group>"; };
+		D6F8E7401FDFD11600BDE62D /* FasleInfoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FasleInfoListViewController.m; sourceTree = "<group>"; };
+		D6F8E7411FDFD11600BDE62D /* FasleInfoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FasleInfoListViewController.xib; sourceTree = "<group>"; };
 		D6FF78881FCD057A00A61D3F /* CardDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailModel.h; sourceTree = "<group>"; };
 		D6FF78891FCD057A00A61D3F /* CardDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailModel.m; sourceTree = "<group>"; };
 		D6FF788B1FCD09A800A61D3F /* DetailTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailTwoCell.h; sourceTree = "<group>"; };
@@ -486,6 +494,8 @@
 				D6215DB91FBE86B30090FE80 /* ZSTabBarViewController.h */,
 				D6215DBA1FBE86B30090FE80 /* ZSTabBarViewController.m */,
 				D6215DBB1FBE86B30090FE80 /* ZSTabBarViewController.xib */,
+				D6F8E73C1FDFCE5500BDE62D /* AppDelegateRequest.h */,
+				D6F8E73D1FDFCE5500BDE62D /* AppDelegateRequest.m */,
 			);
 			path = tabbarView;
 			sourceTree = "<group>";
@@ -563,6 +573,9 @@
 				D60BC5F41FD2C0AD001A6913 /* WebViewController.h */,
 				D60BC5F51FD2C0AD001A6913 /* WebViewController.m */,
 				D60BC5F61FD2C0AD001A6913 /* WebViewController.xib */,
+				D6F8E73F1FDFD11600BDE62D /* FasleInfoListViewController.h */,
+				D6F8E7401FDFD11600BDE62D /* FasleInfoListViewController.m */,
+				D6F8E7411FDFD11600BDE62D /* FasleInfoListViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -886,6 +899,7 @@
 				D6CF52E41FCDB7A700524EEB /* ZSLoginViewController.xib in Resources */,
 				D6CF52FD1FCDC5DE00524EEB /* RegistYanZhengCell.xib in Resources */,
 				D6CF52DF1FCDB6B900524EEB /* MyAppViewController.xib in Resources */,
+				D6F8E7431FDFD11600BDE62D /* FasleInfoListViewController.xib in Resources */,
 				D637E8F21FC515DD00D68410 /* HomeTangDouTableViewCell.xib in Resources */,
 				D6CF52F31FCDBF2A00524EEB /* RegistViewController.xib in Resources */,
 				D6215DAE1FBE82310090FE80 /* LaunchScreen.storyboard in Resources */,
@@ -1009,6 +1023,7 @@
 				D61600021FCC497D008E3FF9 /* DaiDetailProductCell.m in Sources */,
 				D60BC5D81FD19821001A6913 /* MyAppTableViewCell.m in Sources */,
 				D6215DB11FBE82310090FE80 /* main.m in Sources */,
+				D6F8E7421FDFD11600BDE62D /* FasleInfoListViewController.m in Sources */,
 				D6C1787B1FC819F400BD1199 /* DaiKuanDetailRequest.m in Sources */,
 				D60BC5EE1FD2B55D001A6913 /* CollectCardView.m in Sources */,
 				D6EF05811FD05B2100C5C576 /* ResetViewController.m in Sources */,
@@ -1025,6 +1040,7 @@
 				D61F47681FD06B2B006FAD27 /* ReloginRequest.m in Sources */,
 				D6215DB81FBE85250090FE80 /* ZSTabBarItemModel.m in Sources */,
 				D6215DC91FBEB8BC0090FE80 /* ZSHomeViewController.m in Sources */,
+				D6F8E73E1FDFCE5500BDE62D /* AppDelegateRequest.m in Sources */,
 				D6CF52E31FCDB7A700524EEB /* ZSLoginViewController.m in Sources */,
 				D6EF057C1FD054AC00C5C576 /* ResetPwdViewController.m in Sources */,
 				D637E8FA1FC5778E00D68410 /* HotDaiKuanRequest.m in Sources */,

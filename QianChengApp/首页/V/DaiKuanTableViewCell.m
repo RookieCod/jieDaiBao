@@ -30,7 +30,7 @@
     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:daiKuanModel.loanPic] placeholderImage:nil];
     self.daiKuanFanwei.text = [NSString stringWithFormat:@"%@元-%@元",daiKuanModel.loanMoneyMin,daiKuanModel.loanMoneyMax];
     self.kuanTime.text = daiKuanModel.loanPermit;
-    self.lilvLabel.text = [NSString stringWithFormat:@"%@%@",daiKuanModel.loanRate,@"%"];
+    self.lilvLabel.text = [NSString stringWithFormat:@"%.2f%@",[daiKuanModel.loanRate floatValue],@"%"];
     self.qixianLabel.text = daiKuanModel.loanTerm;
     self.productName.text = daiKuanModel.loanName;
 }

@@ -12,6 +12,9 @@
 #import "MyAppViewController.h"
 #import "ZSTabBarViewController.h"
 #import "ZSDaiKuanListViewController.h"
+#import "ZSInfoListViewController.h"
+#import "AppDelegateRequest.h"
+#import "FasleInfoListViewController.h"
 
 #define testIP @"http://106.75.84.49:8080/"
 #define productIP @"http://product.ccqsign.com/webapp-supermarket-h5/"
@@ -26,22 +29,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //默认是NO
+    self.isProduct = YES;
+    
+    
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
 
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = productIP;
-    
     networkConfig.debugLogEnabled = NO;
+    
+    AppDelegateRequest *request = [[AppDelegateRequest alloc] init];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dic = request.responseObject;
+        if ([dic[@"code"] integerValue] == 00) {
+            NSString *ss = dic[@"data"][@"audit"];
+            self.isProduct = [ss boolValue];
+            [self initTabBarVC];
+            self.window.rootViewController = self.tabBarController;
 
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
+    [self initTabBarVC];
     [self getUserSessionFromLocal];
     [self customGlobalBarAppearance];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-
-    [self initTabBarVC];
     self.window.rootViewController = self.tabBarController;
-
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -64,14 +83,31 @@
     ZSHomeViewController *homeVC = [[ZSHomeViewController alloc] init];
     UINavigationController* homeNav = [[UINavigationController alloc] initWithRootViewController:homeVC];
     
-    ZSDaiKuanListViewController *daiKuanVC = [[ZSDaiKuanListViewController alloc] init];
-    daiKuanVC.pushType = DaiKuanListPushTyeFromTab;
-    UINavigationController* marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
+    //2
+    UINavigationController *marketNav = nil;
+    if (self.isProduct) {
+        ZSInfoListViewController *daiKuanVC = (ZSInfoListViewController *)[[ZSInfoListViewController alloc] init];
+        daiKuanVC.pushType = infoVCPushTypeFromTab;
+        marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
+    } else {
+        ZSDaiKuanListViewController *daiKuanVC = [[ZSDaiKuanListViewController alloc] init];
+        daiKuanVC.pushType = DaiKuanListPushTyeFromTab;
+        marketNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
+    }
     
-    ZSNewsViewController *newsVC = [[ZSNewsViewController alloc] init];
-    newsVC.pushType = CardListPushTypeFromTab;
-    UINavigationController* newsNav = [[UINavigationController alloc] initWithRootViewController:newsVC];
+    //3
+    UINavigationController *newsNav = nil;
+    if (self.isProduct) {
+        FasleInfoListViewController *daiKuanVC = [[FasleInfoListViewController alloc] init];
+        daiKuanVC.pushType = infoListVCPushTypeFromTab;
+        newsNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
+    } else {
+        ZSNewsViewController *daiKuanVC = [[ZSNewsViewController alloc] init];
+        daiKuanVC.pushType = CardListPushTypeFromTab;
+        newsNav = [[UINavigationController alloc] initWithRootViewController:daiKuanVC];
+    }
     
+    //4
     MyAppViewController *myAppVC = [[MyAppViewController alloc] init];
     UINavigationController* myAppNav = [[UINavigationController alloc] initWithRootViewController:myAppVC];
     

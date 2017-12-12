@@ -23,7 +23,9 @@
 #import "ZSCardDetailViewController.h"
 #import "ZSInfoListViewController.h"
 #import "WebViewController.h"
-
+#import "InfoListModel.h"
+#import "InfoList.h"
+#import "InfoDetailViewController.h"
 
 @interface ZSHomeViewController ()
 <UITableViewDataSource,
@@ -41,6 +43,8 @@ CycleScrollViewDatasource>
 
 /** homeCardArray */
 @property (nonatomic, strong) NSArray *homeCardModelArray;
+
+@property (nonatomic, strong) NSArray *infoListModelArray;
 
 /** tableHeaderView */
 @property (nonatomic, strong) CycleScrollView *tableHeaderView;
@@ -80,8 +84,9 @@ CycleScrollViewDatasource>
     HomeRequest *request1 = [[HomeRequest alloc] initWithSource:@(1)];
     HotDaiKuanRequest *request2 = [[HotDaiKuanRequest alloc] initWithType:1];
     HotXinYongRequest *request3 = [[HotXinYongRequest alloc] initWithType:1];
+    InfoList *request4 = [[InfoList alloc] initWithType:@"1"];
     
-    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[request1,request2,request3]];
+    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[request1,request2,request3,request4]];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -89,10 +94,12 @@ CycleScrollViewDatasource>
         HomeRequest *bannerRequest = requestArray[0];
         HotDaiKuanRequest *daikuanRequest = requestArray[1];
         HotXinYongRequest *xinYongRequest = requestArray[2];
+        InfoList *infoRequest = requestArray[3];
         [self.baseTableView.pullToRefreshView stopAnimating];
         [self dealWithBannerResponse:bannerRequest.responseObject];
         [self dealWithDaiKuanResponse:daikuanRequest.responseObject];
         [self dealWithCardResponse:xinYongRequest.responseObject];
+        [self dealWithInfoResponse:infoRequest.responseObject];
         
     } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -120,11 +127,10 @@ CycleScrollViewDatasource>
 {
     NSDictionary *responseDic = (NSDictionary *)responseObj;
     if ([responseDic[@"code"] integerValue] == 00) {
-        self.daiKuanModelArray = [DaiKuanModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"loanList"]];
-        
-        if (self.daiKuanModelArray && self.daiKuanModelArray.count > 0) {
-            [self.baseTableView reloadData];
+        if ([responseDic[@"data"][@"loanList"] count] > 0) {
+            self.daiKuanModelArray = [DaiKuanModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"loanList"]];
         }
+        [self.baseTableView reloadData];
     } else {
         
     }
@@ -134,11 +140,25 @@ CycleScrollViewDatasource>
 {
     NSDictionary *responseDic = (NSDictionary *)responseObj;
     if ([responseDic[@"code"] integerValue] == 00) {
-        self.homeCardModelArray = [HomeCardModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"cardList"]];
-        
-        if (self.homeCardModelArray && self.homeCardModelArray.count > 0) {
-            [self.baseTableView reloadData];
+        if ([responseDic[@"data"][@"cardList"] count] > 0) {
+            self.homeCardModelArray = [HomeCardModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"cardList"]];
         }
+        [self.baseTableView reloadData];
+
+    } else {
+        
+    }
+}
+
+- (void)dealWithInfoResponse:(id)responseObj
+{
+    NSDictionary *responseDic = (NSDictionary *)responseObj;
+    if ([responseDic[@"code"] integerValue] == 00) {
+        if ([responseDic[@"data"][@"informationList"] count] > 0) {
+            self.infoListModelArray = [InfoListModel mj_objectArrayWithKeyValuesArray:responseDic[@"data"][@"informationList"]];
+        }
+        [self.baseTableView reloadData];
+
     } else {
         
     }
@@ -179,26 +199,6 @@ CycleScrollViewDatasource>
 
 }
 
-- (UIButton *)reloadButton
-{
-    if (!_reloadButton) {
-        _reloadButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _reloadButton.backgroundColor = [UIColor colorWithHexString:@"b22614"];
-        [_reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
-        [_reloadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        @weakify(self);
-        [[_reloadButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            @strongify(self);
-            [self requestContent];
-        }];
-    }
-    return _reloadButton;
-}
-
-- (void)cycleView:(CycleScrollView *)cycleView didShowPageAtIndex:(NSUInteger)index
-{
-    
-}
 #pragma mark CycleScrollViewDataSource
 - (NSInteger)numberOfCycleScrollViewPage
 {
@@ -219,9 +219,11 @@ CycleScrollViewDatasource>
 #pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.homeCardModelArray && self.daiKuanModelArray) {
+    if (self.daiKuanModelArray && self.homeCardModelArray && self.infoListModelArray) {
+        return 4;
+    } else if ((!self.daiKuanModelArray && self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray)) {
         return 3;
-    } else if (self.homeCardModelArray || self.daiKuanModelArray) {
+    } else if ((!self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (!self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && !self.infoListModelArray)) {
         return 2;
     }
     return 1;
@@ -229,23 +231,65 @@ CycleScrollViewDatasource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.homeCardModelArray && self.daiKuanModelArray) {
+    
+    if (self.homeCardModelArray && self.daiKuanModelArray && self.infoListModelArray) {
         if (section == 0) {
             return 1;
         } else if (section == 1) {
             return self.daiKuanModelArray.count;
-        } else {
+        } else if (section == 2) {
             return self.homeCardModelArray.count;
-        }
-    } else if (self.homeCardModelArray || self.daiKuanModelArray) {
-        if (section == 0) {
-            return 1;
         } else {
-            return (self.daiKuanModelArray.count > 0) ? self.daiKuanModelArray.count : self.homeCardModelArray.count;
+            return self.infoListModelArray.count;
         }
-    } else {
-        return 1;
+    } else if ((!self.daiKuanModelArray && self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray)) {
+        if (self.homeCardModelArray && self.daiKuanModelArray) {
+            if (section == 0) {
+                return 1;
+            } else if (section == 1) {
+                return self.daiKuanModelArray.count;
+            } else {
+                return self.homeCardModelArray.count;
+            }
+        } else if(self.daiKuanModelArray && self.infoListModelArray) {
+            if (section == 0) {
+                return 1;
+            } else if (section == 1) {
+                return self.daiKuanModelArray.count;
+            } else {
+                return self.infoListModelArray.count;
+            }
+        } else {
+            if (section == 0) {
+                return 1;
+            } else if (section == 1) {
+                return self.homeCardModelArray.count;
+            } else {
+                return self.infoListModelArray.count;
+            }
+        }
+    } else if ((!self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (!self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && !self.infoListModelArray)) {
+        if (self.daiKuanModelArray) {
+            if (section == 0) {
+                return 1;
+            } else {
+                return self.daiKuanModelArray.count;
+            }
+        } else if (self.homeCardModelArray) {
+            if (section == 0) {
+                return 1;
+            } else {
+                return self.homeCardModelArray.count;
+            }
+        } else {
+            if (section == 0) {
+                return 1;
+            } else {
+                return self.infoListModelArray.count;
+            }
+        }
     }
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -261,27 +305,64 @@ CycleScrollViewDatasource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.daiKuanModelArray && self.homeCardModelArray) {
+    if (self.homeCardModelArray && self.daiKuanModelArray && self.infoListModelArray) {
         if (indexPath.section == 0) {
             return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
         } else if (indexPath.section == 1) {
             return [self daiKuanCellWithTableView:tableView atIndexPath:indexPath];
-        } else {
+        } else if (indexPath.section == 2) {
             return [self homeCardCellWithTableView:tableView atIndexPath:indexPath];
-        }
-    } else if (self.daiKuanModelArray || self.homeCardModelArray) {
-        if (indexPath.section == 0) {
-            return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
         } else {
-            if (self.daiKuanModelArray) {
+            return [self infoCellWithTableView:tableView indexPath:indexPath];
+        }
+    } else if ((!self.daiKuanModelArray && self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray)) {
+        if (self.homeCardModelArray && self.daiKuanModelArray) {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else if (indexPath.section == 1) {
                 return [self daiKuanCellWithTableView:tableView atIndexPath:indexPath];
             } else {
                 return [self homeCardCellWithTableView:tableView atIndexPath:indexPath];
             }
+        } else if(self.daiKuanModelArray && self.infoListModelArray) {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else if (indexPath.section == 1) {
+                return [self daiKuanCellWithTableView:tableView atIndexPath:indexPath];
+            } else {
+                return [self infoCellWithTableView:tableView indexPath:indexPath];
+            }
+        } else {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else if (indexPath.section == 1) {
+                return [self homeCardCellWithTableView:tableView atIndexPath:indexPath];
+            } else {
+                return [self infoCellWithTableView:tableView indexPath:indexPath];
+            }
         }
-    } else {
-        return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+    } else if ((!self.daiKuanModelArray && !self.homeCardModelArray && self.infoListModelArray) || (!self.daiKuanModelArray && self.homeCardModelArray && !self.infoListModelArray) || (self.daiKuanModelArray && !self.homeCardModelArray && !self.infoListModelArray)) {
+        if (self.daiKuanModelArray) {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else {
+                return [self daiKuanCellWithTableView:tableView atIndexPath:indexPath];
+            }
+        } else if (self.homeCardModelArray) {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else {
+                return [self homeCardCellWithTableView:tableView atIndexPath:indexPath];
+            }
+        } else {
+            if (indexPath.section == 0) {
+                return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
+            } else {
+                return [self infoCellWithTableView:tableView indexPath:indexPath];
+            }
+        }
     }
+    return [self tangDouCellWithTableView:tableView AtIndexPath:indexPath];
 }
 
 - (HomeTangDouTableViewCell *)tangDouCellWithTableView:(UITableView *)tableView AtIndexPath:(NSIndexPath *)indexPath
@@ -345,6 +426,13 @@ CycleScrollViewDatasource>
     return cell;
 }
 
+- (HomeCardTableViewCell *)infoCellWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
+{
+    HomeCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCardCellIdentifier forIndexPath:indexPath];
+    InfoListModel *cardModel = self.infoListModelArray[indexPath.row];
+    cell.infoListModel = cardModel;
+    return cell;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -356,7 +444,6 @@ CycleScrollViewDatasource>
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = [UIColor colorWithHexString:@"F5F5F5"];
 
@@ -372,6 +459,8 @@ CycleScrollViewDatasource>
         titleLabel.text = @"热门贷款推荐";
     } else if (section == 2) {
         titleLabel.text = @"热门信用卡推荐";
+    } else if (section == 3) {
+        titleLabel.text = @"热门资讯推荐";
     }
     
     UIImageView *rightImage = [[UIImageView alloc] init];
@@ -397,10 +486,15 @@ CycleScrollViewDatasource>
             ZSDaiKuanListViewController *daiKuan = [[ZSDaiKuanListViewController alloc] init];
             [self.navigationController pushViewController:daiKuan animated:YES];
             self.hidesBottomBarWhenPushed = NO;
-        } else {
+        } else if (section == 2){
             self.hidesBottomBarWhenPushed = YES;
             ZSNewsViewController *cardVC = [[ZSNewsViewController alloc] init];
             [self.navigationController pushViewController:cardVC animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } else if (section == 3) {
+            self.hidesBottomBarWhenPushed = YES;
+            ZSInfoListViewController *infoList = [[ZSInfoListViewController alloc] init];
+            [self.navigationController pushViewController:infoList animated:YES];
             self.hidesBottomBarWhenPushed = NO;
         }
     }];
@@ -428,8 +522,15 @@ CycleScrollViewDatasource>
         self.hidesBottomBarWhenPushed = YES;
         ZSCardDetailViewController *cardDetailVC = [[ZSCardDetailViewController alloc] init];
         HomeCardModel *cardModel = self.homeCardModelArray[indexPath.row];
-        cardDetailVC.cardid = [NSString stringWithFormat:@"%@",cardModel.cardId];
+        cardDetailVC.cardid = cardModel.cardId;
         [self.navigationController pushViewController:cardDetailVC animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    } else if (indexPath.section == 3) {
+        self.hidesBottomBarWhenPushed = YES;
+        InfoDetailViewController *infoDetail = [[InfoDetailViewController alloc] init];
+        InfoListModel *infoModel = self.infoListModelArray[indexPath.row];
+        infoDetail.infoId = infoModel.informationId;
+        [self.navigationController pushViewController:infoDetail animated:YES];
         self.hidesBottomBarWhenPushed = NO;
     }
 }
