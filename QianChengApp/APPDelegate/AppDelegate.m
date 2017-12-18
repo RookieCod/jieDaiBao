@@ -39,22 +39,25 @@
 
     YTKNetworkConfig *networkConfig = [YTKNetworkConfig sharedConfig];
     networkConfig.baseUrl = productIP;
-    networkConfig.debugLogEnabled = NO;
+    networkConfig.debugLogEnabled = YES;
     
-    AppDelegateRequest *request = [[AppDelegateRequest alloc] init];
-    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSDictionary *dic = request.responseObject;
-        if ([dic[@"code"] integerValue] == 00) {
-            NSString *ss = dic[@"data"][@"audit"];
-            self.isProduct = [ss boolValue];
-            [self initTabBarVC];
-            self.window.rootViewController = self.tabBarController;
+    NSURL *url = [NSURL URLWithString:@"http://product.ccqsign.com/webapp-supermarket-h5/sso/audit"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"POST";
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    // 由于要先对request先行处理,我们通过request初始化task
+    NSURLSessionTask *task = [session dataTaskWithRequest:request
+                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                                            if ([dic[@"code"] integerValue] == 00) {
+                                                self.isProduct = [dic[@"data"][@"audit"] boolValue];
+                                            }
+                                            CFRunLoopStop(CFRunLoopGetMain());
+                                        }];
+    [task resume];
+    CFRunLoopRunInMode(kCFRunLoopDefaultMode,2, NO);
 
-        }
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-    }];
-    
     [self initTabBarVC];
     [self getUserSessionFromLocal];
     [self customGlobalBarAppearance];

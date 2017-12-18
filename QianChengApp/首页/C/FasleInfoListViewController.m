@@ -24,17 +24,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"资讯";
-    if (self.pushType == infoListVCPushTypeFromHome) {
-        self.navigationItem.leftBarButtonItem = [self backButtonBar];
-    } else {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+    
     
     self.baseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.baseTableView registerNib:[UINib nibWithNibName:@"HomeCardTableViewCell" bundle:nil]
              forCellReuseIdentifier:homeCardCellIdentifier];
     [self requestContent];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.pushType == infoListVCPushTypeFromHome) {
+        self.navigationItem.leftBarButtonItem = [self backButtonBar];
+    } else {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+}
+
 - (void)requestContent
 {
     InfoList *request = [[InfoList alloc] initWithType:@"2"];
@@ -77,7 +84,6 @@
 
 - (HomeCardTableViewCell *)homeCardCellWithTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath
 {
-    self.hidesBottomBarWhenPushed = YES;
     HomeCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCardCellIdentifier forIndexPath:indexPath];
     InfoListModel *cardModel = self.listArray[indexPath.row];
     cell.infoListModel = cardModel;

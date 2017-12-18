@@ -225,8 +225,8 @@
             @strongify(self);
             self.hidesBottomBarWhenPushed = YES;
             WebViewController *webVC = [[WebViewController alloc] init];
-            webVC.title = @"钱诚信贷宝服务协议";
-            webVC.webUrl = @"http://106.75.84.49:8080/other/agreement.html";
+            webVC.title = @"钱诚宝服务协议";
+            webVC.webUrl = @"http://product.ccqsign.com/webapp-supermarket-h5/other/agreement.html";
             [self.navigationController pushViewController:webVC animated:YES];
         }];
         [_footerView addGestureRecognizer:tap];

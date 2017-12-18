@@ -160,7 +160,7 @@ static  NSString * const cellNameArray[] = {
             self.hidesBottomBarWhenPushed = YES;
             WebViewController *webVC = [[WebViewController alloc] init];
             webVC.title = @"关于";
-            webVC.webUrl = @"http://106.75.84.49:8080/other/about.html";
+            webVC.webUrl = @"http://product.ccqsign.com/webapp-supermarket-h5/other/about.html";
             [self.navigationController pushViewController:webVC animated:YES];
             self.hidesBottomBarWhenPushed = NO;
         } 
